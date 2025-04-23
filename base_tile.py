@@ -1,5 +1,51 @@
 import mujoco as mj
 import random
+import numpy as np
+
+
+box = {
+  "start":(0, 0),
+  "dim":(2, 2)
+}
+
+def reset_grid(grid,grid_size):
+  for i in range(grid_size[0]):
+    for j in range(grid_size[1]):
+      grid[i][j].pos[2] = 0
+
+def there_is_a_hole(grid,grid_size):
+  # Maybe replace this for loop with numpy
+  # Fill gaps caused by operation if any
+  # TODO:Go through each 4 neighbor if the neighbor
+  # abs(dz) is bigger than 2 * 0.1 move it up or down
+  for i in range(grid_size[0]):
+    for j in range(grid_size[1]):
+      # Looking at neighbors height
+      current_tile_z = grid[i][j].pos[2]
+      for k in [1,-1]:
+        for l in [1,-1]:
+          if i + k < grid_size[0]:
+            if j + l < grid_size[1]:
+              neighbors_tile_z = grid[i+k][j+l].pos[2]
+              dz = get_dz(current_tile_z , neighbors_tile_z, 0.1)
+              if abs(dz) > 0.25:
+                return True
+
+def get_dz(current_tile_z, neighbor_tile_z, thickness):
+  threshold = 5e-3
+  current  = {"top":current_tile_z + thickness, "bottom":current_tile_z - thickness}
+  neighbor = {"top":neighbor_tile_z + thickness, "bottom":neighbor_tile_z - thickness}
+
+  dist = 0
+  # neighbor is underneath
+  if neighbor["top"] < current["bottom"] + threshold:
+    dist = abs(current["bottom"] - neighbor["top"])
+
+  # neighbor is above
+  if neighbor["bottom"] > current["top"] + threshold:
+    dist = abs(neighbor["bottom"] - current["top"])
+
+  return dist
 
 
 def stack(base_tile, num_stairs=4, direction = 1):
@@ -45,6 +91,78 @@ def stack(base_tile, num_stairs=4, direction = 1):
   size = [l , l, THICKNESS]
   base_tile.add_geom(pos=pos, size=size)
 
+def box_extrusions(base_tile, grid_size=(20,20),complex = False):
+  SQUARE_LENGTH = 0.1
+  x_offset = SQUARE_LENGTH * 11
+  y_offset = SQUARE_LENGTH * 19
+  x_step = SQUARE_LENGTH * 2
+  y_step = -SQUARE_LENGTH * 2
+
+  # Create initial grid and store geoms ref
+  grid = [[ 0 for _ in range(grid_size[0])] for _ in range(grid_size[0])]
+  for i in range(grid_size[0]):
+    for j in range(grid_size[1]):
+      rgba = np.random.rand(4)
+      rgba[3] = 1
+      ref = base_tile.add_geom(
+        pos = [x_offset + i * x_step ,
+               y_offset + j * y_step ,
+               0],
+        size = [0.1, 0.1, 0.1]
+      )
+      grid[i][j] = ref
+
+  # Create valid boxes
+  num_boxes = random.randint(4, 50)
+  boxes = []
+  while len(boxes) < num_boxes:
+    start = (random.randint(0, 18), random.randint(0, 18))
+    dim = (random.randint(0, 18), random.randint(0, 18))
+    # Add valid boxes
+    if start[0] + dim [0] < len(grid) and start[1] + dim [1] < len(grid):
+      box = {"start":start , "dim":dim}
+      boxes.append(box)
+
+  # Extrude or Cut operation using the boxes
+  for b in boxes:
+    operation = random.choice([1, -1])
+    start = b["start"]
+    dim = b["dim"]
+    for i in range(start[0], dim[0]):
+      for j in range(start[1], dim[1]):
+        tile = grid[i][j]
+        if complex:
+          tile.pos[2] += operation * SQUARE_LENGTH
+        else:
+          tile.pos[2] = operation * SQUARE_LENGTH
+
+
+
+
+
+
+
+
+
+def rough_ground(base_tile,grid_size=(20,20)):
+  SQUARE_LENGTH = 0.1
+  x_offset = SQUARE_LENGTH * 11
+  y_offset = SQUARE_LENGTH * 19
+  x_step = SQUARE_LENGTH * 2
+  y_step = -SQUARE_LENGTH * 2
+
+
+  for i in range(grid_size[0]):
+    for j in range(grid_size[1]):
+      rgba = np.random.rand(4)
+      rgba[3] = 1
+      base_tile.add_geom(
+        pos = [x_offset + i * x_step ,
+               y_offset + j * y_step ,
+               random.randint(-1, 1) * SQUARE_LENGTH  ],
+        size = [0.1, 0.1, 0.1],
+        rgba = rgba
+      )
 
 def tile(spec=None, grid_loc=(0,0), num_stairs = 5, direction = 1):
   if spec is None:
@@ -74,24 +192,27 @@ def tile(spec=None, grid_loc=(0,0), num_stairs = 5, direction = 1):
   hallow_body.add_geom(pos=[3 * SQUARE_LENGTH, 3 * SQUARE_LENGTH ,0],
                        size = [ 2 * SQUARE_LENGTH, SQUARE_LENGTH, THICKNESS])
 
+
   # Stairs up or down
-  stack(base_tile = hallow_body,
-        num_stairs = num_stairs,
-        direction = direction)
+  # stack(base_tile = hallow_body,
+  #       num_stairs = num_stairs,
+  #       direction = direction)
+
+  # rough_ground(base_tile = hallow_body)
+  box_extrusions(base_tile = hallow_body)
 
   return spec
 
 
 if __name__ == "__main__":
 
-
   spec =  mj.MjSpec()
-  for i in range(-5,5):
-    for j in range(-5,5):
-      tile(spec, grid_loc=(i,j),
-           num_stairs=random.randint(2, 8),
-           direction=random.choice([1, -1]))
-
+  tile(spec)
+  # for i in range(-5,5):
+  #   for j in range(-5,5):
+  #     tile(spec, grid_loc=(i,j),
+  #          num_stairs=random.randint(2, 8),
+  #          direction=random.choice([1, -1]))
 
   pos = [-40, -20, 20 ,40]
   dir = [-0.8,-0.8, 0.8,0.8]
