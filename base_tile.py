@@ -2,6 +2,7 @@ import mujoco as mj
 import random
 import numpy as np
 
+SAND_RGBA = [0.96, 0.96, 0.86, 1.0]
 
 box = {
   "start":(0, 0),
@@ -47,7 +48,6 @@ def get_dz(current_tile_z, neighbor_tile_z, thickness):
 
   return dist
 
-
 def stack(base_tile, num_stairs=4, direction = 1):
   SQUARE_LENGTH = 1 # singe square length
   THICKNESS = 0.1
@@ -57,39 +57,37 @@ def stack(base_tile, num_stairs=4, direction = 1):
     # Side left
     pos = [ SQUARE_LENGTH * 1 + STEP * (1 + 2 * i),
            0,
-          direction * (2 + 2 * i) * THICKNESS]
+          direction * (0 + 2 * i) * THICKNESS]
     size = [SQUARE_LENGTH * 0.1 , (2 - STEP * ( 2 * i)) * SQUARE_LENGTH, THICKNESS]
-    base_tile.add_geom(pos=pos, size=size)
+    base_tile.add_geom(pos=pos, size=size, rgba = SAND_RGBA)
 
     # Side right
     pos = [SQUARE_LENGTH * 5 - STEP * (1 + 2 * i),
            0,
-          direction * (2 + 2 * i) * THICKNESS]
-    base_tile.add_geom(pos=pos, size=size)
+          direction * (0 + 2 * i) * THICKNESS]
+    base_tile.add_geom(pos=pos, size=size, rgba = SAND_RGBA)
 
     # Bottom
     pos =[3 * SQUARE_LENGTH ,
           -(2 - STEP * (1 + 2 * i)) * SQUARE_LENGTH,
-          direction * (2 + 2 * i) * THICKNESS]
+          direction * (0 + 2 * i) * THICKNESS]
     size =  [(2 - (2* STEP * (1+ i))) * SQUARE_LENGTH,
                              SQUARE_LENGTH * 0.1,
                              THICKNESS
                             ]
-    base_tile.add_geom(pos=pos, size=size)
+    base_tile.add_geom(pos=pos, size=size, rgba = SAND_RGBA)
     # Top
     pos =[3 * SQUARE_LENGTH ,
          (2 - STEP * (1 + 2 * i)) * SQUARE_LENGTH,
-         direction * (2 + 2 * i) * THICKNESS]
-    base_tile.add_geom(pos = pos,
-                       size = size
-                      )
+         direction * (0 + 2 * i) * THICKNESS]
+    base_tile.add_geom(pos = pos, size = size , rgba = SAND_RGBA)
   # TODO: Closing
   l = (2 - STEP * ( 2 * num_stairs)) * SQUARE_LENGTH
   pos = [ SQUARE_LENGTH * 1 + STEP * (2 + 2 * i) + l,
            0,
           direction * (2 + 2 * i) * THICKNESS]
   size = [l , l, THICKNESS]
-  base_tile.add_geom(pos=pos, size=size)
+  base_tile.add_geom(pos=pos, size=size, rgba = SAND_RGBA)
 
 def box_extrusions(base_tile, grid_size=(20,20),complex = False):
   SQUARE_LENGTH = 0.1
@@ -108,7 +106,8 @@ def box_extrusions(base_tile, grid_size=(20,20),complex = False):
         pos = [x_offset + i * x_step ,
                y_offset + j * y_step ,
                0],
-        size = [0.1, 0.1, 0.1]
+        size = [0.1, 0.1, 0.1],
+        rgba = SAND_RGBA
       )
       grid[i][j] = ref
 
@@ -136,20 +135,13 @@ def box_extrusions(base_tile, grid_size=(20,20),complex = False):
         else:
           tile.pos[2] = operation * SQUARE_LENGTH
 
-
-
-
-
-
-
-
-
 def rough_ground(base_tile,grid_size=(20,20)):
   SQUARE_LENGTH = 0.1
-  x_offset = SQUARE_LENGTH * 11
-  y_offset = SQUARE_LENGTH * 19
   x_step = SQUARE_LENGTH * 2
   y_step = -SQUARE_LENGTH * 2
+
+  x_offset = SQUARE_LENGTH * 11
+  y_offset = SQUARE_LENGTH * 19
 
 
   for i in range(grid_size[0]):
@@ -157,14 +149,14 @@ def rough_ground(base_tile,grid_size=(20,20)):
       rgba = np.random.rand(4)
       rgba[3] = 1
       base_tile.add_geom(
-        pos = [x_offset + i * x_step ,
-               y_offset + j * y_step ,
+        pos = [ x_offset + i * x_step ,
+                y_offset + j * y_step ,
                random.randint(-1, 1) * SQUARE_LENGTH  ],
         size = [0.1, 0.1, 0.1],
-        rgba = rgba
+        rgba = SAND_RGBA
       )
 
-def tile(spec=None, grid_loc=(0,0), num_stairs = 5, direction = 1):
+def tile(spec=None, grid_loc=(0,0), num_stairs = 5):
   if spec is None:
     spec = mj.MjSpec()
 
@@ -176,30 +168,21 @@ def tile(spec=None, grid_loc=(0,0), num_stairs = 5, direction = 1):
   SQUARE_LENGTH = 1 # singe square length
   THICKNESS = 0.1
 
-  x = grid_loc[0] * SQUARE_LENGTH * 8
-  y = grid_loc[1] * SQUARE_LENGTH * 8
-  hallow_body = spec.worldbody.add_body(pos =[x, y, 0])
 
-  # Left Panel
-  hallow_body.add_geom(size=[SQUARE_LENGTH, 4 * SQUARE_LENGTH, THICKNESS])
-  # Right Panel
-  hallow_body.add_geom(pos=[6 * SQUARE_LENGTH, 0 ,0],
-                       size =[SQUARE_LENGTH, 4 * SQUARE_LENGTH, THICKNESS])
-  # Bottom Panel
-  hallow_body.add_geom(pos=[3 * SQUARE_LENGTH, -3 * SQUARE_LENGTH ,0],
-                       size =[ 2 * SQUARE_LENGTH, SQUARE_LENGTH, THICKNESS])
-  # Top Panel
-  hallow_body.add_geom(pos=[3 * SQUARE_LENGTH, 3 * SQUARE_LENGTH ,0],
-                       size = [ 2 * SQUARE_LENGTH, SQUARE_LENGTH, THICKNESS])
+  x = grid_loc[0] * SQUARE_LENGTH * 4
+  y = grid_loc[1] * SQUARE_LENGTH * 4
+  body = spec.worldbody.add_body(pos =[x, y, 0])
 
-
+  tile_type = random.randint(0,3)
   # Stairs up or down
-  # stack(base_tile = hallow_body,
-  #       num_stairs = num_stairs,
-  #       direction = direction)
-
-  # rough_ground(base_tile = hallow_body)
-  box_extrusions(base_tile = hallow_body)
+  if tile_type == 0:
+    stack(base_tile = body, num_stairs = num_stairs, direction = 1)
+  elif tile_type == 1:
+    stack(base_tile = body, num_stairs = num_stairs, direction = 1)
+  elif tile_type == 2:
+    rough_ground(base_tile = body)
+  elif tile_type == 3:
+    box_extrusions(base_tile = body)
 
   return spec
 
@@ -207,12 +190,12 @@ def tile(spec=None, grid_loc=(0,0), num_stairs = 5, direction = 1):
 if __name__ == "__main__":
 
   spec =  mj.MjSpec()
-  tile(spec)
-  # for i in range(-5,5):
-  #   for j in range(-5,5):
-  #     tile(spec, grid_loc=(i,j),
-  #          num_stairs=random.randint(2, 8),
-  #          direction=random.choice([1, -1]))
+  # tile(spec)
+
+  for i in range(-3,3):
+    for j in range(-3,3):
+      tile(spec, grid_loc=(i,j),
+           num_stairs=random.randint(2, 8))
 
   pos = [-40, -20, 20 ,40]
   dir = [-0.8,-0.8, 0.8,0.8]
