@@ -2,6 +2,8 @@ import mujoco as mj
 import random
 import numpy as np
 
+from scipy.signal import convolve2d
+
 SAND_RGBA = [0.96, 0.96, 0.86, 1.0]
 
 box = {
@@ -48,7 +50,7 @@ def get_dz(current_tile_z, neighbor_tile_z, thickness):
 
   return dist
 
-def stack(base_tile, num_stairs=4, direction = 1):
+def stairs(base_tile, num_stairs = 4, direction = 1):
   SQUARE_LENGTH = 1 # singe square length
   THICKNESS = 0.1
   STEP = 0.1
@@ -89,7 +91,7 @@ def stack(base_tile, num_stairs=4, direction = 1):
   size = [l , l, THICKNESS]
   base_tile.add_geom(pos=pos, size=size, rgba = SAND_RGBA)
 
-def box_extrusions(base_tile, grid_size=(20,20),complex = False):
+def box_extrusions(base_tile, grid_size=(20, 20),complex = False):
   SQUARE_LENGTH = 0.1
   x_offset = SQUARE_LENGTH * 11
   y_offset = SQUARE_LENGTH * 19
@@ -135,7 +137,7 @@ def box_extrusions(base_tile, grid_size=(20,20),complex = False):
         else:
           tile.pos[2] = operation * SQUARE_LENGTH
 
-def rough_ground(base_tile,grid_size=(20,20)):
+def boxy_terrain(base_tile, grid_size=(20, 20)):
   SQUARE_LENGTH = 0.1
   x_step = SQUARE_LENGTH * 2
   y_step = -SQUARE_LENGTH * 2
@@ -156,7 +158,7 @@ def rough_ground(base_tile,grid_size=(20,20)):
         rgba = SAND_RGBA
       )
 
-def tile(spec=None, grid_loc=(0,0), num_stairs = 5):
+def tile(spec=None, grid_loc=(0,0), tile_num = 0):
   if spec is None:
     spec = mj.MjSpec()
 
@@ -164,38 +166,34 @@ def tile(spec=None, grid_loc=(0,0), num_stairs = 5):
   main = spec.default
   main.geom.type = mj.mjtGeom.mjGEOM_BOX
 
-  # Hollow Square
   SQUARE_LENGTH = 1 # singe square length
-  THICKNESS = 0.1
-
 
   x = grid_loc[0] * SQUARE_LENGTH * 4
   y = grid_loc[1] * SQUARE_LENGTH * 4
   body = spec.worldbody.add_body(pos =[x, y, 0])
 
   tile_type = random.randint(0,3)
-  # Stairs up or down
+  # tile_type = 4
   if tile_type == 0:
-    stack(base_tile = body, num_stairs = num_stairs, direction = 1)
+    stairs(base_tile = body, num_stairs = random.randint(2, 8), direction = 1)
   elif tile_type == 1:
-    stack(base_tile = body, num_stairs = num_stairs, direction = 1)
+    stairs(base_tile = body, num_stairs = random.randint(2, 8), direction = -1)
   elif tile_type == 2:
-    rough_ground(base_tile = body)
+    boxy_terrain(base_tile = body)
   elif tile_type == 3:
     box_extrusions(base_tile = body)
 
   return spec
 
-
 if __name__ == "__main__":
 
   spec =  mj.MjSpec()
   # tile(spec)
-
-  for i in range(-3,3):
-    for j in range(-3,3):
-      tile(spec, grid_loc=(i,j),
-           num_stairs=random.randint(2, 8))
+  tile_num = 0
+  for i in range(-2,2):
+    for j in range(-2,2):
+      tile_num +=1
+      tile(spec = spec, grid_loc=(i,j),tile_num = tile_num)
 
   pos = [-40, -20, 20 ,40]
   dir = [-0.8,-0.8, 0.8,0.8]
