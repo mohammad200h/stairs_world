@@ -1,0 +1,543 @@
+<mujoco model="MuJoCo Model">
+  <compiler angle="radian"/>
+
+  <option timestep="0.0001">
+    <flag override="enable" multiccd="enable"/>
+  </option>
+
+  <visual>
+    <global elevation="-10" offwidth="2048" offheight="1536"/>
+    <quality shadowsize="8192"/>
+    <headlight diffuse="0.5 0.5 0.5" specular="1 1 1"/>
+  </visual>
+
+  <default>
+    <mesh scale="0.1 0.1 0.1"/>
+    <geom type="box" solref="0.0001"/>
+  </default>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.5 0.5 0.5" rgb2="0 0 0" width="10" height="60"/>
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="1 1 1" rgb2="1 1 1" width="300" height="300"/>
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0.3"/>
+    <mesh name="d0_0_debris_-2_-2" vertex="-0.643234 0.76567 0 0.280967 0.959717 0 0.977025 -0.213125 0 -0.769071 -0.639164 0 -0.643234 0.76567 0.1 0.280967 0.959717 0.1 0.977025 -0.213125 0.1 -0.769071 -0.639164 0.1"/>
+    <mesh name="d0_1_debris_-2_-2" vertex="-0.797121 -0.60382 0 0.157079 -0.987586 0 -0.834932 -0.550353 0 -0.624372 -0.781127 0 -0.797121 -0.60382 0.1 0.157079 -0.987586 0.1 -0.834932 -0.550353 0.1 -0.624372 -0.781127 0.1"/>
+    <mesh name="d0_2_debris_-2_-2" vertex="0.996519 0.0833606 0 -0.984331 -0.176328 0 0.752533 -0.658555 0 -0.955589 0.294703 0 0.996519 0.0833606 0.1 -0.984331 -0.176328 0.1 0.752533 -0.658555 0.1 -0.955589 0.294703 0.1"/>
+    <mesh name="d0_3_debris_-2_-2" vertex="0.781916 0.623383 0 -0.626297 0.779584 0 0.745745 0.666232 0 0.791264 0.611475 0 0.781916 0.623383 0.1 -0.626297 0.779584 0.1 0.745745 0.666232 0.1 0.791264 0.611475 0.1"/>
+    <mesh name="d0_4_debris_-2_-2" vertex="-0.813138 -0.582071 0 -0.932402 0.361422 0 0.499741 -0.866175 0 -0.84536 -0.534198 0 -0.813138 -0.582071 0.1 -0.932402 0.361422 0.1 0.499741 -0.866175 0.1 -0.84536 -0.534198 0.1"/>
+    <mesh name="d1_0_debris_-2_-2" vertex="-0.726288 -0.687391 0 0.11162 0.993751 0 0.880123 -0.474746 0 -0.2948 -0.955559 0 -0.726288 -0.687391 0.1 0.11162 0.993751 0.1 0.880123 -0.474746 0.1 -0.2948 -0.955559 0.1"/>
+    <mesh name="d1_1_debris_-2_-2" vertex="-0.952457 0.304673 0 -0.931085 0.364802 0 -0.645921 -0.763404 0 0.425656 -0.904885 0 -0.952457 0.304673 0.1 -0.931085 0.364802 0.1 -0.645921 -0.763404 0.1 0.425656 -0.904885 0.1"/>
+    <mesh name="d1_2_debris_-2_-2" vertex="-0.379935 0.925013 0 -0.314646 -0.949209 0 0.492721 -0.870187 0 -0.370398 -0.928873 0 -0.379935 0.925013 0.1 -0.314646 -0.949209 0.1 0.492721 -0.870187 0.1 -0.370398 -0.928873 0.1"/>
+    <mesh name="d1_3_debris_-2_-2" vertex="-0.528361 0.84902 0 -0.980895 0.19454 0 -0.861482 -0.507788 0 0.322653 0.946517 0 -0.528361 0.84902 0.1 -0.980895 0.19454 0.1 -0.861482 -0.507788 0.1 0.322653 0.946517 0.1"/>
+    <mesh name="d1_4_debris_-2_-2" vertex="-0.242349 0.970189 0 -0.854405 -0.519608 0 -0.98662 0.163036 0 -0.96597 -0.258653 0 -0.242349 0.970189 0.1 -0.854405 -0.519608 0.1 -0.98662 0.163036 0.1 -0.96597 -0.258653 0.1"/>
+    <mesh name="d2_0_debris_-2_-2" vertex="0.953447 0.301562 0 0.249761 -0.968308 0 0.612109 0.790773 0 -0.704293 -0.709909 0 0.953447 0.301562 0.1 0.249761 -0.968308 0.1 0.612109 0.790773 0.1 -0.704293 -0.709909 0.1"/>
+    <mesh name="d2_1_debris_-2_-2" vertex="-0.048057 -0.998845 0 0.766442 0.642313 0 0.309258 0.950978 0 0.248087 -0.968738 0 -0.048057 -0.998845 0.1 0.766442 0.642313 0.1 0.309258 0.950978 0.1 0.248087 -0.968738 0.1"/>
+    <mesh name="d2_2_debris_-2_-2" vertex="-0.797409 0.60344 0 -0.798673 0.601765 0 -0.915995 -0.401189 0 0.66351 0.748168 0 -0.797409 0.60344 0.1 -0.798673 0.601765 0.1 -0.915995 -0.401189 0.1 0.66351 0.748168 0.1"/>
+    <mesh name="d2_3_debris_-2_-2" vertex="-0.0612896 0.99812 0 0.533309 -0.845921 0 0.973205 0.229939 0 0.554728 0.832031 0 -0.0612896 0.99812 0.1 0.533309 -0.845921 0.1 0.973205 0.229939 0.1 0.554728 0.832031 0.1"/>
+    <mesh name="d2_4_debris_-2_-2" vertex="-0.972233 -0.234014 0 0.992931 0.118691 0 -0.608588 0.793486 0 -0.184043 -0.982918 0 -0.972233 -0.234014 0.1 0.992931 0.118691 0.1 -0.608588 0.793486 0.1 -0.184043 -0.982918 0.1"/>
+    <mesh name="d3_0_debris_-2_-2" vertex="0.640525 0.767937 0 0.607342 0.794441 0 0.0712404 -0.997459 0 -0.86631 -0.499507 0 0.640525 0.767937 0.1 0.607342 0.794441 0.1 0.0712404 -0.997459 0.1 -0.86631 -0.499507 0.1"/>
+    <mesh name="d3_1_debris_-2_-2" vertex="0.910998 -0.412411 0 0.402202 0.915551 0 0.833768 -0.552115 0 0.770445 -0.637506 0 0.910998 -0.412411 0.1 0.402202 0.915551 0.1 0.833768 -0.552115 0.1 0.770445 -0.637506 0.1"/>
+    <mesh name="d3_2_debris_-2_-2" vertex="0.944742 -0.327814 0 0.268255 0.963348 0 -0.560723 0.828003 0 0.0995061 -0.995037 0 0.944742 -0.327814 0.1 0.268255 0.963348 0.1 -0.560723 0.828003 0.1 0.0995061 -0.995037 0.1"/>
+    <mesh name="d3_3_debris_-2_-2" vertex="0.700799 -0.713358 0 0.339872 0.940472 0 -0.999918 -0.0128114 0 0.401549 0.915837 0 0.700799 -0.713358 0.1 0.339872 0.940472 0.1 -0.999918 -0.0128114 0.1 0.401549 0.915837 0.1"/>
+    <mesh name="d3_4_debris_-2_-2" vertex="-0.568875 -0.822424 0 -0.208046 -0.978119 0 -0.951965 -0.306208 0 -0.339111 -0.940746 0 -0.568875 -0.822424 0.1 -0.208046 -0.978119 0.1 -0.951965 -0.306208 0.1 -0.339111 -0.940746 0.1"/>
+    <mesh name="d4_0_debris_-2_-2" vertex="0.119262 -0.992863 0 0.386083 -0.922464 0 -0.648287 -0.761396 0 -0.121634 -0.992575 0 0.119262 -0.992863 0.1 0.386083 -0.922464 0.1 -0.648287 -0.761396 0.1 -0.121634 -0.992575 0.1"/>
+    <mesh name="d4_1_debris_-2_-2" vertex="-0.40781 0.913067 0 -0.464247 -0.885706 0 0.578873 -0.815418 0 0.616146 0.787632 0 -0.40781 0.913067 0.1 -0.464247 -0.885706 0.1 0.578873 -0.815418 0.1 0.616146 0.787632 0.1"/>
+    <mesh name="d4_2_debris_-2_-2" vertex="-0.159363 -0.98722 0 -0.689481 -0.724304 0 -0.610615 -0.791928 0 -0.181077 0.983469 0 -0.159363 -0.98722 0.1 -0.689481 -0.724304 0.1 -0.610615 -0.791928 0.1 -0.181077 0.983469 0.1"/>
+    <mesh name="d4_3_debris_-2_-2" vertex="-0.617251 -0.786767 0 0.796637 -0.604458 0 -0.0970282 0.995282 0 -0.955334 -0.295528 0 -0.617251 -0.786767 0.1 0.796637 -0.604458 0.1 -0.0970282 0.995282 0.1 -0.955334 -0.295528 0.1"/>
+    <mesh name="d4_4_debris_-2_-2" vertex="-0.939841 -0.341613 0 -0.759097 0.650978 0 0.0688078 0.99763 0 -0.504367 0.863489 0 -0.939841 -0.341613 0.1 -0.759097 0.650978 0.1 0.0688078 0.99763 0.1 -0.504367 0.863489 0.1"/>
+    <mesh name="d0_0_debris_-2_0" vertex="-0.887034 -0.461703 0 -0.637951 -0.770077 0 0.71701 0.697063 0 -0.948861 -0.315693 0 -0.887034 -0.461703 0.1 -0.637951 -0.770077 0.1 0.71701 0.697063 0.1 -0.948861 -0.315693 0.1"/>
+    <mesh name="d0_1_debris_-2_0" vertex="0.56911 -0.822262 0 -0.00829971 -0.999966 0 -0.453024 -0.891498 0 0.15257 -0.988293 0 0.56911 -0.822262 0.1 -0.00829971 -0.999966 0.1 -0.453024 -0.891498 0.1 0.15257 -0.988293 0.1"/>
+    <mesh name="d0_2_debris_-2_0" vertex="-0.897482 0.441052 0 -0.791703 0.610906 0 0.634081 -0.773267 0 -0.898445 -0.439087 0 -0.897482 0.441052 0.1 -0.791703 0.610906 0.1 0.634081 -0.773267 0.1 -0.898445 -0.439087 0.1"/>
+    <mesh name="d0_3_debris_-2_0" vertex="-0.838606 -0.544738 0 -0.851619 0.524161 0 0.793715 -0.60829 0 -0.350493 -0.936565 0 -0.838606 -0.544738 0.1 -0.851619 0.524161 0.1 0.793715 -0.60829 0.1 -0.350493 -0.936565 0.1"/>
+    <mesh name="d0_4_debris_-2_0" vertex="0.432769 0.901505 0 0.30599 -0.952035 0 0.791846 -0.610721 0 0.997888 -0.0649649 0 0.432769 0.901505 0.1 0.30599 -0.952035 0.1 0.791846 -0.610721 0.1 0.997888 -0.0649649 0.1"/>
+    <mesh name="d1_0_debris_-2_0" vertex="0.439828 0.898082 0 -0.474698 -0.880149 0 0.709183 -0.705024 0 0.0638457 -0.99796 0 0.439828 0.898082 0.1 -0.474698 -0.880149 0.1 0.709183 -0.705024 0.1 0.0638457 -0.99796 0.1"/>
+    <mesh name="d1_1_debris_-2_0" vertex="0.983789 0.179327 0 -0.864251 0.503061 0 -0.649125 -0.760682 0 -0.41751 -0.908672 0 0.983789 0.179327 0.1 -0.864251 0.503061 0.1 -0.649125 -0.760682 0.1 -0.41751 -0.908672 0.1"/>
+    <mesh name="d1_2_debris_-2_0" vertex="-0.34325 0.939244 0 0.339114 -0.940745 0 -0.98042 -0.196919 0 0.887294 0.461204 0 -0.34325 0.939244 0.1 0.339114 -0.940745 0.1 -0.98042 -0.196919 0.1 0.887294 0.461204 0.1"/>
+    <mesh name="d1_3_debris_-2_0" vertex="0.496251 0.868179 0 -0.478888 -0.877876 0 0.969606 -0.244672 0 0.227162 0.973857 0 0.496251 0.868179 0.1 -0.478888 -0.877876 0.1 0.969606 -0.244672 0.1 0.227162 0.973857 0.1"/>
+    <mesh name="d1_4_debris_-2_0" vertex="-0.975257 0.221075 0 0.999184 0.0403958 0 0.20408 0.978954 0 -0.325456 -0.945557 0 -0.975257 0.221075 0.1 0.999184 0.0403958 0.1 0.20408 0.978954 0.1 -0.325456 -0.945557 0.1"/>
+    <mesh name="d2_0_debris_-2_0" vertex="0.0103663 0.999946 0 0.923673 -0.383181 0 -0.942043 0.335493 0 0.546541 0.837432 0 0.0103663 0.999946 0.1 0.923673 -0.383181 0.1 -0.942043 0.335493 0.1 0.546541 0.837432 0.1"/>
+    <mesh name="d2_1_debris_-2_0" vertex="-0.96721 0.253978 0 -0.809182 -0.587558 0 0.958131 0.28633 0 -0.872659 0.48833 0 -0.96721 0.253978 0.1 -0.809182 -0.587558 0.1 0.958131 0.28633 0.1 -0.872659 0.48833 0.1"/>
+    <mesh name="d2_2_debris_-2_0" vertex="-0.0904455 0.995901 0 0.512402 0.858746 0 -0.303289 -0.952899 0 0.928029 -0.372508 0 -0.0904455 0.995901 0.1 0.512402 0.858746 0.1 -0.303289 -0.952899 0.1 0.928029 -0.372508 0.1"/>
+    <mesh name="d2_3_debris_-2_0" vertex="-0.257055 0.966397 0 -0.167134 -0.985934 0 -0.841234 0.540671 0 -0.326851 0.945076 0 -0.257055 0.966397 0.1 -0.167134 -0.985934 0.1 -0.841234 0.540671 0.1 -0.326851 0.945076 0.1"/>
+    <mesh name="d2_4_debris_-2_0" vertex="0.800805 0.598925 0 -0.730665 -0.682736 0 -0.18154 -0.983384 0 0.99895 -0.0458242 0 0.800805 0.598925 0.1 -0.730665 -0.682736 0.1 -0.18154 -0.983384 0.1 0.99895 -0.0458242 0.1"/>
+    <mesh name="d3_0_debris_-2_0" vertex="-0.799081 0.601223 0 -0.244411 -0.969672 0 0.509412 0.860523 0 -0.584899 0.811106 0 -0.799081 0.601223 0.1 -0.244411 -0.969672 0.1 0.509412 0.860523 0.1 -0.584899 0.811106 0.1"/>
+    <mesh name="d3_1_debris_-2_0" vertex="-0.988924 -0.148424 0 -0.826867 0.562397 0 -0.837461 -0.546498 0 0.978723 0.205184 0 -0.988924 -0.148424 0.1 -0.826867 0.562397 0.1 -0.837461 -0.546498 0.1 0.978723 0.205184 0.1"/>
+    <mesh name="d3_2_debris_-2_0" vertex="0.16817 -0.985758 0 0.312375 0.949959 0 0.950292 -0.31136 0 -0.966074 0.258265 0 0.16817 -0.985758 0.1 0.312375 0.949959 0.1 0.950292 -0.31136 0.1 -0.966074 0.258265 0.1"/>
+    <mesh name="d3_3_debris_-2_0" vertex="-0.000892132 1 0 -0.251986 0.967731 0 -0.809217 0.58751 0 0.441132 0.897442 0 -0.000892132 1 0.1 -0.251986 0.967731 0.1 -0.809217 0.58751 0.1 0.441132 0.897442 0.1"/>
+    <mesh name="d3_4_debris_-2_0" vertex="0.9828 0.184672 0 0.870795 -0.491647 0 -0.935387 -0.353624 0 -0.382879 0.923798 0 0.9828 0.184672 0.1 0.870795 -0.491647 0.1 -0.935387 -0.353624 0.1 -0.382879 0.923798 0.1"/>
+    <mesh name="d4_0_debris_-2_0" vertex="0.576798 -0.816887 0 -0.503176 -0.864184 0 -0.272272 -0.96222 0 0.892383 0.451279 0 0.576798 -0.816887 0.1 -0.503176 -0.864184 0.1 -0.272272 -0.96222 0.1 0.892383 0.451279 0.1"/>
+    <mesh name="d4_1_debris_-2_0" vertex="0.794357 0.607451 0 -0.334117 -0.942532 0 -0.645331 0.763903 0 0.997137 -0.0756176 0 0.794357 0.607451 0.1 -0.334117 -0.942532 0.1 -0.645331 0.763903 0.1 0.997137 -0.0756176 0.1"/>
+    <mesh name="d4_2_debris_-2_0" vertex="0.980949 -0.194266 0 -0.958286 0.285812 0 0.67719 0.735808 0 0.0178097 -0.999841 0 0.980949 -0.194266 0.1 -0.958286 0.285812 0.1 0.67719 0.735808 0.1 0.0178097 -0.999841 0.1"/>
+    <mesh name="d4_3_debris_-2_0" vertex="-0.712902 -0.701264 0 0.712418 0.701755 0 -0.997042 -0.0768579 0 -0.991119 0.132977 0 -0.712902 -0.701264 0.1 0.712418 0.701755 0.1 -0.997042 -0.0768579 0.1 -0.991119 0.132977 0.1"/>
+    <mesh name="d4_4_debris_-2_0" vertex="0.711055 0.703137 0 0.52196 -0.85297 0 -0.148853 -0.988859 0 -0.500857 -0.86553 0 0.711055 0.703137 0.1 0.52196 -0.85297 0.1 -0.148853 -0.988859 0.1 -0.500857 -0.86553 0.1"/>
+    <mesh name="d0_0_debris_0_-2" vertex="-0.999982 0.00600742 0 0.982698 0.185216 0 -0.295657 -0.955294 0 -0.805164 0.593053 0 -0.999982 0.00600742 0.1 0.982698 0.185216 0.1 -0.295657 -0.955294 0.1 -0.805164 0.593053 0.1"/>
+    <mesh name="d0_1_debris_0_-2" vertex="0.944344 -0.328959 0 -0.26479 -0.964306 0 -0.623453 0.781861 0 -0.133762 0.991013 0 0.944344 -0.328959 0.1 -0.26479 -0.964306 0.1 -0.623453 0.781861 0.1 -0.133762 0.991013 0.1"/>
+    <mesh name="d0_2_debris_0_-2" vertex="-0.942225 0.334979 0 -0.970414 0.241445 0 -0.844298 0.535874 0 0.396913 0.917856 0 -0.942225 0.334979 0.1 -0.970414 0.241445 0.1 -0.844298 0.535874 0.1 0.396913 0.917856 0.1"/>
+    <mesh name="d0_3_debris_0_-2" vertex="-0.973917 0.226903 0 0.702693 -0.711494 0 0.12416 -0.992262 0 -0.192305 0.981335 0 -0.973917 0.226903 0.1 0.702693 -0.711494 0.1 0.12416 -0.992262 0.1 -0.192305 0.981335 0.1"/>
+    <mesh name="d0_4_debris_0_-2" vertex="-0.00488419 -0.999988 0 0.0269015 0.999638 0 0.99762 -0.0689563 0 0.574133 0.818762 0 -0.00488419 -0.999988 0.1 0.0269015 0.999638 0.1 0.99762 -0.0689563 0.1 0.574133 0.818762 0.1"/>
+    <mesh name="d1_0_debris_0_-2" vertex="-0.523552 0.851994 0 0.971212 -0.238216 0 -0.279373 -0.960183 0 0.804887 -0.593428 0 -0.523552 0.851994 0.1 0.971212 -0.238216 0.1 -0.279373 -0.960183 0.1 0.804887 -0.593428 0.1"/>
+    <mesh name="d1_1_debris_0_-2" vertex="-0.840198 0.542279 0 -0.96596 -0.25869 0 -0.88888 -0.45814 0 -0.998014 -0.0629959 0 -0.840198 0.542279 0.1 -0.96596 -0.25869 0.1 -0.88888 -0.45814 0.1 -0.998014 -0.0629959 0.1"/>
+    <mesh name="d1_2_debris_0_-2" vertex="-0.230259 0.97313 0 0.0431478 0.999069 0 -0.956027 0.293279 0 -0.99858 0.0532724 0 -0.230259 0.97313 0.1 0.0431478 0.999069 0.1 -0.956027 0.293279 0.1 -0.99858 0.0532724 0.1"/>
+    <mesh name="d1_3_debris_0_-2" vertex="0.597739 -0.801691 0 -0.654444 0.756111 0 -0.45899 -0.888441 0 -0.833248 -0.5529 0 0.597739 -0.801691 0.1 -0.654444 0.756111 0.1 -0.45899 -0.888441 0.1 -0.833248 -0.5529 0.1"/>
+    <mesh name="d1_4_debris_0_-2" vertex="0.888821 0.458254 0 0.768571 0.639764 0 -0.985185 -0.171493 0 0.309374 0.950941 0 0.888821 0.458254 0.1 0.768571 0.639764 0.1 -0.985185 -0.171493 0.1 0.309374 0.950941 0.1"/>
+    <mesh name="d2_0_debris_0_-2" vertex="-0.291303 -0.956631 0 -0.620333 0.784339 0 -0.978033 -0.208452 0 -0.303193 -0.952929 0 -0.291303 -0.956631 0.1 -0.620333 0.784339 0.1 -0.978033 -0.208452 0.1 -0.303193 -0.952929 0.1"/>
+    <mesh name="d2_1_debris_0_-2" vertex="0.946077 0.323942 0 0.945445 -0.325781 0 -0.94601 -0.324138 0 -0.0427485 -0.999086 0 0.946077 0.323942 0.1 0.945445 -0.325781 0.1 -0.94601 -0.324138 0.1 -0.0427485 -0.999086 0.1"/>
+    <mesh name="d2_2_debris_0_-2" vertex="-0.886047 0.463596 0 0.73114 0.682227 0 0.433718 -0.901049 0 0.535951 -0.844249 0 -0.886047 0.463596 0.1 0.73114 0.682227 0.1 0.433718 -0.901049 0.1 0.535951 -0.844249 0.1"/>
+    <mesh name="d2_3_debris_0_-2" vertex="-0.691893 -0.722 0 0.223198 -0.974773 0 -0.463038 -0.886338 0 0.16543 -0.986222 0 -0.691893 -0.722 0.1 0.223198 -0.974773 0.1 -0.463038 -0.886338 0.1 0.16543 -0.986222 0.1"/>
+    <mesh name="d2_4_debris_0_-2" vertex="-0.974531 -0.224254 0 0.857298 -0.51482 0 -0.995992 0.0894478 0 -0.998147 -0.0608493 0 -0.974531 -0.224254 0.1 0.857298 -0.51482 0.1 -0.995992 0.0894478 0.1 -0.998147 -0.0608493 0.1"/>
+    <mesh name="d3_0_debris_0_-2" vertex="-0.88332 -0.468771 0 0.397677 0.917526 0 0.988513 -0.151136 0 -0.918498 0.395426 0 -0.88332 -0.468771 0.1 0.397677 0.917526 0.1 0.988513 -0.151136 0.1 -0.918498 0.395426 0.1"/>
+    <mesh name="d3_1_debris_0_-2" vertex="-0.808666 -0.588267 0 0.781025 0.624499 0 0.975976 0.217879 0 0.893995 0.448077 0 -0.808666 -0.588267 0.1 0.781025 0.624499 0.1 0.975976 0.217879 0.1 0.893995 0.448077 0.1"/>
+    <mesh name="d3_2_debris_0_-2" vertex="-0.260531 -0.965466 0 -0.284638 -0.958635 0 0.979572 -0.201093 0 0.934601 -0.355699 0 -0.260531 -0.965466 0.1 -0.284638 -0.958635 0.1 0.979572 -0.201093 0.1 0.934601 -0.355699 0.1"/>
+    <mesh name="d3_3_debris_0_-2" vertex="-0.990619 0.136652 0 -0.896261 0.443526 0 0.544218 0.838944 0 -0.639476 0.768811 0 -0.990619 0.136652 0.1 -0.896261 0.443526 0.1 0.544218 0.838944 0.1 -0.639476 0.768811 0.1"/>
+    <mesh name="d3_4_debris_0_-2" vertex="-0.77189 0.635756 0 0.270339 0.962765 0 -0.694187 0.719795 0 0.973368 0.229249 0 -0.77189 0.635756 0.1 0.270339 0.962765 0.1 -0.694187 0.719795 0.1 0.973368 0.229249 0.1"/>
+    <mesh name="d4_0_debris_0_-2" vertex="0.277977 -0.960588 0 0.993906 -0.110229 0 -0.14783 0.989013 0 0.480515 -0.876987 0 0.277977 -0.960588 0.1 0.993906 -0.110229 0.1 -0.14783 0.989013 0.1 0.480515 -0.876987 0.1"/>
+    <mesh name="d4_1_debris_0_-2" vertex="-0.83943 0.543467 0 -0.391385 -0.920227 0 0.882187 0.470899 0 0.932904 0.360126 0 -0.83943 0.543467 0.1 -0.391385 -0.920227 0.1 0.882187 0.470899 0.1 0.932904 0.360126 0.1"/>
+    <mesh name="d4_2_debris_0_-2" vertex="-0.734338 0.678784 0 -0.989666 0.143392 0 0.994136 0.108136 0 -0.955653 -0.294496 0 -0.734338 0.678784 0.1 -0.989666 0.143392 0.1 0.994136 0.108136 0.1 -0.955653 -0.294496 0.1"/>
+    <mesh name="d4_3_debris_0_-2" vertex="-0.576125 0.817361 0 -0.955065 -0.296395 0 0.0480553 -0.998845 0 0.65388 -0.756598 0 -0.576125 0.817361 0.1 -0.955065 -0.296395 0.1 0.0480553 -0.998845 0.1 0.65388 -0.756598 0.1"/>
+    <mesh name="d4_4_debris_0_-2" vertex="-0.759262 0.650785 0 -0.995132 -0.098547 0 0.438554 0.898705 0 -0.920029 -0.391851 0 -0.759262 0.650785 0.1 -0.995132 -0.098547 0.1 0.438554 0.898705 0.1 -0.920029 -0.391851 0.1"/>
+    <mesh name="d0_0_debris_0_0" vertex="0.310759 -0.950489 0 0.764555 0.644558 0 -0.0688949 0.997624 0 -0.139101 0.990278 0 0.310759 -0.950489 0.1 0.764555 0.644558 0.1 -0.0688949 0.997624 0.1 -0.139101 0.990278 0.1"/>
+    <mesh name="d0_1_debris_0_0" vertex="-0.398928 -0.916982 0 -0.395858 -0.918312 0 0.790402 0.612589 0 0.953464 0.301508 0 -0.398928 -0.916982 0.1 -0.395858 -0.918312 0.1 0.790402 0.612589 0.1 0.953464 0.301508 0.1"/>
+    <mesh name="d0_2_debris_0_0" vertex="0.0163011 -0.999867 0 -0.0565085 -0.998402 0 -0.791943 -0.610595 0 0.77168 -0.636011 0 0.0163011 -0.999867 0.1 -0.0565085 -0.998402 0.1 -0.791943 -0.610595 0.1 0.77168 -0.636011 0.1"/>
+    <mesh name="d0_3_debris_0_0" vertex="0.0290224 0.999579 0 -0.827476 -0.561501 0 0.932533 0.361084 0 0.890675 -0.454641 0 0.0290224 0.999579 0.1 -0.827476 -0.561501 0.1 0.932533 0.361084 0.1 0.890675 -0.454641 0.1"/>
+    <mesh name="d0_4_debris_0_0" vertex="0.596304 0.802758 0 -0.722047 0.691844 0 -0.971242 -0.238094 0 -0.337729 0.941243 0 0.596304 0.802758 0.1 -0.722047 0.691844 0.1 -0.971242 -0.238094 0.1 -0.337729 0.941243 0.1"/>
+    <mesh name="d1_0_debris_0_0" vertex="-0.37535 0.926883 0 -0.982181 0.187939 0 0.273441 0.961889 0 0.536317 0.844016 0 -0.37535 0.926883 0.1 -0.982181 0.187939 0.1 0.273441 0.961889 0.1 0.536317 0.844016 0.1"/>
+    <mesh name="d1_1_debris_0_0" vertex="0.80458 -0.593844 0 -0.0323644 0.999476 0 0.872633 0.488377 0 0.592242 -0.80576 0 0.80458 -0.593844 0.1 -0.0323644 0.999476 0.1 0.872633 0.488377 0.1 0.592242 -0.80576 0.1"/>
+    <mesh name="d1_2_debris_0_0" vertex="0.509041 -0.860742 0 0.530079 0.847948 0 0.150311 -0.988639 0 0.73733 0.675533 0 0.509041 -0.860742 0.1 0.530079 0.847948 0.1 0.150311 -0.988639 0.1 0.73733 0.675533 0.1"/>
+    <mesh name="d1_3_debris_0_0" vertex="0.858418 -0.51295 0 0.699701 0.714436 0 0.906909 -0.421326 0 0.401467 0.915874 0 0.858418 -0.51295 0.1 0.699701 0.714436 0.1 0.906909 -0.421326 0.1 0.401467 0.915874 0.1"/>
+    <mesh name="d1_4_debris_0_0" vertex="-0.784781 0.619773 0 0.860906 -0.508764 0 0.83202 0.554745 0 -0.779967 0.625821 0 -0.784781 0.619773 0.1 0.860906 -0.508764 0.1 0.83202 0.554745 0.1 -0.779967 0.625821 0.1"/>
+    <mesh name="d2_0_debris_0_0" vertex="-0.995154 0.0983335 0 0.55201 -0.833838 0 0.468154 -0.883647 0 0.495726 0.868479 0 -0.995154 0.0983335 0.1 0.55201 -0.833838 0.1 0.468154 -0.883647 0.1 0.495726 0.868479 0.1"/>
+    <mesh name="d2_1_debris_0_0" vertex="0.954985 -0.296654 0 -0.909873 0.414887 0 0.533879 -0.845561 0 -0.901684 -0.432396 0 0.954985 -0.296654 0.1 -0.909873 0.414887 0.1 0.533879 -0.845561 0.1 -0.901684 -0.432396 0.1"/>
+    <mesh name="d2_2_debris_0_0" vertex="0.805008 -0.593264 0 -0.512957 0.858414 0 -0.114459 -0.993428 0 -0.981353 -0.192216 0 0.805008 -0.593264 0.1 -0.512957 0.858414 0.1 -0.114459 -0.993428 0.1 -0.981353 -0.192216 0.1"/>
+    <mesh name="d2_3_debris_0_0" vertex="-0.124336 0.99224 0 -0.534883 0.844926 0 0.454516 0.890738 0 0.659745 0.751489 0 -0.124336 0.99224 0.1 -0.534883 0.844926 0.1 0.454516 0.890738 0.1 0.659745 0.751489 0.1"/>
+    <mesh name="d2_4_debris_0_0" vertex="-0.988705 0.149876 0 0.599193 -0.800604 0 -0.157523 -0.987515 0 0.623515 0.781811 0 -0.988705 0.149876 0.1 0.599193 -0.800604 0.1 -0.157523 -0.987515 0.1 0.623515 0.781811 0.1"/>
+    <mesh name="d3_0_debris_0_0" vertex="-0.918686 -0.394989 0 -0.300724 0.953711 0 0.271019 -0.962574 0 0.102095 -0.994775 0 -0.918686 -0.394989 0.1 -0.300724 0.953711 0.1 0.271019 -0.962574 0.1 0.102095 -0.994775 0.1"/>
+    <mesh name="d3_1_debris_0_0" vertex="-0.336589 -0.941652 0 0.777346 0.629074 0 0.99828 -0.0586269 0 -0.954431 -0.298431 0 -0.336589 -0.941652 0.1 0.777346 0.629074 0.1 0.99828 -0.0586269 0.1 -0.954431 -0.298431 0.1"/>
+    <mesh name="d3_2_debris_0_0" vertex="0.716154 0.697942 0 0.486834 -0.873495 0 -0.998805 -0.0488818 0 0.52388 0.851792 0 0.716154 0.697942 0.1 0.486834 -0.873495 0.1 -0.998805 -0.0488818 0.1 0.52388 0.851792 0.1"/>
+    <mesh name="d3_3_debris_0_0" vertex="-0.937746 0.347322 0 0.613967 -0.789332 0 0.890029 -0.455905 0 0.981256 0.192707 0 -0.937746 0.347322 0.1 0.613967 -0.789332 0.1 0.890029 -0.455905 0.1 0.981256 0.192707 0.1"/>
+    <mesh name="d3_4_debris_0_0" vertex="-0.694203 0.71978 0 0.917634 0.397426 0 0.962611 0.270888 0 -0.624628 -0.780922 0 -0.694203 0.71978 0.1 0.917634 0.397426 0.1 0.962611 0.270888 0.1 -0.624628 -0.780922 0.1"/>
+    <mesh name="d4_0_debris_0_0" vertex="-0.242657 0.970112 0 0.767537 0.641005 0 0.976893 0.213729 0 0.979672 0.200607 0 -0.242657 0.970112 0.1 0.767537 0.641005 0.1 0.976893 0.213729 0.1 0.979672 0.200607 0.1"/>
+    <mesh name="d4_1_debris_0_0" vertex="-0.168256 -0.985743 0 -0.322226 0.946663 0 0.248814 -0.968551 0 0.889632 -0.456679 0 -0.168256 -0.985743 0.1 -0.322226 0.946663 0.1 0.248814 -0.968551 0.1 0.889632 -0.456679 0.1"/>
+    <mesh name="d4_2_debris_0_0" vertex="-0.968592 0.248655 0 0.385061 -0.922891 0 0.883625 -0.468195 0 -0.121022 0.99265 0 -0.968592 0.248655 0.1 0.385061 -0.922891 0.1 0.883625 -0.468195 0.1 -0.121022 0.99265 0.1"/>
+    <mesh name="d4_3_debris_0_0" vertex="0.755033 0.655686 0 -0.575189 0.81802 0 0.447119 -0.894475 0 -0.357931 -0.933748 0 0.755033 0.655686 0.1 -0.575189 0.81802 0.1 0.447119 -0.894475 0.1 -0.357931 -0.933748 0.1"/>
+    <mesh name="d4_4_debris_0_0" vertex="-0.987622 0.156853 0 0.724988 0.688762 0 0.997456 0.0712869 0 -0.91104 0.412318 0 -0.987622 0.156853 0.1 0.724988 0.688762 0.1 0.997456 0.0712869 0.1 -0.91104 0.412318 0.1"/>
+  </asset>
+
+  <worldbody>
+    <light pos="-1 -1 40" dir="0.0663723 0.0663723 -0.995585"/>
+    <light pos="-1 1 40" dir="0.0663723 -0.0663723 -0.995585"/>
+    <light pos="1 -1 40" dir="-0.0663723 0.0663723 -0.995585"/>
+    <light pos="1 1 40" dir="-0.0663723 -0.0663723 -0.995585"/>
+    <body name="debris_-2_-2" pos="-2 -2 0">
+      <geom size="1 1 0.05" rgba="0.647 0.165 0.165 1"/>
+    </body>
+    <body name="d0_0_debris_-2_-2" pos="-2.95 -1.05 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d0_0_debris_-2_-2"/>
+    </body>
+    <body name="d0_1_debris_-2_-2" pos="-2.95 -1.45 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d0_1_debris_-2_-2"/>
+    </body>
+    <body name="d0_2_debris_-2_-2" pos="-2.95 -1.85 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d0_2_debris_-2_-2"/>
+    </body>
+    <body name="d0_3_debris_-2_-2" pos="-2.95 -2.25 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d0_3_debris_-2_-2"/>
+    </body>
+    <body name="d0_4_debris_-2_-2" pos="-2.95 -2.65 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d0_4_debris_-2_-2"/>
+    </body>
+    <body name="d1_0_debris_-2_-2" pos="-2.55 -1.05 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d1_0_debris_-2_-2"/>
+    </body>
+    <body name="d1_1_debris_-2_-2" pos="-2.55 -1.45 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d1_1_debris_-2_-2"/>
+    </body>
+    <body name="d1_2_debris_-2_-2" pos="-2.55 -1.85 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d1_2_debris_-2_-2"/>
+    </body>
+    <body name="d1_3_debris_-2_-2" pos="-2.55 -2.25 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d1_3_debris_-2_-2"/>
+    </body>
+    <body name="d1_4_debris_-2_-2" pos="-2.55 -2.65 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d1_4_debris_-2_-2"/>
+    </body>
+    <body name="d2_0_debris_-2_-2" pos="-2.15 -1.05 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d2_0_debris_-2_-2"/>
+    </body>
+    <body name="d2_1_debris_-2_-2" pos="-2.15 -1.45 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d2_1_debris_-2_-2"/>
+    </body>
+    <body name="d2_2_debris_-2_-2" pos="-2.15 -1.85 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d2_2_debris_-2_-2"/>
+    </body>
+    <body name="d2_3_debris_-2_-2" pos="-2.15 -2.25 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d2_3_debris_-2_-2"/>
+    </body>
+    <body name="d2_4_debris_-2_-2" pos="-2.15 -2.65 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d2_4_debris_-2_-2"/>
+    </body>
+    <body name="d3_0_debris_-2_-2" pos="-1.75 -1.05 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d3_0_debris_-2_-2"/>
+    </body>
+    <body name="d3_1_debris_-2_-2" pos="-1.75 -1.45 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d3_1_debris_-2_-2"/>
+    </body>
+    <body name="d3_2_debris_-2_-2" pos="-1.75 -1.85 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d3_2_debris_-2_-2"/>
+    </body>
+    <body name="d3_3_debris_-2_-2" pos="-1.75 -2.25 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d3_3_debris_-2_-2"/>
+    </body>
+    <body name="d3_4_debris_-2_-2" pos="-1.75 -2.65 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d3_4_debris_-2_-2"/>
+    </body>
+    <body name="d4_0_debris_-2_-2" pos="-1.35 -1.05 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d4_0_debris_-2_-2"/>
+    </body>
+    <body name="d4_1_debris_-2_-2" pos="-1.35 -1.45 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d4_1_debris_-2_-2"/>
+    </body>
+    <body name="d4_2_debris_-2_-2" pos="-1.35 -1.85 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d4_2_debris_-2_-2"/>
+    </body>
+    <body name="d4_3_debris_-2_-2" pos="-1.35 -2.25 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d4_3_debris_-2_-2"/>
+    </body>
+    <body name="d4_4_debris_-2_-2" pos="-1.35 -2.65 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d4_4_debris_-2_-2"/>
+    </body>
+    <body name="debris_-2_0" pos="-2 0 0">
+      <geom size="1 1 0.05" rgba="0.647 0.165 0.165 1"/>
+    </body>
+    <body name="d0_0_debris_-2_0" pos="-2.95 0.95 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d0_0_debris_-2_0"/>
+    </body>
+    <body name="d0_1_debris_-2_0" pos="-2.95 0.55 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d0_1_debris_-2_0"/>
+    </body>
+    <body name="d0_2_debris_-2_0" pos="-2.95 0.15 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d0_2_debris_-2_0"/>
+    </body>
+    <body name="d0_3_debris_-2_0" pos="-2.95 -0.25 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d0_3_debris_-2_0"/>
+    </body>
+    <body name="d0_4_debris_-2_0" pos="-2.95 -0.65 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d0_4_debris_-2_0"/>
+    </body>
+    <body name="d1_0_debris_-2_0" pos="-2.55 0.95 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d1_0_debris_-2_0"/>
+    </body>
+    <body name="d1_1_debris_-2_0" pos="-2.55 0.55 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d1_1_debris_-2_0"/>
+    </body>
+    <body name="d1_2_debris_-2_0" pos="-2.55 0.15 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d1_2_debris_-2_0"/>
+    </body>
+    <body name="d1_3_debris_-2_0" pos="-2.55 -0.25 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d1_3_debris_-2_0"/>
+    </body>
+    <body name="d1_4_debris_-2_0" pos="-2.55 -0.65 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d1_4_debris_-2_0"/>
+    </body>
+    <body name="d2_0_debris_-2_0" pos="-2.15 0.95 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d2_0_debris_-2_0"/>
+    </body>
+    <body name="d2_1_debris_-2_0" pos="-2.15 0.55 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d2_1_debris_-2_0"/>
+    </body>
+    <body name="d2_2_debris_-2_0" pos="-2.15 0.15 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d2_2_debris_-2_0"/>
+    </body>
+    <body name="d2_3_debris_-2_0" pos="-2.15 -0.25 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d2_3_debris_-2_0"/>
+    </body>
+    <body name="d2_4_debris_-2_0" pos="-2.15 -0.65 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d2_4_debris_-2_0"/>
+    </body>
+    <body name="d3_0_debris_-2_0" pos="-1.75 0.95 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d3_0_debris_-2_0"/>
+    </body>
+    <body name="d3_1_debris_-2_0" pos="-1.75 0.55 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d3_1_debris_-2_0"/>
+    </body>
+    <body name="d3_2_debris_-2_0" pos="-1.75 0.15 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d3_2_debris_-2_0"/>
+    </body>
+    <body name="d3_3_debris_-2_0" pos="-1.75 -0.25 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d3_3_debris_-2_0"/>
+    </body>
+    <body name="d3_4_debris_-2_0" pos="-1.75 -0.65 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d3_4_debris_-2_0"/>
+    </body>
+    <body name="d4_0_debris_-2_0" pos="-1.35 0.95 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d4_0_debris_-2_0"/>
+    </body>
+    <body name="d4_1_debris_-2_0" pos="-1.35 0.55 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d4_1_debris_-2_0"/>
+    </body>
+    <body name="d4_2_debris_-2_0" pos="-1.35 0.15 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d4_2_debris_-2_0"/>
+    </body>
+    <body name="d4_3_debris_-2_0" pos="-1.35 -0.25 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d4_3_debris_-2_0"/>
+    </body>
+    <body name="d4_4_debris_-2_0" pos="-1.35 -0.65 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d4_4_debris_-2_0"/>
+    </body>
+    <body name="debris_0_-2" pos="0 -2 0">
+      <geom size="1 1 0.05" rgba="0.647 0.165 0.165 1"/>
+    </body>
+    <body name="d0_0_debris_0_-2" pos="-0.95 -1.05 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d0_0_debris_0_-2"/>
+    </body>
+    <body name="d0_1_debris_0_-2" pos="-0.95 -1.45 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d0_1_debris_0_-2"/>
+    </body>
+    <body name="d0_2_debris_0_-2" pos="-0.95 -1.85 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d0_2_debris_0_-2"/>
+    </body>
+    <body name="d0_3_debris_0_-2" pos="-0.95 -2.25 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d0_3_debris_0_-2"/>
+    </body>
+    <body name="d0_4_debris_0_-2" pos="-0.95 -2.65 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d0_4_debris_0_-2"/>
+    </body>
+    <body name="d1_0_debris_0_-2" pos="-0.55 -1.05 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d1_0_debris_0_-2"/>
+    </body>
+    <body name="d1_1_debris_0_-2" pos="-0.55 -1.45 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d1_1_debris_0_-2"/>
+    </body>
+    <body name="d1_2_debris_0_-2" pos="-0.55 -1.85 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d1_2_debris_0_-2"/>
+    </body>
+    <body name="d1_3_debris_0_-2" pos="-0.55 -2.25 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d1_3_debris_0_-2"/>
+    </body>
+    <body name="d1_4_debris_0_-2" pos="-0.55 -2.65 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d1_4_debris_0_-2"/>
+    </body>
+    <body name="d2_0_debris_0_-2" pos="-0.15 -1.05 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d2_0_debris_0_-2"/>
+    </body>
+    <body name="d2_1_debris_0_-2" pos="-0.15 -1.45 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d2_1_debris_0_-2"/>
+    </body>
+    <body name="d2_2_debris_0_-2" pos="-0.15 -1.85 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d2_2_debris_0_-2"/>
+    </body>
+    <body name="d2_3_debris_0_-2" pos="-0.15 -2.25 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d2_3_debris_0_-2"/>
+    </body>
+    <body name="d2_4_debris_0_-2" pos="-0.15 -2.65 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d2_4_debris_0_-2"/>
+    </body>
+    <body name="d3_0_debris_0_-2" pos="0.25 -1.05 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d3_0_debris_0_-2"/>
+    </body>
+    <body name="d3_1_debris_0_-2" pos="0.25 -1.45 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d3_1_debris_0_-2"/>
+    </body>
+    <body name="d3_2_debris_0_-2" pos="0.25 -1.85 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d3_2_debris_0_-2"/>
+    </body>
+    <body name="d3_3_debris_0_-2" pos="0.25 -2.25 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d3_3_debris_0_-2"/>
+    </body>
+    <body name="d3_4_debris_0_-2" pos="0.25 -2.65 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d3_4_debris_0_-2"/>
+    </body>
+    <body name="d4_0_debris_0_-2" pos="0.65 -1.05 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d4_0_debris_0_-2"/>
+    </body>
+    <body name="d4_1_debris_0_-2" pos="0.65 -1.45 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d4_1_debris_0_-2"/>
+    </body>
+    <body name="d4_2_debris_0_-2" pos="0.65 -1.85 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d4_2_debris_0_-2"/>
+    </body>
+    <body name="d4_3_debris_0_-2" pos="0.65 -2.25 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d4_3_debris_0_-2"/>
+    </body>
+    <body name="d4_4_debris_0_-2" pos="0.65 -2.65 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d4_4_debris_0_-2"/>
+    </body>
+    <body name="debris_0_0">
+      <geom size="1 1 0.05" rgba="0.647 0.165 0.165 1"/>
+    </body>
+    <body name="d0_0_debris_0_0" pos="-0.95 0.95 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d0_0_debris_0_0"/>
+    </body>
+    <body name="d0_1_debris_0_0" pos="-0.95 0.55 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d0_1_debris_0_0"/>
+    </body>
+    <body name="d0_2_debris_0_0" pos="-0.95 0.15 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d0_2_debris_0_0"/>
+    </body>
+    <body name="d0_3_debris_0_0" pos="-0.95 -0.25 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d0_3_debris_0_0"/>
+    </body>
+    <body name="d0_4_debris_0_0" pos="-0.95 -0.65 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d0_4_debris_0_0"/>
+    </body>
+    <body name="d1_0_debris_0_0" pos="-0.55 0.95 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d1_0_debris_0_0"/>
+    </body>
+    <body name="d1_1_debris_0_0" pos="-0.55 0.55 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d1_1_debris_0_0"/>
+    </body>
+    <body name="d1_2_debris_0_0" pos="-0.55 0.15 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d1_2_debris_0_0"/>
+    </body>
+    <body name="d1_3_debris_0_0" pos="-0.55 -0.25 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d1_3_debris_0_0"/>
+    </body>
+    <body name="d1_4_debris_0_0" pos="-0.55 -0.65 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d1_4_debris_0_0"/>
+    </body>
+    <body name="d2_0_debris_0_0" pos="-0.15 0.95 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d2_0_debris_0_0"/>
+    </body>
+    <body name="d2_1_debris_0_0" pos="-0.15 0.55 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d2_1_debris_0_0"/>
+    </body>
+    <body name="d2_2_debris_0_0" pos="-0.15 0.15 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d2_2_debris_0_0"/>
+    </body>
+    <body name="d2_3_debris_0_0" pos="-0.15 -0.25 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d2_3_debris_0_0"/>
+    </body>
+    <body name="d2_4_debris_0_0" pos="-0.15 -0.65 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d2_4_debris_0_0"/>
+    </body>
+    <body name="d3_0_debris_0_0" pos="0.25 0.95 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d3_0_debris_0_0"/>
+    </body>
+    <body name="d3_1_debris_0_0" pos="0.25 0.55 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d3_1_debris_0_0"/>
+    </body>
+    <body name="d3_2_debris_0_0" pos="0.25 0.15 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d3_2_debris_0_0"/>
+    </body>
+    <body name="d3_3_debris_0_0" pos="0.25 -0.25 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d3_3_debris_0_0"/>
+    </body>
+    <body name="d3_4_debris_0_0" pos="0.25 -0.65 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d3_4_debris_0_0"/>
+    </body>
+    <body name="d4_0_debris_0_0" pos="0.65 0.95 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d4_0_debris_0_0"/>
+    </body>
+    <body name="d4_1_debris_0_0" pos="0.65 0.55 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d4_1_debris_0_0"/>
+    </body>
+    <body name="d4_2_debris_0_0" pos="0.65 0.15 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d4_2_debris_0_0"/>
+    </body>
+    <body name="d4_3_debris_0_0" pos="0.65 -0.25 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d4_3_debris_0_0"/>
+    </body>
+    <body name="d4_4_debris_0_0" pos="0.65 -0.65 0.2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" mesh="d4_4_debris_0_0"/>
+    </body>
+  </worldbody>
+</mujoco>

@@ -78,7 +78,8 @@ def debris(spec=None, grid_loc=[0, 0] , name='debris'):
   THICKNESS = 0.05
   STEP = THICKNESS * 8
   SCALE = 0.1
-  BROWN_RGBA = BROWN_RGBA = [0.647, 0.165, 0.165, 1.0]
+  BROWN_RGBA = [0.647, 0.165, 0.165, 1.0]
+
 
   if spec == None:
     spec = spec = mj.MjSpec()
@@ -92,9 +93,8 @@ def debris(spec=None, grid_loc=[0, 0] , name='debris'):
   y_beginning = SQUARE_LENGTH - THICKNESS
 
   # Plane
-  rgba = np.random.rand(4); rgba[3]=1
   body = spec.worldbody.add_body(pos= grid_loc + [0], name=name)
-  body.add_geom(size = [SQUARE_LENGTH,SQUARE_LENGTH, THICKNESS], rgba=rgba)
+  body.add_geom(size = [SQUARE_LENGTH,SQUARE_LENGTH, THICKNESS], rgba=BROWN_RGBA)
 
   # Debris
   for i in range(5):
@@ -107,7 +107,7 @@ def debris(spec=None, grid_loc=[0, 0] , name='debris'):
       # Add z value
       base = np.concatenate((drawing, z), axis=1)
       # Extrude triangle
-      z_extrusion = np.full((drawing.shape[0], 1), THICKNESS)
+      z_extrusion = np.full((drawing.shape[0], 1), THICKNESS * 2)
       top = np.concatenate((drawing, z_extrusion), axis=1)
       mesh = np.vstack((base, top))
 
@@ -208,7 +208,7 @@ def add_tile(spec=None, grid_loc=[0,0]):
     spec = mj.MjSpec()
 
   # tile_type = random.randint(0,5)
-  tile_type=3
+  tile_type = 3
   if tile_type == 0:
     plane(spec,grid_loc, name = f"plane_{grid_loc[0]}_{grid_loc[1]}")
   elif tile_type == 1:
@@ -247,18 +247,33 @@ if __name__ == "__main__":
 
   spec = mj.MjSpec.from_string(arena_xml)
 
+  spec.option.enableflags |= mj.mjtEnableBit.mjENBL_OVERRIDE
+  spec.option.enableflags |= mj.mjtEnableBit.mjENBL_MULTICCD
+  spec.option.timestep = 0.0001
+  print(f"spec.option.timestep::{spec.option.timestep}")
+  main = spec.default
+  main.geom.solref = [0.0001, 1]
+
+
   # Add lights
-  for x in [-5, 5]:
-    for y in [-5, 5]:
+  for x in [-1, 1]:
+    for y in [-1, 1]:
       spec.worldbody.add_light(pos = [x, y, 40], dir = [-x, -y, -15])
 
   SQUARE_LENGTH = 1
-  for i in range(-2,2):
-    for j in range(-2,2):
+  for i in range(-1,1):
+    for j in range(-1,1):
       add_tile(spec=spec, grid_loc=[i * 2 * SQUARE_LENGTH,j * 2 * SQUARE_LENGTH])
 
   model = spec.compile()
+  # print(f"model.opt::{model.opt}")
   data = mj.MjData(model)
+
+  # Timestep 0.0001
+
+  # Enable Flag -> (Override, MultiCCD)
+  # https://github.com/google-deepmind/mujoco/blob/45d3fef2fc31f02667d3a63014a6ba171840d88c/include/mujoco/mjmodel.h#L73C14-L73C27
+
 
   with open("./terrain.xml","w") as f:
     f.write(spec.to_xml())
