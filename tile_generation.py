@@ -3,7 +3,7 @@ import random
 import numpy as np
 
 
-def plane(spec, grid_loc, name='plane'):
+def plane(spec, grid_loc=[0, 0], name='plane'):
   BROWN_RGBA = [0.647, 0.165, 0.165, 1.0]
   SQUARE_LENGTH = 1 # singe square length
   THICKNESS = 0.05
@@ -12,12 +12,65 @@ def plane(spec, grid_loc, name='plane'):
   main = spec.default
   main.geom.type = mj.mjtGeom.mjGEOM_BOX
 
-  body = spec.worldbody.add_body(pos= grid_loc + [0], name=name)
+  body = spec.worldbody.add_body(pos=grid_loc + [0], name=name)
   rgba = np.random.rand(4); rgba[3]=1
-  body.add_geom(size = [SQUARE_LENGTH,SQUARE_LENGTH, THICKNESS], rgba = BROWN_RGBA )
+  body.add_geom(size = [SQUARE_LENGTH,SQUARE_LENGTH, THICKNESS], rgba = rgba )
 
   # center = spec.worldbody.add_body(pos=grid_loc + [0.2])
   # center.add_geom(type = mj.mjtGeom.mjGEOM_SPHERE,size=[0.1,0,0],rgba=BROWN_RGBA)
+
+def plane_with_simple_geoms(spec=None, grid_loc=[0, 0], name='plane'):
+  SQUARE_LENGTH = 1
+  THICKNESS = 0.05
+  STEP = THICKNESS * 8
+  BROWN_RGBA = [0.647, 0.165, 0.165, 1.0]
+  RED_RGBA = [0.6, 0.12, 0.15, 1.0]
+
+  if spec == None:
+    spec = spec = mj.MjSpec()
+
+  # Defaults
+  main = spec.default
+  main.geom.type = mj.mjtGeom.mjGEOM_BOX
+
+  x_beginning, y_end = [-SQUARE_LENGTH + THICKNESS] * 2
+  x_end, y_beginning = [SQUARE_LENGTH - THICKNESS] * 2
+
+  # Plane
+  body = spec.worldbody.add_body(pos=grid_loc + [0], name=name)
+  body.add_geom(size = [SQUARE_LENGTH,SQUARE_LENGTH, THICKNESS], rgba = BROWN_RGBA )
+
+  # Simple Geoms
+  x_grid = np.linspace(x_beginning, x_end, 10)
+  y_grid = np.linspace(y_beginning, y_end, 10)
+
+  history = []
+
+  for i in range(10):
+    x = np.random.choice(x_grid)
+    y = np.random.choice(y_grid)
+
+    history.append([x, y])
+
+    pos=[grid_loc[0] + x ,
+           grid_loc[1] + y ,
+           0.2]
+
+    type = None
+    size = None
+    if random.randint(0, 1):
+      type = mj.mjtGeom.mjGEOM_BOX
+      size = [0.1, 0.1, 0.02]
+    else:
+      type = mj.mjtGeom.mjGEOM_CYLINDER
+      size = [0.1, 0.02, 0]
+
+    body = spec.worldbody.add_body(pos=pos, name=f'g{i}_{j}_{name}', mass=1)
+    body.add_geom(type=type ,size=size, rgba=RED_RGBA)
+    body.add_freejoint()
+
+
+  # TODO: Scatter geoms over the surface
 
 def stairs(spec=None, grid_loc=[0, 0] , num_stairs=4, direction=1, name='stair'):
   SQUARE_LENGTH = 1
@@ -79,7 +132,7 @@ def debris(spec=None, grid_loc=[0, 0] , name='debris'):
   STEP = THICKNESS * 8
   SCALE = 0.1
   BROWN_RGBA = [0.647, 0.165, 0.165, 1.0]
-
+  RED_RGBA = [0.6, 0.12, 0.15, 1.0]
 
   if spec == None:
     spec = spec = mj.MjSpec()
@@ -93,36 +146,36 @@ def debris(spec=None, grid_loc=[0, 0] , name='debris'):
   y_beginning = SQUARE_LENGTH - THICKNESS
 
   # Plane
-  body = spec.worldbody.add_body(pos= grid_loc + [0], name=name)
-  body.add_geom(size = [SQUARE_LENGTH,SQUARE_LENGTH, THICKNESS], rgba=BROWN_RGBA)
+  body = spec.worldbody.add_body(pos=grid_loc + [0], name=name)
+  body.add_geom(size=[SQUARE_LENGTH,SQUARE_LENGTH, THICKNESS], rgba=BROWN_RGBA)
 
   # Debris
   for i in range(5):
     for j in range(5):
       # x y
-      drawing = np.random.normal(size = (4, 2))
+      drawing = np.random.normal(size=(4, 2))
       # Normalize
       drawing /= np.linalg.norm(drawing, axis=1, keepdims=True)
       z = np.zeros((drawing.shape[0], 1))
       # Add z value
       base = np.concatenate((drawing, z), axis=1)
       # Extrude triangle
-      z_extrusion = np.full((drawing.shape[0], 1), THICKNESS * 2)
+      z_extrusion = np.full((drawing.shape[0], 1), THICKNESS * 4)
       top = np.concatenate((drawing, z_extrusion), axis=1)
+      # Combine to get mesh
       mesh = np.vstack((base, top))
 
-
-      # Create Body and add mesh to the Geom of the Body
+      # Create body and add mesh to the geom of the body
       spec.add_mesh(name=f'd{i}_{j}_{name}', uservert=mesh.flatten())
       pos=[grid_loc[0] + x_beginning + i * STEP ,
            grid_loc[1] + y_beginning - j * STEP ,
            0.2]
 
       body = spec.worldbody.add_body(pos=pos, name=f'd{i}_{j}_{name}', mass=1)
-      body.add_geom(type=mj.mjtGeom.mjGEOM_MESH ,meshname=f'd{i}_{j}_{name}')
+      body.add_geom(type=mj.mjtGeom.mjGEOM_MESH ,meshname=f'd{i}_{j}_{name}', rgba=RED_RGBA)
       body.add_freejoint()
 
-def box_extrusions(spec=None, grid_loc =[0, 0], complex=False, name='box_extrusions'):
+def box_extrusions(spec=None, grid_loc=[0, 0], complex=False, name='box_extrusions'):
   # Warning! complex sometimes leads to creation of holes
   SQUARE_LENGTH = 1
   THICKNESS = 0.05
@@ -176,7 +229,7 @@ def box_extrusions(spec=None, grid_loc =[0, 0], complex=False, name='box_extrusi
         else:
           tile.pos[2] = operation * THICKNESS
 
-def boxy_terrain(spec = None, grid_loc=[0,0], name='boxy_terrain'):
+def boxy_terrain(spec=None, grid_loc=[0, 0], name='boxy_terrain'):
   SQUARE_LENGTH = 1
   THICKNESS = 0.05
   GRID_SIZE = int(SQUARE_LENGTH / THICKNESS)
@@ -203,14 +256,14 @@ def boxy_terrain(spec = None, grid_loc=[0,0], name='boxy_terrain'):
         rgba = BROWN_RGBA
       )
 
-def add_tile(spec=None, grid_loc=[0,0]):
+def add_tile(spec=None, grid_loc=[0, 0]):
   if spec is None:
     spec = mj.MjSpec()
 
-  # tile_type = random.randint(0,5)
-  tile_type = 3
+  tile_type = random.randint(0,5)
+  # tile_type = 3
   if tile_type == 0:
-    plane(spec,grid_loc, name = f"plane_{grid_loc[0]}_{grid_loc[1]}")
+    plane_with_simple_geoms(spec,grid_loc, name = f"plane_{grid_loc[0]}_{grid_loc[1]}")
   elif tile_type == 1:
     stairs(spec,grid_loc, name = f"stairs_up_{grid_loc[0]}_{grid_loc[1]}",direction=1)
   elif tile_type == 2:
@@ -250,10 +303,9 @@ if __name__ == "__main__":
   spec.option.enableflags |= mj.mjtEnableBit.mjENBL_OVERRIDE
   spec.option.enableflags |= mj.mjtEnableBit.mjENBL_MULTICCD
   spec.option.timestep = 0.0001
-  print(f"spec.option.timestep::{spec.option.timestep}")
-  main = spec.default
-  main.geom.solref = [0.0001, 1]
 
+  main = spec.default
+  main.geom.solref = [0.001, 1]
 
   # Add lights
   for x in [-1, 1]:
@@ -261,19 +313,12 @@ if __name__ == "__main__":
       spec.worldbody.add_light(pos = [x, y, 40], dir = [-x, -y, -15])
 
   SQUARE_LENGTH = 1
-  for i in range(-1,1):
-    for j in range(-1,1):
+  for i in range(-4,4):
+    for j in range(-4,4):
       add_tile(spec=spec, grid_loc=[i * 2 * SQUARE_LENGTH,j * 2 * SQUARE_LENGTH])
 
   model = spec.compile()
-  # print(f"model.opt::{model.opt}")
   data = mj.MjData(model)
-
-  # Timestep 0.0001
-
-  # Enable Flag -> (Override, MultiCCD)
-  # https://github.com/google-deepmind/mujoco/blob/45d3fef2fc31f02667d3a63014a6ba171840d88c/include/mujoco/mjmodel.h#L73C14-L73C27
-
 
   with open("./terrain.xml","w") as f:
     f.write(spec.to_xml())
@@ -286,5 +331,7 @@ if __name__ == "__main__":
     mj.mjv_defaultFreeCamera(model, viewer.cam)
     while viewer.is_running():
       mj.mj_step(model, data)
+      stability = np.isnan(data.qacc).any() or np.isinf(data.qacc).any()
+      time = data.time
       viewer.sync()
 
