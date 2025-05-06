@@ -70,8 +70,8 @@ def floating_platform(spec=None, gird_loc=[0, 0, 0], platform_length = 0.2 ,thet
   main.geom.type = mj.mjtGeom.mjGEOM_BOX
 
   # Platform with sites
-  platform = spec.worldbody.add_body(pos=gird_loc, name=name)
-  platform.add_geom(size=SIZE, rgba=RGBA_GOLD)
+  platform = spec.worldbody.add_body(pos=gird_loc, name=name,euler =[0,0,theta])
+  platform.add_geom(size=SIZE, rgba=RGBA_GOLD )
   platform.add_freejoint()
 
   for x_dir in [-1, 1]:
@@ -160,7 +160,7 @@ def sin_suspended_stair(spec, grid_loc=[0, 0], num_stair=40,
                             i * V_STEP],
                            name =f'{name}_p_{i}')
 
-def circular_stairs(spec, grid_loc=[0, 0], num_stair=40, name="circular_stairs"):
+def circular_stairs(spec, grid_loc=[0, 0], num_stair=60, name="circular_stairs"):
   BROWN_RGBA = [0.460, 0.362, 0.216, 1.0]
   SQUARE_LENGTH = 1
   THICKNESS = 0.05
@@ -250,7 +250,7 @@ def plane_with_simple_geoms(spec=None, grid_loc=[0, 0], name='plane'):
       type = mj.mjtGeom.mjGEOM_CYLINDER
       size = [0.1, 0.02, 0]
 
-    body = spec.worldbody.add_body(pos=pos, name=f'g{i}_{j}_{name}', mass=1)
+    body = spec.worldbody.add_body(pos=pos, name=f'g{i}_{name}', mass=1)
     body.add_geom(type=type ,size=size, rgba=RED_RGBA)
     body.add_freejoint()
 
@@ -473,8 +473,7 @@ def add_tile(spec=None, grid_loc=[0, 0]):
     spec = mj.MjSpec()
 
   tile_type = random.randint(0,9)
-  # tile_type = 3
-  # tile_type = random.choice([0, 6])
+
   if tile_type == 0:
     plane_with_simple_geoms(spec,grid_loc, name = f"plane_{grid_loc[0]}_{grid_loc[1]}")
   elif tile_type == 1:
@@ -520,6 +519,7 @@ if __name__ == "__main__":
   """
 
   spec = mj.MjSpec.from_string(arena_xml)
+  spec.compiler.degree  = False
 
   spec.option.enableflags |= mj.mjtEnableBit.mjENBL_OVERRIDE
   spec.option.enableflags |= mj.mjtEnableBit.mjENBL_MULTICCD
@@ -533,7 +533,18 @@ if __name__ == "__main__":
     for y in [-1, 1]:
       spec.worldbody.add_light(pos = [x, y, 40], dir = [-x, -y, -15])
 
+  # simple_suspended_stair(spec)
+  # sin_suspended_stair(spec)
   circular_stairs(spec)
+
+  # plane_with_simple_geoms(spec)
+  # debris(spec)
+
+  # stairs(spec)
+  # box_extrusions(spec)
+  # boxy_terrain(spec)
+
+  # h_field(spec)
 
   # SQUARE_LENGTH = 1
   # for i in range(-3,3):

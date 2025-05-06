@@ -26,162 +26,242 @@
     <site name="circular_stairs_p_0_hook_-1_1" pos="0.7 0.012 0.2" size="0.002"/>
     <site name="circular_stairs_p_0_hook_1_-1" pos="0.9 -0.012 0.2" size="0.002"/>
     <site name="circular_stairs_p_0_hook_1_1" pos="0.9 0.012 0.2" size="0.002"/>
-    <site name="circular_stairs_p_1_hook_-1_-1" pos="0.693259 0.0976519 0.21" size="0.002"/>
-    <site name="circular_stairs_p_1_hook_-1_1" pos="0.689505 0.121356 0.21" size="0.002"/>
-    <site name="circular_stairs_p_1_hook_1_-1" pos="0.890797 0.128939 0.21" size="0.002"/>
-    <site name="circular_stairs_p_1_hook_1_1" pos="0.887042 0.152643 0.21" size="0.002"/>
-    <site name="circular_stairs_p_2_hook_-1_-1" pos="0.669448 0.204899 0.22" size="0.002"/>
-    <site name="circular_stairs_p_2_hook_-1_1" pos="0.662031 0.227725 0.22" size="0.002"/>
-    <site name="circular_stairs_p_2_hook_1_-1" pos="0.859659 0.266703 0.22" size="0.002"/>
-    <site name="circular_stairs_p_2_hook_1_1" pos="0.852243 0.289528 0.22" size="0.002"/>
-    <site name="circular_stairs_p_3_hook_-1_-1" pos="0.629152 0.307101 0.23" size="0.002"/>
-    <site name="circular_stairs_p_3_hook_-1_1" pos="0.618257 0.328485 0.23" size="0.002"/>
-    <site name="circular_stairs_p_3_hook_1_-1" pos="0.807354 0.397899 0.23" size="0.002"/>
-    <site name="circular_stairs_p_3_hook_1_1" pos="0.796458 0.419284 0.23" size="0.002"/>
-    <site name="circular_stairs_p_4_hook_-1_-1" pos="0.573365 0.401741 0.24" size="0.002"/>
-    <site name="circular_stairs_p_4_hook_-1_1" pos="0.559258 0.421158 0.24" size="0.002"/>
-    <site name="circular_stairs_p_4_hook_1_-1" pos="0.735169 0.519299 0.24" size="0.002"/>
-    <site name="circular_stairs_p_4_hook_1_1" pos="0.721062 0.538715 0.24" size="0.002"/>
-    <site name="circular_stairs_p_5_hook_-1_-1" pos="0.50346 0.486489 0.25" size="0.002"/>
-    <site name="circular_stairs_p_5_hook_-1_1" pos="0.486489 0.50346 0.25" size="0.002"/>
-    <site name="circular_stairs_p_5_hook_1_-1" pos="0.644881 0.627911 0.25" size="0.002"/>
-    <site name="circular_stairs_p_5_hook_1_1" pos="0.627911 0.644881 0.25" size="0.002"/>
-    <site name="circular_stairs_p_6_hook_-1_-1" pos="0.421158 0.559258 0.26" size="0.002"/>
-    <site name="circular_stairs_p_6_hook_-1_1" pos="0.401741 0.573365 0.26" size="0.002"/>
-    <site name="circular_stairs_p_6_hook_1_-1" pos="0.538715 0.721062 0.26" size="0.002"/>
-    <site name="circular_stairs_p_6_hook_1_1" pos="0.519299 0.735169 0.26" size="0.002"/>
-    <site name="circular_stairs_p_7_hook_-1_-1" pos="0.328485 0.618257 0.27" size="0.002"/>
-    <site name="circular_stairs_p_7_hook_-1_1" pos="0.307101 0.629152 0.27" size="0.002"/>
-    <site name="circular_stairs_p_7_hook_1_-1" pos="0.419284 0.796458 0.27" size="0.002"/>
-    <site name="circular_stairs_p_7_hook_1_1" pos="0.397899 0.807354 0.27" size="0.002"/>
-    <site name="circular_stairs_p_8_hook_-1_-1" pos="0.227725 0.662031 0.28" size="0.002"/>
-    <site name="circular_stairs_p_8_hook_-1_1" pos="0.204899 0.669448 0.28" size="0.002"/>
-    <site name="circular_stairs_p_8_hook_1_-1" pos="0.289528 0.852243 0.28" size="0.002"/>
-    <site name="circular_stairs_p_8_hook_1_1" pos="0.266703 0.859659 0.28" size="0.002"/>
-    <site name="circular_stairs_p_9_hook_-1_-1" pos="0.121356 0.689505 0.29" size="0.002"/>
-    <site name="circular_stairs_p_9_hook_-1_1" pos="0.0976519 0.693259 0.29" size="0.002"/>
-    <site name="circular_stairs_p_9_hook_1_-1" pos="0.152643 0.887042 0.29" size="0.002"/>
-    <site name="circular_stairs_p_9_hook_1_1" pos="0.128939 0.890797 0.29" size="0.002"/>
-    <site name="circular_stairs_p_10_hook_-1_-1" pos="0.012 0.7 0.3" size="0.002"/>
-    <site name="circular_stairs_p_10_hook_-1_1" pos="-0.012 0.7 0.3" size="0.002"/>
-    <site name="circular_stairs_p_10_hook_1_-1" pos="0.012 0.9 0.3" size="0.002"/>
-    <site name="circular_stairs_p_10_hook_1_1" pos="-0.012 0.9 0.3" size="0.002"/>
-    <site name="circular_stairs_p_11_hook_-1_-1" pos="-0.0976519 0.693259 0.31" size="0.002"/>
-    <site name="circular_stairs_p_11_hook_-1_1" pos="-0.121356 0.689505 0.31" size="0.002"/>
-    <site name="circular_stairs_p_11_hook_1_-1" pos="-0.128939 0.890797 0.31" size="0.002"/>
-    <site name="circular_stairs_p_11_hook_1_1" pos="-0.152643 0.887042 0.31" size="0.002"/>
-    <site name="circular_stairs_p_12_hook_-1_-1" pos="-0.204899 0.669448 0.32" size="0.002"/>
-    <site name="circular_stairs_p_12_hook_-1_1" pos="-0.227725 0.662031 0.32" size="0.002"/>
-    <site name="circular_stairs_p_12_hook_1_-1" pos="-0.266703 0.859659 0.32" size="0.002"/>
-    <site name="circular_stairs_p_12_hook_1_1" pos="-0.289528 0.852243 0.32" size="0.002"/>
-    <site name="circular_stairs_p_13_hook_-1_-1" pos="-0.307101 0.629152 0.33" size="0.002"/>
-    <site name="circular_stairs_p_13_hook_-1_1" pos="-0.328485 0.618257 0.33" size="0.002"/>
-    <site name="circular_stairs_p_13_hook_1_-1" pos="-0.397899 0.807354 0.33" size="0.002"/>
-    <site name="circular_stairs_p_13_hook_1_1" pos="-0.419284 0.796458 0.33" size="0.002"/>
-    <site name="circular_stairs_p_14_hook_-1_-1" pos="-0.401741 0.573365 0.34" size="0.002"/>
-    <site name="circular_stairs_p_14_hook_-1_1" pos="-0.421158 0.559258 0.34" size="0.002"/>
-    <site name="circular_stairs_p_14_hook_1_-1" pos="-0.519299 0.735169 0.34" size="0.002"/>
-    <site name="circular_stairs_p_14_hook_1_1" pos="-0.538715 0.721062 0.34" size="0.002"/>
-    <site name="circular_stairs_p_15_hook_-1_-1" pos="-0.486489 0.50346 0.35" size="0.002"/>
-    <site name="circular_stairs_p_15_hook_-1_1" pos="-0.50346 0.486489 0.35" size="0.002"/>
-    <site name="circular_stairs_p_15_hook_1_-1" pos="-0.627911 0.644881 0.35" size="0.002"/>
-    <site name="circular_stairs_p_15_hook_1_1" pos="-0.644881 0.627911 0.35" size="0.002"/>
-    <site name="circular_stairs_p_16_hook_-1_-1" pos="-0.559258 0.421158 0.36" size="0.002"/>
-    <site name="circular_stairs_p_16_hook_-1_1" pos="-0.573365 0.401741 0.36" size="0.002"/>
-    <site name="circular_stairs_p_16_hook_1_-1" pos="-0.721062 0.538715 0.36" size="0.002"/>
-    <site name="circular_stairs_p_16_hook_1_1" pos="-0.735169 0.519299 0.36" size="0.002"/>
-    <site name="circular_stairs_p_17_hook_-1_-1" pos="-0.618257 0.328485 0.37" size="0.002"/>
-    <site name="circular_stairs_p_17_hook_-1_1" pos="-0.629152 0.307101 0.37" size="0.002"/>
-    <site name="circular_stairs_p_17_hook_1_-1" pos="-0.796458 0.419284 0.37" size="0.002"/>
-    <site name="circular_stairs_p_17_hook_1_1" pos="-0.807354 0.397899 0.37" size="0.002"/>
-    <site name="circular_stairs_p_18_hook_-1_-1" pos="-0.662031 0.227725 0.38" size="0.002"/>
-    <site name="circular_stairs_p_18_hook_-1_1" pos="-0.669448 0.204899 0.38" size="0.002"/>
-    <site name="circular_stairs_p_18_hook_1_-1" pos="-0.852243 0.289528 0.38" size="0.002"/>
-    <site name="circular_stairs_p_18_hook_1_1" pos="-0.859659 0.266703 0.38" size="0.002"/>
-    <site name="circular_stairs_p_19_hook_-1_-1" pos="-0.689505 0.121356 0.39" size="0.002"/>
-    <site name="circular_stairs_p_19_hook_-1_1" pos="-0.693259 0.0976519 0.39" size="0.002"/>
-    <site name="circular_stairs_p_19_hook_1_-1" pos="-0.887042 0.152643 0.39" size="0.002"/>
-    <site name="circular_stairs_p_19_hook_1_1" pos="-0.890797 0.128939 0.39" size="0.002"/>
-    <site name="circular_stairs_p_20_hook_-1_-1" pos="-0.7 0.012 0.4" size="0.002"/>
-    <site name="circular_stairs_p_20_hook_-1_1" pos="-0.7 -0.012 0.4" size="0.002"/>
-    <site name="circular_stairs_p_20_hook_1_-1" pos="-0.9 0.012 0.4" size="0.002"/>
-    <site name="circular_stairs_p_20_hook_1_1" pos="-0.9 -0.012 0.4" size="0.002"/>
-    <site name="circular_stairs_p_21_hook_-1_-1" pos="-0.693259 -0.0976519 0.41" size="0.002"/>
-    <site name="circular_stairs_p_21_hook_-1_1" pos="-0.689505 -0.121356 0.41" size="0.002"/>
-    <site name="circular_stairs_p_21_hook_1_-1" pos="-0.890797 -0.128939 0.41" size="0.002"/>
-    <site name="circular_stairs_p_21_hook_1_1" pos="-0.887042 -0.152643 0.41" size="0.002"/>
-    <site name="circular_stairs_p_22_hook_-1_-1" pos="-0.669448 -0.204899 0.42" size="0.002"/>
-    <site name="circular_stairs_p_22_hook_-1_1" pos="-0.662031 -0.227725 0.42" size="0.002"/>
-    <site name="circular_stairs_p_22_hook_1_-1" pos="-0.859659 -0.266703 0.42" size="0.002"/>
-    <site name="circular_stairs_p_22_hook_1_1" pos="-0.852243 -0.289528 0.42" size="0.002"/>
-    <site name="circular_stairs_p_23_hook_-1_-1" pos="-0.629152 -0.307101 0.43" size="0.002"/>
-    <site name="circular_stairs_p_23_hook_-1_1" pos="-0.618257 -0.328485 0.43" size="0.002"/>
-    <site name="circular_stairs_p_23_hook_1_-1" pos="-0.807354 -0.397899 0.43" size="0.002"/>
-    <site name="circular_stairs_p_23_hook_1_1" pos="-0.796458 -0.419284 0.43" size="0.002"/>
-    <site name="circular_stairs_p_24_hook_-1_-1" pos="-0.573365 -0.401741 0.44" size="0.002"/>
-    <site name="circular_stairs_p_24_hook_-1_1" pos="-0.559258 -0.421158 0.44" size="0.002"/>
-    <site name="circular_stairs_p_24_hook_1_-1" pos="-0.735169 -0.519299 0.44" size="0.002"/>
-    <site name="circular_stairs_p_24_hook_1_1" pos="-0.721062 -0.538715 0.44" size="0.002"/>
-    <site name="circular_stairs_p_25_hook_-1_-1" pos="-0.50346 -0.486489 0.45" size="0.002"/>
-    <site name="circular_stairs_p_25_hook_-1_1" pos="-0.486489 -0.50346 0.45" size="0.002"/>
-    <site name="circular_stairs_p_25_hook_1_-1" pos="-0.644881 -0.627911 0.45" size="0.002"/>
-    <site name="circular_stairs_p_25_hook_1_1" pos="-0.627911 -0.644881 0.45" size="0.002"/>
-    <site name="circular_stairs_p_26_hook_-1_-1" pos="-0.421158 -0.559258 0.46" size="0.002"/>
-    <site name="circular_stairs_p_26_hook_-1_1" pos="-0.401741 -0.573365 0.46" size="0.002"/>
-    <site name="circular_stairs_p_26_hook_1_-1" pos="-0.538715 -0.721062 0.46" size="0.002"/>
-    <site name="circular_stairs_p_26_hook_1_1" pos="-0.519299 -0.735169 0.46" size="0.002"/>
-    <site name="circular_stairs_p_27_hook_-1_-1" pos="-0.328485 -0.618257 0.47" size="0.002"/>
-    <site name="circular_stairs_p_27_hook_-1_1" pos="-0.307101 -0.629152 0.47" size="0.002"/>
-    <site name="circular_stairs_p_27_hook_1_-1" pos="-0.419284 -0.796458 0.47" size="0.002"/>
-    <site name="circular_stairs_p_27_hook_1_1" pos="-0.397899 -0.807354 0.47" size="0.002"/>
-    <site name="circular_stairs_p_28_hook_-1_-1" pos="-0.227725 -0.662031 0.48" size="0.002"/>
-    <site name="circular_stairs_p_28_hook_-1_1" pos="-0.204899 -0.669448 0.48" size="0.002"/>
-    <site name="circular_stairs_p_28_hook_1_-1" pos="-0.289528 -0.852243 0.48" size="0.002"/>
-    <site name="circular_stairs_p_28_hook_1_1" pos="-0.266703 -0.859659 0.48" size="0.002"/>
-    <site name="circular_stairs_p_29_hook_-1_-1" pos="-0.121356 -0.689505 0.49" size="0.002"/>
-    <site name="circular_stairs_p_29_hook_-1_1" pos="-0.0976519 -0.693259 0.49" size="0.002"/>
-    <site name="circular_stairs_p_29_hook_1_-1" pos="-0.152643 -0.887042 0.49" size="0.002"/>
-    <site name="circular_stairs_p_29_hook_1_1" pos="-0.128939 -0.890797 0.49" size="0.002"/>
-    <site name="circular_stairs_p_30_hook_-1_-1" pos="-0.012 -0.7 0.5" size="0.002"/>
-    <site name="circular_stairs_p_30_hook_-1_1" pos="0.012 -0.7 0.5" size="0.002"/>
-    <site name="circular_stairs_p_30_hook_1_-1" pos="-0.012 -0.9 0.5" size="0.002"/>
-    <site name="circular_stairs_p_30_hook_1_1" pos="0.012 -0.9 0.5" size="0.002"/>
-    <site name="circular_stairs_p_31_hook_-1_-1" pos="0.0976519 -0.693259 0.51" size="0.002"/>
-    <site name="circular_stairs_p_31_hook_-1_1" pos="0.121356 -0.689505 0.51" size="0.002"/>
-    <site name="circular_stairs_p_31_hook_1_-1" pos="0.128939 -0.890797 0.51" size="0.002"/>
-    <site name="circular_stairs_p_31_hook_1_1" pos="0.152643 -0.887042 0.51" size="0.002"/>
-    <site name="circular_stairs_p_32_hook_-1_-1" pos="0.204899 -0.669448 0.52" size="0.002"/>
-    <site name="circular_stairs_p_32_hook_-1_1" pos="0.227725 -0.662031 0.52" size="0.002"/>
-    <site name="circular_stairs_p_32_hook_1_-1" pos="0.266703 -0.859659 0.52" size="0.002"/>
-    <site name="circular_stairs_p_32_hook_1_1" pos="0.289528 -0.852243 0.52" size="0.002"/>
-    <site name="circular_stairs_p_33_hook_-1_-1" pos="0.307101 -0.629152 0.53" size="0.002"/>
-    <site name="circular_stairs_p_33_hook_-1_1" pos="0.328485 -0.618257 0.53" size="0.002"/>
-    <site name="circular_stairs_p_33_hook_1_-1" pos="0.397899 -0.807354 0.53" size="0.002"/>
-    <site name="circular_stairs_p_33_hook_1_1" pos="0.419284 -0.796458 0.53" size="0.002"/>
-    <site name="circular_stairs_p_34_hook_-1_-1" pos="0.401741 -0.573365 0.54" size="0.002"/>
-    <site name="circular_stairs_p_34_hook_-1_1" pos="0.421158 -0.559258 0.54" size="0.002"/>
-    <site name="circular_stairs_p_34_hook_1_-1" pos="0.519299 -0.735169 0.54" size="0.002"/>
-    <site name="circular_stairs_p_34_hook_1_1" pos="0.538715 -0.721062 0.54" size="0.002"/>
-    <site name="circular_stairs_p_35_hook_-1_-1" pos="0.486489 -0.50346 0.55" size="0.002"/>
-    <site name="circular_stairs_p_35_hook_-1_1" pos="0.50346 -0.486489 0.55" size="0.002"/>
-    <site name="circular_stairs_p_35_hook_1_-1" pos="0.627911 -0.644881 0.55" size="0.002"/>
-    <site name="circular_stairs_p_35_hook_1_1" pos="0.644881 -0.627911 0.55" size="0.002"/>
-    <site name="circular_stairs_p_36_hook_-1_-1" pos="0.559258 -0.421158 0.56" size="0.002"/>
-    <site name="circular_stairs_p_36_hook_-1_1" pos="0.573365 -0.401741 0.56" size="0.002"/>
-    <site name="circular_stairs_p_36_hook_1_-1" pos="0.721062 -0.538715 0.56" size="0.002"/>
-    <site name="circular_stairs_p_36_hook_1_1" pos="0.735169 -0.519299 0.56" size="0.002"/>
-    <site name="circular_stairs_p_37_hook_-1_-1" pos="0.618257 -0.328485 0.57" size="0.002"/>
-    <site name="circular_stairs_p_37_hook_-1_1" pos="0.629152 -0.307101 0.57" size="0.002"/>
-    <site name="circular_stairs_p_37_hook_1_-1" pos="0.796458 -0.419284 0.57" size="0.002"/>
-    <site name="circular_stairs_p_37_hook_1_1" pos="0.807354 -0.397899 0.57" size="0.002"/>
-    <site name="circular_stairs_p_38_hook_-1_-1" pos="0.662031 -0.227725 0.58" size="0.002"/>
-    <site name="circular_stairs_p_38_hook_-1_1" pos="0.669448 -0.204899 0.58" size="0.002"/>
-    <site name="circular_stairs_p_38_hook_1_-1" pos="0.852243 -0.289528 0.58" size="0.002"/>
-    <site name="circular_stairs_p_38_hook_1_1" pos="0.859659 -0.266703 0.58" size="0.002"/>
-    <site name="circular_stairs_p_39_hook_-1_-1" pos="0.689505 -0.121356 0.59" size="0.002"/>
-    <site name="circular_stairs_p_39_hook_-1_1" pos="0.693259 -0.0976519 0.59" size="0.002"/>
-    <site name="circular_stairs_p_39_hook_1_-1" pos="0.887042 -0.152643 0.59" size="0.002"/>
-    <site name="circular_stairs_p_39_hook_1_1" pos="0.890797 -0.128939 0.59" size="0.002"/>
+    <site name="circular_stairs_p_1_hook_-1_-1" pos="0.69742 0.0612357 0.21" size="0.002"/>
+    <site name="circular_stairs_p_1_hook_-1_1" pos="0.694911 0.0851042 0.21" size="0.002"/>
+    <site name="circular_stairs_p_1_hook_1_-1" pos="0.896324 0.0821414 0.21" size="0.002"/>
+    <site name="circular_stairs_p_1_hook_1_1" pos="0.893815 0.10601 0.21" size="0.002"/>
+    <site name="circular_stairs_p_2_hook_-1_-1" pos="0.687198 0.1338 0.22" size="0.002"/>
+    <site name="circular_stairs_p_2_hook_-1_1" pos="0.682208 0.157276 0.22" size="0.002"/>
+    <site name="circular_stairs_p_2_hook_1_-1" pos="0.882828 0.175383 0.22" size="0.002"/>
+    <site name="circular_stairs_p_2_hook_1_1" pos="0.877838 0.198858 0.22" size="0.002"/>
+    <site name="circular_stairs_p_3_hook_-1_-1" pos="0.669448 0.204899 0.23" size="0.002"/>
+    <site name="circular_stairs_p_3_hook_-1_1" pos="0.662031 0.227725 0.23" size="0.002"/>
+    <site name="circular_stairs_p_3_hook_1_-1" pos="0.859659 0.266703 0.23" size="0.002"/>
+    <site name="circular_stairs_p_3_hook_1_1" pos="0.852243 0.289528 0.23" size="0.002"/>
+    <site name="circular_stairs_p_4_hook_-1_-1" pos="0.644363 0.273753 0.24" size="0.002"/>
+    <site name="circular_stairs_p_4_hook_-1_1" pos="0.634601 0.295678 0.24" size="0.002"/>
+    <site name="circular_stairs_p_4_hook_1_-1" pos="0.827072 0.3551 0.24" size="0.002"/>
+    <site name="circular_stairs_p_4_hook_1_1" pos="0.81731 0.377026 0.24" size="0.002"/>
+    <site name="circular_stairs_p_5_hook_-1_-1" pos="0.612218 0.339608 0.25" size="0.002"/>
+    <site name="circular_stairs_p_5_hook_-1_1" pos="0.600218 0.360392 0.25" size="0.002"/>
+    <site name="circular_stairs_p_5_hook_1_-1" pos="0.785423 0.439608 0.25" size="0.002"/>
+    <site name="circular_stairs_p_5_hook_1_1" pos="0.773423 0.460392 0.25" size="0.002"/>
+    <site name="circular_stairs_p_6_hook_-1_-1" pos="0.573365 0.401741 0.26" size="0.002"/>
+    <site name="circular_stairs_p_6_hook_-1_1" pos="0.559258 0.421158 0.26" size="0.002"/>
+    <site name="circular_stairs_p_6_hook_1_-1" pos="0.735169 0.519299 0.26" size="0.002"/>
+    <site name="circular_stairs_p_6_hook_1_1" pos="0.721062 0.538715 0.26" size="0.002"/>
+    <site name="circular_stairs_p_7_hook_-1_-1" pos="0.528231 0.459474 0.27" size="0.002"/>
+    <site name="circular_stairs_p_7_hook_-1_1" pos="0.512172 0.477309 0.27" size="0.002"/>
+    <site name="circular_stairs_p_7_hook_1_-1" pos="0.67686 0.5933 0.27" size="0.002"/>
+    <site name="circular_stairs_p_7_hook_1_1" pos="0.660801 0.611135 0.27" size="0.002"/>
+    <site name="circular_stairs_p_8_hook_-1_-1" pos="0.477309 0.512172 0.28" size="0.002"/>
+    <site name="circular_stairs_p_8_hook_-1_1" pos="0.459474 0.528231 0.28" size="0.002"/>
+    <site name="circular_stairs_p_8_hook_1_-1" pos="0.611135 0.660801 0.28" size="0.002"/>
+    <site name="circular_stairs_p_8_hook_1_1" pos="0.5933 0.67686 0.28" size="0.002"/>
+    <site name="circular_stairs_p_9_hook_-1_-1" pos="0.421158 0.559258 0.29" size="0.002"/>
+    <site name="circular_stairs_p_9_hook_-1_1" pos="0.401741 0.573365 0.29" size="0.002"/>
+    <site name="circular_stairs_p_9_hook_1_-1" pos="0.538715 0.721062 0.29" size="0.002"/>
+    <site name="circular_stairs_p_9_hook_1_1" pos="0.519299 0.735169 0.29" size="0.002"/>
+    <site name="circular_stairs_p_10_hook_-1_-1" pos="0.360392 0.600218 0.3" size="0.002"/>
+    <site name="circular_stairs_p_10_hook_-1_1" pos="0.339608 0.612218 0.3" size="0.002"/>
+    <site name="circular_stairs_p_10_hook_1_-1" pos="0.460392 0.773423 0.3" size="0.002"/>
+    <site name="circular_stairs_p_10_hook_1_1" pos="0.439608 0.785423 0.3" size="0.002"/>
+    <site name="circular_stairs_p_11_hook_-1_-1" pos="0.295678 0.634601 0.31" size="0.002"/>
+    <site name="circular_stairs_p_11_hook_-1_1" pos="0.273753 0.644363 0.31" size="0.002"/>
+    <site name="circular_stairs_p_11_hook_1_-1" pos="0.377026 0.81731 0.31" size="0.002"/>
+    <site name="circular_stairs_p_11_hook_1_1" pos="0.3551 0.827072 0.31" size="0.002"/>
+    <site name="circular_stairs_p_12_hook_-1_-1" pos="0.227725 0.662031 0.32" size="0.002"/>
+    <site name="circular_stairs_p_12_hook_-1_1" pos="0.204899 0.669448 0.32" size="0.002"/>
+    <site name="circular_stairs_p_12_hook_1_-1" pos="0.289528 0.852243 0.32" size="0.002"/>
+    <site name="circular_stairs_p_12_hook_1_1" pos="0.266703 0.859659 0.32" size="0.002"/>
+    <site name="circular_stairs_p_13_hook_-1_-1" pos="0.157276 0.682208 0.33" size="0.002"/>
+    <site name="circular_stairs_p_13_hook_-1_1" pos="0.1338 0.687198 0.33" size="0.002"/>
+    <site name="circular_stairs_p_13_hook_1_-1" pos="0.198858 0.877838 0.33" size="0.002"/>
+    <site name="circular_stairs_p_13_hook_1_1" pos="0.175383 0.882828 0.33" size="0.002"/>
+    <site name="circular_stairs_p_14_hook_-1_-1" pos="0.0851042 0.694911 0.34" size="0.002"/>
+    <site name="circular_stairs_p_14_hook_-1_1" pos="0.0612357 0.69742 0.34" size="0.002"/>
+    <site name="circular_stairs_p_14_hook_1_-1" pos="0.10601 0.893815 0.34" size="0.002"/>
+    <site name="circular_stairs_p_14_hook_1_1" pos="0.0821414 0.896324 0.34" size="0.002"/>
+    <site name="circular_stairs_p_15_hook_-1_-1" pos="0.012 0.7 0.35" size="0.002"/>
+    <site name="circular_stairs_p_15_hook_-1_1" pos="-0.012 0.7 0.35" size="0.002"/>
+    <site name="circular_stairs_p_15_hook_1_-1" pos="0.012 0.9 0.35" size="0.002"/>
+    <site name="circular_stairs_p_15_hook_1_1" pos="-0.012 0.9 0.35" size="0.002"/>
+    <site name="circular_stairs_p_16_hook_-1_-1" pos="-0.0612357 0.69742 0.36" size="0.002"/>
+    <site name="circular_stairs_p_16_hook_-1_1" pos="-0.0851042 0.694911 0.36" size="0.002"/>
+    <site name="circular_stairs_p_16_hook_1_-1" pos="-0.0821414 0.896324 0.36" size="0.002"/>
+    <site name="circular_stairs_p_16_hook_1_1" pos="-0.10601 0.893815 0.36" size="0.002"/>
+    <site name="circular_stairs_p_17_hook_-1_-1" pos="-0.1338 0.687198 0.37" size="0.002"/>
+    <site name="circular_stairs_p_17_hook_-1_1" pos="-0.157276 0.682208 0.37" size="0.002"/>
+    <site name="circular_stairs_p_17_hook_1_-1" pos="-0.175383 0.882828 0.37" size="0.002"/>
+    <site name="circular_stairs_p_17_hook_1_1" pos="-0.198858 0.877838 0.37" size="0.002"/>
+    <site name="circular_stairs_p_18_hook_-1_-1" pos="-0.204899 0.669448 0.38" size="0.002"/>
+    <site name="circular_stairs_p_18_hook_-1_1" pos="-0.227725 0.662031 0.38" size="0.002"/>
+    <site name="circular_stairs_p_18_hook_1_-1" pos="-0.266703 0.859659 0.38" size="0.002"/>
+    <site name="circular_stairs_p_18_hook_1_1" pos="-0.289528 0.852243 0.38" size="0.002"/>
+    <site name="circular_stairs_p_19_hook_-1_-1" pos="-0.273753 0.644363 0.39" size="0.002"/>
+    <site name="circular_stairs_p_19_hook_-1_1" pos="-0.295678 0.634601 0.39" size="0.002"/>
+    <site name="circular_stairs_p_19_hook_1_-1" pos="-0.3551 0.827072 0.39" size="0.002"/>
+    <site name="circular_stairs_p_19_hook_1_1" pos="-0.377026 0.81731 0.39" size="0.002"/>
+    <site name="circular_stairs_p_20_hook_-1_-1" pos="-0.339608 0.612218 0.4" size="0.002"/>
+    <site name="circular_stairs_p_20_hook_-1_1" pos="-0.360392 0.600218 0.4" size="0.002"/>
+    <site name="circular_stairs_p_20_hook_1_-1" pos="-0.439608 0.785423 0.4" size="0.002"/>
+    <site name="circular_stairs_p_20_hook_1_1" pos="-0.460392 0.773423 0.4" size="0.002"/>
+    <site name="circular_stairs_p_21_hook_-1_-1" pos="-0.401741 0.573365 0.41" size="0.002"/>
+    <site name="circular_stairs_p_21_hook_-1_1" pos="-0.421158 0.559258 0.41" size="0.002"/>
+    <site name="circular_stairs_p_21_hook_1_-1" pos="-0.519299 0.735169 0.41" size="0.002"/>
+    <site name="circular_stairs_p_21_hook_1_1" pos="-0.538715 0.721062 0.41" size="0.002"/>
+    <site name="circular_stairs_p_22_hook_-1_-1" pos="-0.459474 0.528231 0.42" size="0.002"/>
+    <site name="circular_stairs_p_22_hook_-1_1" pos="-0.477309 0.512172 0.42" size="0.002"/>
+    <site name="circular_stairs_p_22_hook_1_-1" pos="-0.5933 0.67686 0.42" size="0.002"/>
+    <site name="circular_stairs_p_22_hook_1_1" pos="-0.611135 0.660801 0.42" size="0.002"/>
+    <site name="circular_stairs_p_23_hook_-1_-1" pos="-0.512172 0.477309 0.43" size="0.002"/>
+    <site name="circular_stairs_p_23_hook_-1_1" pos="-0.528231 0.459474 0.43" size="0.002"/>
+    <site name="circular_stairs_p_23_hook_1_-1" pos="-0.660801 0.611135 0.43" size="0.002"/>
+    <site name="circular_stairs_p_23_hook_1_1" pos="-0.67686 0.5933 0.43" size="0.002"/>
+    <site name="circular_stairs_p_24_hook_-1_-1" pos="-0.559258 0.421158 0.44" size="0.002"/>
+    <site name="circular_stairs_p_24_hook_-1_1" pos="-0.573365 0.401741 0.44" size="0.002"/>
+    <site name="circular_stairs_p_24_hook_1_-1" pos="-0.721062 0.538715 0.44" size="0.002"/>
+    <site name="circular_stairs_p_24_hook_1_1" pos="-0.735169 0.519299 0.44" size="0.002"/>
+    <site name="circular_stairs_p_25_hook_-1_-1" pos="-0.600218 0.360392 0.45" size="0.002"/>
+    <site name="circular_stairs_p_25_hook_-1_1" pos="-0.612218 0.339608 0.45" size="0.002"/>
+    <site name="circular_stairs_p_25_hook_1_-1" pos="-0.773423 0.460392 0.45" size="0.002"/>
+    <site name="circular_stairs_p_25_hook_1_1" pos="-0.785423 0.439608 0.45" size="0.002"/>
+    <site name="circular_stairs_p_26_hook_-1_-1" pos="-0.634601 0.295678 0.46" size="0.002"/>
+    <site name="circular_stairs_p_26_hook_-1_1" pos="-0.644363 0.273753 0.46" size="0.002"/>
+    <site name="circular_stairs_p_26_hook_1_-1" pos="-0.81731 0.377026 0.46" size="0.002"/>
+    <site name="circular_stairs_p_26_hook_1_1" pos="-0.827072 0.3551 0.46" size="0.002"/>
+    <site name="circular_stairs_p_27_hook_-1_-1" pos="-0.662031 0.227725 0.47" size="0.002"/>
+    <site name="circular_stairs_p_27_hook_-1_1" pos="-0.669448 0.204899 0.47" size="0.002"/>
+    <site name="circular_stairs_p_27_hook_1_-1" pos="-0.852243 0.289528 0.47" size="0.002"/>
+    <site name="circular_stairs_p_27_hook_1_1" pos="-0.859659 0.266703 0.47" size="0.002"/>
+    <site name="circular_stairs_p_28_hook_-1_-1" pos="-0.682208 0.157276 0.48" size="0.002"/>
+    <site name="circular_stairs_p_28_hook_-1_1" pos="-0.687198 0.1338 0.48" size="0.002"/>
+    <site name="circular_stairs_p_28_hook_1_-1" pos="-0.877838 0.198858 0.48" size="0.002"/>
+    <site name="circular_stairs_p_28_hook_1_1" pos="-0.882828 0.175383 0.48" size="0.002"/>
+    <site name="circular_stairs_p_29_hook_-1_-1" pos="-0.694911 0.0851042 0.49" size="0.002"/>
+    <site name="circular_stairs_p_29_hook_-1_1" pos="-0.69742 0.0612357 0.49" size="0.002"/>
+    <site name="circular_stairs_p_29_hook_1_-1" pos="-0.893815 0.10601 0.49" size="0.002"/>
+    <site name="circular_stairs_p_29_hook_1_1" pos="-0.896324 0.0821414 0.49" size="0.002"/>
+    <site name="circular_stairs_p_30_hook_-1_-1" pos="-0.7 0.012 0.5" size="0.002"/>
+    <site name="circular_stairs_p_30_hook_-1_1" pos="-0.7 -0.012 0.5" size="0.002"/>
+    <site name="circular_stairs_p_30_hook_1_-1" pos="-0.9 0.012 0.5" size="0.002"/>
+    <site name="circular_stairs_p_30_hook_1_1" pos="-0.9 -0.012 0.5" size="0.002"/>
+    <site name="circular_stairs_p_31_hook_-1_-1" pos="-0.69742 -0.0612357 0.51" size="0.002"/>
+    <site name="circular_stairs_p_31_hook_-1_1" pos="-0.694911 -0.0851042 0.51" size="0.002"/>
+    <site name="circular_stairs_p_31_hook_1_-1" pos="-0.896324 -0.0821414 0.51" size="0.002"/>
+    <site name="circular_stairs_p_31_hook_1_1" pos="-0.893815 -0.10601 0.51" size="0.002"/>
+    <site name="circular_stairs_p_32_hook_-1_-1" pos="-0.687198 -0.1338 0.52" size="0.002"/>
+    <site name="circular_stairs_p_32_hook_-1_1" pos="-0.682208 -0.157276 0.52" size="0.002"/>
+    <site name="circular_stairs_p_32_hook_1_-1" pos="-0.882828 -0.175383 0.52" size="0.002"/>
+    <site name="circular_stairs_p_32_hook_1_1" pos="-0.877838 -0.198858 0.52" size="0.002"/>
+    <site name="circular_stairs_p_33_hook_-1_-1" pos="-0.669448 -0.204899 0.53" size="0.002"/>
+    <site name="circular_stairs_p_33_hook_-1_1" pos="-0.662031 -0.227725 0.53" size="0.002"/>
+    <site name="circular_stairs_p_33_hook_1_-1" pos="-0.859659 -0.266703 0.53" size="0.002"/>
+    <site name="circular_stairs_p_33_hook_1_1" pos="-0.852243 -0.289528 0.53" size="0.002"/>
+    <site name="circular_stairs_p_34_hook_-1_-1" pos="-0.644363 -0.273753 0.54" size="0.002"/>
+    <site name="circular_stairs_p_34_hook_-1_1" pos="-0.634601 -0.295678 0.54" size="0.002"/>
+    <site name="circular_stairs_p_34_hook_1_-1" pos="-0.827072 -0.3551 0.54" size="0.002"/>
+    <site name="circular_stairs_p_34_hook_1_1" pos="-0.81731 -0.377026 0.54" size="0.002"/>
+    <site name="circular_stairs_p_35_hook_-1_-1" pos="-0.612218 -0.339608 0.55" size="0.002"/>
+    <site name="circular_stairs_p_35_hook_-1_1" pos="-0.600218 -0.360392 0.55" size="0.002"/>
+    <site name="circular_stairs_p_35_hook_1_-1" pos="-0.785423 -0.439608 0.55" size="0.002"/>
+    <site name="circular_stairs_p_35_hook_1_1" pos="-0.773423 -0.460392 0.55" size="0.002"/>
+    <site name="circular_stairs_p_36_hook_-1_-1" pos="-0.573365 -0.401741 0.56" size="0.002"/>
+    <site name="circular_stairs_p_36_hook_-1_1" pos="-0.559258 -0.421158 0.56" size="0.002"/>
+    <site name="circular_stairs_p_36_hook_1_-1" pos="-0.735169 -0.519299 0.56" size="0.002"/>
+    <site name="circular_stairs_p_36_hook_1_1" pos="-0.721062 -0.538715 0.56" size="0.002"/>
+    <site name="circular_stairs_p_37_hook_-1_-1" pos="-0.528231 -0.459474 0.57" size="0.002"/>
+    <site name="circular_stairs_p_37_hook_-1_1" pos="-0.512172 -0.477309 0.57" size="0.002"/>
+    <site name="circular_stairs_p_37_hook_1_-1" pos="-0.67686 -0.5933 0.57" size="0.002"/>
+    <site name="circular_stairs_p_37_hook_1_1" pos="-0.660801 -0.611135 0.57" size="0.002"/>
+    <site name="circular_stairs_p_38_hook_-1_-1" pos="-0.477309 -0.512172 0.58" size="0.002"/>
+    <site name="circular_stairs_p_38_hook_-1_1" pos="-0.459474 -0.528231 0.58" size="0.002"/>
+    <site name="circular_stairs_p_38_hook_1_-1" pos="-0.611135 -0.660801 0.58" size="0.002"/>
+    <site name="circular_stairs_p_38_hook_1_1" pos="-0.5933 -0.67686 0.58" size="0.002"/>
+    <site name="circular_stairs_p_39_hook_-1_-1" pos="-0.421158 -0.559258 0.59" size="0.002"/>
+    <site name="circular_stairs_p_39_hook_-1_1" pos="-0.401741 -0.573365 0.59" size="0.002"/>
+    <site name="circular_stairs_p_39_hook_1_-1" pos="-0.538715 -0.721062 0.59" size="0.002"/>
+    <site name="circular_stairs_p_39_hook_1_1" pos="-0.519299 -0.735169 0.59" size="0.002"/>
+    <site name="circular_stairs_p_40_hook_-1_-1" pos="-0.360392 -0.600218 0.6" size="0.002"/>
+    <site name="circular_stairs_p_40_hook_-1_1" pos="-0.339608 -0.612218 0.6" size="0.002"/>
+    <site name="circular_stairs_p_40_hook_1_-1" pos="-0.460392 -0.773423 0.6" size="0.002"/>
+    <site name="circular_stairs_p_40_hook_1_1" pos="-0.439608 -0.785423 0.6" size="0.002"/>
+    <site name="circular_stairs_p_41_hook_-1_-1" pos="-0.295678 -0.634601 0.61" size="0.002"/>
+    <site name="circular_stairs_p_41_hook_-1_1" pos="-0.273753 -0.644363 0.61" size="0.002"/>
+    <site name="circular_stairs_p_41_hook_1_-1" pos="-0.377026 -0.81731 0.61" size="0.002"/>
+    <site name="circular_stairs_p_41_hook_1_1" pos="-0.3551 -0.827072 0.61" size="0.002"/>
+    <site name="circular_stairs_p_42_hook_-1_-1" pos="-0.227725 -0.662031 0.62" size="0.002"/>
+    <site name="circular_stairs_p_42_hook_-1_1" pos="-0.204899 -0.669448 0.62" size="0.002"/>
+    <site name="circular_stairs_p_42_hook_1_-1" pos="-0.289528 -0.852243 0.62" size="0.002"/>
+    <site name="circular_stairs_p_42_hook_1_1" pos="-0.266703 -0.859659 0.62" size="0.002"/>
+    <site name="circular_stairs_p_43_hook_-1_-1" pos="-0.157276 -0.682208 0.63" size="0.002"/>
+    <site name="circular_stairs_p_43_hook_-1_1" pos="-0.1338 -0.687198 0.63" size="0.002"/>
+    <site name="circular_stairs_p_43_hook_1_-1" pos="-0.198858 -0.877838 0.63" size="0.002"/>
+    <site name="circular_stairs_p_43_hook_1_1" pos="-0.175383 -0.882828 0.63" size="0.002"/>
+    <site name="circular_stairs_p_44_hook_-1_-1" pos="-0.0851042 -0.694911 0.64" size="0.002"/>
+    <site name="circular_stairs_p_44_hook_-1_1" pos="-0.0612357 -0.69742 0.64" size="0.002"/>
+    <site name="circular_stairs_p_44_hook_1_-1" pos="-0.10601 -0.893815 0.64" size="0.002"/>
+    <site name="circular_stairs_p_44_hook_1_1" pos="-0.0821414 -0.896324 0.64" size="0.002"/>
+    <site name="circular_stairs_p_45_hook_-1_-1" pos="-0.012 -0.7 0.65" size="0.002"/>
+    <site name="circular_stairs_p_45_hook_-1_1" pos="0.012 -0.7 0.65" size="0.002"/>
+    <site name="circular_stairs_p_45_hook_1_-1" pos="-0.012 -0.9 0.65" size="0.002"/>
+    <site name="circular_stairs_p_45_hook_1_1" pos="0.012 -0.9 0.65" size="0.002"/>
+    <site name="circular_stairs_p_46_hook_-1_-1" pos="0.0612357 -0.69742 0.66" size="0.002"/>
+    <site name="circular_stairs_p_46_hook_-1_1" pos="0.0851042 -0.694911 0.66" size="0.002"/>
+    <site name="circular_stairs_p_46_hook_1_-1" pos="0.0821414 -0.896324 0.66" size="0.002"/>
+    <site name="circular_stairs_p_46_hook_1_1" pos="0.10601 -0.893815 0.66" size="0.002"/>
+    <site name="circular_stairs_p_47_hook_-1_-1" pos="0.1338 -0.687198 0.67" size="0.002"/>
+    <site name="circular_stairs_p_47_hook_-1_1" pos="0.157276 -0.682208 0.67" size="0.002"/>
+    <site name="circular_stairs_p_47_hook_1_-1" pos="0.175383 -0.882828 0.67" size="0.002"/>
+    <site name="circular_stairs_p_47_hook_1_1" pos="0.198858 -0.877838 0.67" size="0.002"/>
+    <site name="circular_stairs_p_48_hook_-1_-1" pos="0.204899 -0.669448 0.68" size="0.002"/>
+    <site name="circular_stairs_p_48_hook_-1_1" pos="0.227725 -0.662031 0.68" size="0.002"/>
+    <site name="circular_stairs_p_48_hook_1_-1" pos="0.266703 -0.859659 0.68" size="0.002"/>
+    <site name="circular_stairs_p_48_hook_1_1" pos="0.289528 -0.852243 0.68" size="0.002"/>
+    <site name="circular_stairs_p_49_hook_-1_-1" pos="0.273753 -0.644363 0.69" size="0.002"/>
+    <site name="circular_stairs_p_49_hook_-1_1" pos="0.295678 -0.634601 0.69" size="0.002"/>
+    <site name="circular_stairs_p_49_hook_1_-1" pos="0.3551 -0.827072 0.69" size="0.002"/>
+    <site name="circular_stairs_p_49_hook_1_1" pos="0.377026 -0.81731 0.69" size="0.002"/>
+    <site name="circular_stairs_p_50_hook_-1_-1" pos="0.339608 -0.612218 0.7" size="0.002"/>
+    <site name="circular_stairs_p_50_hook_-1_1" pos="0.360392 -0.600218 0.7" size="0.002"/>
+    <site name="circular_stairs_p_50_hook_1_-1" pos="0.439608 -0.785423 0.7" size="0.002"/>
+    <site name="circular_stairs_p_50_hook_1_1" pos="0.460392 -0.773423 0.7" size="0.002"/>
+    <site name="circular_stairs_p_51_hook_-1_-1" pos="0.401741 -0.573365 0.71" size="0.002"/>
+    <site name="circular_stairs_p_51_hook_-1_1" pos="0.421158 -0.559258 0.71" size="0.002"/>
+    <site name="circular_stairs_p_51_hook_1_-1" pos="0.519299 -0.735169 0.71" size="0.002"/>
+    <site name="circular_stairs_p_51_hook_1_1" pos="0.538715 -0.721062 0.71" size="0.002"/>
+    <site name="circular_stairs_p_52_hook_-1_-1" pos="0.459474 -0.528231 0.72" size="0.002"/>
+    <site name="circular_stairs_p_52_hook_-1_1" pos="0.477309 -0.512172 0.72" size="0.002"/>
+    <site name="circular_stairs_p_52_hook_1_-1" pos="0.5933 -0.67686 0.72" size="0.002"/>
+    <site name="circular_stairs_p_52_hook_1_1" pos="0.611135 -0.660801 0.72" size="0.002"/>
+    <site name="circular_stairs_p_53_hook_-1_-1" pos="0.512172 -0.477309 0.73" size="0.002"/>
+    <site name="circular_stairs_p_53_hook_-1_1" pos="0.528231 -0.459474 0.73" size="0.002"/>
+    <site name="circular_stairs_p_53_hook_1_-1" pos="0.660801 -0.611135 0.73" size="0.002"/>
+    <site name="circular_stairs_p_53_hook_1_1" pos="0.67686 -0.5933 0.73" size="0.002"/>
+    <site name="circular_stairs_p_54_hook_-1_-1" pos="0.559258 -0.421158 0.74" size="0.002"/>
+    <site name="circular_stairs_p_54_hook_-1_1" pos="0.573365 -0.401741 0.74" size="0.002"/>
+    <site name="circular_stairs_p_54_hook_1_-1" pos="0.721062 -0.538715 0.74" size="0.002"/>
+    <site name="circular_stairs_p_54_hook_1_1" pos="0.735169 -0.519299 0.74" size="0.002"/>
+    <site name="circular_stairs_p_55_hook_-1_-1" pos="0.600218 -0.360392 0.75" size="0.002"/>
+    <site name="circular_stairs_p_55_hook_-1_1" pos="0.612218 -0.339608 0.75" size="0.002"/>
+    <site name="circular_stairs_p_55_hook_1_-1" pos="0.773423 -0.460392 0.75" size="0.002"/>
+    <site name="circular_stairs_p_55_hook_1_1" pos="0.785423 -0.439608 0.75" size="0.002"/>
+    <site name="circular_stairs_p_56_hook_-1_-1" pos="0.634601 -0.295678 0.76" size="0.002"/>
+    <site name="circular_stairs_p_56_hook_-1_1" pos="0.644363 -0.273753 0.76" size="0.002"/>
+    <site name="circular_stairs_p_56_hook_1_-1" pos="0.81731 -0.377026 0.76" size="0.002"/>
+    <site name="circular_stairs_p_56_hook_1_1" pos="0.827072 -0.3551 0.76" size="0.002"/>
+    <site name="circular_stairs_p_57_hook_-1_-1" pos="0.662031 -0.227725 0.77" size="0.002"/>
+    <site name="circular_stairs_p_57_hook_-1_1" pos="0.669448 -0.204899 0.77" size="0.002"/>
+    <site name="circular_stairs_p_57_hook_1_-1" pos="0.852243 -0.289528 0.77" size="0.002"/>
+    <site name="circular_stairs_p_57_hook_1_1" pos="0.859659 -0.266703 0.77" size="0.002"/>
+    <site name="circular_stairs_p_58_hook_-1_-1" pos="0.682208 -0.157276 0.78" size="0.002"/>
+    <site name="circular_stairs_p_58_hook_-1_1" pos="0.687198 -0.1338 0.78" size="0.002"/>
+    <site name="circular_stairs_p_58_hook_1_-1" pos="0.877838 -0.198858 0.78" size="0.002"/>
+    <site name="circular_stairs_p_58_hook_1_1" pos="0.882828 -0.175383 0.78" size="0.002"/>
+    <site name="circular_stairs_p_59_hook_-1_-1" pos="0.694911 -0.0851042 0.79" size="0.002"/>
+    <site name="circular_stairs_p_59_hook_-1_1" pos="0.69742 -0.0612357 0.79" size="0.002"/>
+    <site name="circular_stairs_p_59_hook_1_-1" pos="0.893815 -0.10601 0.79" size="0.002"/>
+    <site name="circular_stairs_p_59_hook_1_1" pos="0.896324 -0.0821414 0.79" size="0.002"/>
     <light pos="-1 -1 40" dir="0.0663723 0.0663723 -0.995585"/>
     <light pos="-1 1 40" dir="0.0663723 -0.0663723 -0.995585"/>
     <light pos="1 -1 40" dir="-0.0663723 0.0663723 -0.995585"/>
@@ -197,7 +277,7 @@
       <site name="circular_stairs_p_0_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_0_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_1" pos="0.790151 0.125148 0.01">
+    <body name="circular_stairs_p_1" pos="0.795618 0.0836228 0.01" quat="0.99863 0 0 0.052336">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_1_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -205,7 +285,7 @@
       <site name="circular_stairs_p_1_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_1_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_2" pos="0.760845 0.247214 0.02">
+    <body name="circular_stairs_p_2" pos="0.782518 0.166329 0.02" quat="0.994522 0 0 0.104528">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_2_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -213,7 +293,7 @@
       <site name="circular_stairs_p_2_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_2_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_3" pos="0.712805 0.363192 0.03">
+    <body name="circular_stairs_p_3" pos="0.760845 0.247214 0.03" quat="0.987688 0 0 0.156434">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_3_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -221,7 +301,7 @@
       <site name="circular_stairs_p_3_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_3_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_4" pos="0.647214 0.470228 0.04">
+    <body name="circular_stairs_p_4" pos="0.730836 0.325389 0.04" quat="0.978148 0 0 0.207912">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_4_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -229,7 +309,7 @@
       <site name="circular_stairs_p_4_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_4_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_5" pos="0.565685 0.565685 0.05">
+    <body name="circular_stairs_p_5" pos="0.69282 0.4 0.05" quat="0.965926 0 0 0.258819">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_5_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -237,7 +317,7 @@
       <site name="circular_stairs_p_5_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_5_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_6" pos="0.470228 0.647214 0.06">
+    <body name="circular_stairs_p_6" pos="0.647214 0.470228 0.06" quat="0.951057 0 0 0.309017">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_6_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -245,7 +325,7 @@
       <site name="circular_stairs_p_6_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_6_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_7" pos="0.363192 0.712805 0.07">
+    <body name="circular_stairs_p_7" pos="0.594516 0.535304 0.07" quat="0.93358 0 0 0.358368">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_7_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -253,7 +333,7 @@
       <site name="circular_stairs_p_7_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_7_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_8" pos="0.247214 0.760845 0.08">
+    <body name="circular_stairs_p_8" pos="0.535304 0.594516 0.08" quat="0.913545 0 0 0.406737">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_8_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -261,7 +341,7 @@
       <site name="circular_stairs_p_8_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_8_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_9" pos="0.125148 0.790151 0.09">
+    <body name="circular_stairs_p_9" pos="0.470228 0.647214 0.09" quat="0.891007 0 0 0.45399">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_9_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -269,7 +349,7 @@
       <site name="circular_stairs_p_9_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_9_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_10" pos="0 0.8 0.1">
+    <body name="circular_stairs_p_10" pos="0.4 0.69282 0.1" quat="0.866025 0 0 0.5">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_10_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -277,7 +357,7 @@
       <site name="circular_stairs_p_10_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_10_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_11" pos="-0.125148 0.790151 0.11">
+    <body name="circular_stairs_p_11" pos="0.325389 0.730836 0.11" quat="0.838671 0 0 0.544639">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_11_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -285,7 +365,7 @@
       <site name="circular_stairs_p_11_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_11_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_12" pos="-0.247214 0.760845 0.12">
+    <body name="circular_stairs_p_12" pos="0.247214 0.760845 0.12" quat="0.809017 0 0 0.587785">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_12_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -293,7 +373,7 @@
       <site name="circular_stairs_p_12_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_12_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_13" pos="-0.363192 0.712805 0.13">
+    <body name="circular_stairs_p_13" pos="0.166329 0.782518 0.13" quat="0.777146 0 0 0.62932">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_13_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -301,7 +381,7 @@
       <site name="circular_stairs_p_13_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_13_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_14" pos="-0.470228 0.647214 0.14">
+    <body name="circular_stairs_p_14" pos="0.0836228 0.795618 0.14" quat="0.743145 0 0 0.669131">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_14_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -309,7 +389,7 @@
       <site name="circular_stairs_p_14_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_14_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_15" pos="-0.565685 0.565685 0.15">
+    <body name="circular_stairs_p_15" pos="0 0.8 0.15" quat="0.707107 0 0 0.707107">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_15_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -317,7 +397,7 @@
       <site name="circular_stairs_p_15_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_15_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_16" pos="-0.647214 0.470228 0.16">
+    <body name="circular_stairs_p_16" pos="-0.0836228 0.795618 0.16" quat="0.669131 0 0 0.743145">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_16_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -325,7 +405,7 @@
       <site name="circular_stairs_p_16_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_16_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_17" pos="-0.712805 0.363192 0.17">
+    <body name="circular_stairs_p_17" pos="-0.166329 0.782518 0.17" quat="0.62932 0 0 0.777146">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_17_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -333,7 +413,7 @@
       <site name="circular_stairs_p_17_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_17_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_18" pos="-0.760845 0.247214 0.18">
+    <body name="circular_stairs_p_18" pos="-0.247214 0.760845 0.18" quat="0.587785 0 0 0.809017">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_18_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -341,7 +421,7 @@
       <site name="circular_stairs_p_18_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_18_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_19" pos="-0.790151 0.125148 0.19">
+    <body name="circular_stairs_p_19" pos="-0.325389 0.730836 0.19" quat="0.544639 0 0 0.838671">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_19_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -349,7 +429,7 @@
       <site name="circular_stairs_p_19_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_19_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_20" pos="-0.8 0 0.2">
+    <body name="circular_stairs_p_20" pos="-0.4 0.69282 0.2" quat="0.5 0 0 0.866025">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_20_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -357,7 +437,7 @@
       <site name="circular_stairs_p_20_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_20_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_21" pos="-0.790151 -0.125148 0.21">
+    <body name="circular_stairs_p_21" pos="-0.470228 0.647214 0.21" quat="0.45399 0 0 0.891007">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_21_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -365,7 +445,7 @@
       <site name="circular_stairs_p_21_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_21_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_22" pos="-0.760845 -0.247214 0.22">
+    <body name="circular_stairs_p_22" pos="-0.535304 0.594516 0.22" quat="0.406737 0 0 0.913545">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_22_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -373,7 +453,7 @@
       <site name="circular_stairs_p_22_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_22_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_23" pos="-0.712805 -0.363192 0.23">
+    <body name="circular_stairs_p_23" pos="-0.594516 0.535304 0.23" quat="0.358368 0 0 0.93358">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_23_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -381,7 +461,7 @@
       <site name="circular_stairs_p_23_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_23_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_24" pos="-0.647214 -0.470228 0.24">
+    <body name="circular_stairs_p_24" pos="-0.647214 0.470228 0.24" quat="0.309017 0 0 0.951057">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_24_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -389,7 +469,7 @@
       <site name="circular_stairs_p_24_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_24_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_25" pos="-0.565685 -0.565685 0.25">
+    <body name="circular_stairs_p_25" pos="-0.69282 0.4 0.25" quat="0.258819 0 0 0.965926">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_25_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -397,7 +477,7 @@
       <site name="circular_stairs_p_25_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_25_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_26" pos="-0.470228 -0.647214 0.26">
+    <body name="circular_stairs_p_26" pos="-0.730836 0.325389 0.26" quat="0.207912 0 0 0.978148">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_26_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -405,7 +485,7 @@
       <site name="circular_stairs_p_26_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_26_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_27" pos="-0.363192 -0.712805 0.27">
+    <body name="circular_stairs_p_27" pos="-0.760845 0.247214 0.27" quat="0.156434 0 0 0.987688">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_27_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -413,7 +493,7 @@
       <site name="circular_stairs_p_27_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_27_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_28" pos="-0.247214 -0.760845 0.28">
+    <body name="circular_stairs_p_28" pos="-0.782518 0.166329 0.28" quat="0.104528 0 0 0.994522">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_28_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -421,7 +501,7 @@
       <site name="circular_stairs_p_28_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_28_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_29" pos="-0.125148 -0.790151 0.29">
+    <body name="circular_stairs_p_29" pos="-0.795618 0.0836228 0.29" quat="0.052336 0 0 0.99863">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_29_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -429,7 +509,7 @@
       <site name="circular_stairs_p_29_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_29_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_30" pos="0 -0.8 0.3">
+    <body name="circular_stairs_p_30" pos="-0.8 0 0.3" quat="0 0 0 1">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_30_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -437,7 +517,7 @@
       <site name="circular_stairs_p_30_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_30_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_31" pos="0.125148 -0.790151 0.31">
+    <body name="circular_stairs_p_31" pos="-0.795618 -0.0836228 0.31" quat="-0.052336 0 0 0.99863">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_31_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -445,7 +525,7 @@
       <site name="circular_stairs_p_31_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_31_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_32" pos="0.247214 -0.760845 0.32">
+    <body name="circular_stairs_p_32" pos="-0.782518 -0.166329 0.32" quat="-0.104528 0 0 0.994522">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_32_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -453,7 +533,7 @@
       <site name="circular_stairs_p_32_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_32_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_33" pos="0.363192 -0.712805 0.33">
+    <body name="circular_stairs_p_33" pos="-0.760845 -0.247214 0.33" quat="-0.156434 0 0 0.987688">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_33_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -461,7 +541,7 @@
       <site name="circular_stairs_p_33_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_33_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_34" pos="0.470228 -0.647214 0.34">
+    <body name="circular_stairs_p_34" pos="-0.730836 -0.325389 0.34" quat="-0.207912 0 0 0.978148">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_34_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -469,7 +549,7 @@
       <site name="circular_stairs_p_34_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_34_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_35" pos="0.565685 -0.565685 0.35">
+    <body name="circular_stairs_p_35" pos="-0.69282 -0.4 0.35" quat="-0.258819 0 0 0.965926">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_35_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -477,7 +557,7 @@
       <site name="circular_stairs_p_35_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_35_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_36" pos="0.647214 -0.470228 0.36">
+    <body name="circular_stairs_p_36" pos="-0.647214 -0.470228 0.36" quat="-0.309017 0 0 0.951057">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_36_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -485,7 +565,7 @@
       <site name="circular_stairs_p_36_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_36_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_37" pos="0.712805 -0.363192 0.37">
+    <body name="circular_stairs_p_37" pos="-0.594516 -0.535304 0.37" quat="-0.358368 0 0 0.93358">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_37_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -493,7 +573,7 @@
       <site name="circular_stairs_p_37_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_37_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_38" pos="0.760845 -0.247214 0.38">
+    <body name="circular_stairs_p_38" pos="-0.535304 -0.594516 0.38" quat="-0.406737 0 0 0.913545">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_38_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
@@ -501,13 +581,173 @@
       <site name="circular_stairs_p_38_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_38_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
-    <body name="circular_stairs_p_39" pos="0.790151 -0.125148 0.39">
+    <body name="circular_stairs_p_39" pos="-0.470228 -0.647214 0.39" quat="-0.45399 0 0 0.891007">
       <joint type="free" limited="false" actuatorfrclimited="false"/>
       <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
       <site name="circular_stairs_p_39_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_39_anchor_-1_1" pos="-0.1 0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_39_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
       <site name="circular_stairs_p_39_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
+    </body>
+    <body name="circular_stairs_p_40" pos="-0.4 -0.69282 0.4" quat="-0.5 0 0 0.866025">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
+      <site name="circular_stairs_p_40_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_40_anchor_-1_1" pos="-0.1 0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_40_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_40_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
+    </body>
+    <body name="circular_stairs_p_41" pos="-0.325389 -0.730836 0.41" quat="-0.544639 0 0 0.838671">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
+      <site name="circular_stairs_p_41_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_41_anchor_-1_1" pos="-0.1 0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_41_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_41_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
+    </body>
+    <body name="circular_stairs_p_42" pos="-0.247214 -0.760845 0.42" quat="-0.587785 0 0 0.809017">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
+      <site name="circular_stairs_p_42_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_42_anchor_-1_1" pos="-0.1 0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_42_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_42_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
+    </body>
+    <body name="circular_stairs_p_43" pos="-0.166329 -0.782518 0.43" quat="-0.62932 0 0 0.777146">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
+      <site name="circular_stairs_p_43_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_43_anchor_-1_1" pos="-0.1 0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_43_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_43_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
+    </body>
+    <body name="circular_stairs_p_44" pos="-0.0836228 -0.795618 0.44" quat="-0.669131 0 0 0.743145">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
+      <site name="circular_stairs_p_44_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_44_anchor_-1_1" pos="-0.1 0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_44_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_44_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
+    </body>
+    <body name="circular_stairs_p_45" pos="0 -0.8 0.45" quat="-0.707107 0 0 0.707107">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
+      <site name="circular_stairs_p_45_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_45_anchor_-1_1" pos="-0.1 0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_45_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_45_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
+    </body>
+    <body name="circular_stairs_p_46" pos="0.0836228 -0.795618 0.46" quat="-0.743145 0 0 0.669131">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
+      <site name="circular_stairs_p_46_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_46_anchor_-1_1" pos="-0.1 0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_46_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_46_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
+    </body>
+    <body name="circular_stairs_p_47" pos="0.166329 -0.782518 0.47" quat="-0.777146 0 0 0.62932">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
+      <site name="circular_stairs_p_47_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_47_anchor_-1_1" pos="-0.1 0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_47_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_47_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
+    </body>
+    <body name="circular_stairs_p_48" pos="0.247214 -0.760845 0.48" quat="-0.809017 0 0 0.587785">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
+      <site name="circular_stairs_p_48_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_48_anchor_-1_1" pos="-0.1 0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_48_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_48_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
+    </body>
+    <body name="circular_stairs_p_49" pos="0.325389 -0.730836 0.49" quat="-0.838671 0 0 0.544639">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
+      <site name="circular_stairs_p_49_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_49_anchor_-1_1" pos="-0.1 0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_49_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_49_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
+    </body>
+    <body name="circular_stairs_p_50" pos="0.4 -0.69282 0.5" quat="-0.866025 0 0 0.5">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
+      <site name="circular_stairs_p_50_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_50_anchor_-1_1" pos="-0.1 0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_50_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_50_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
+    </body>
+    <body name="circular_stairs_p_51" pos="0.470228 -0.647214 0.51" quat="-0.891007 0 0 0.45399">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
+      <site name="circular_stairs_p_51_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_51_anchor_-1_1" pos="-0.1 0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_51_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_51_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
+    </body>
+    <body name="circular_stairs_p_52" pos="0.535304 -0.594516 0.52" quat="-0.913545 0 0 0.406737">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
+      <site name="circular_stairs_p_52_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_52_anchor_-1_1" pos="-0.1 0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_52_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_52_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
+    </body>
+    <body name="circular_stairs_p_53" pos="0.594516 -0.535304 0.53" quat="-0.93358 0 0 0.358368">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
+      <site name="circular_stairs_p_53_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_53_anchor_-1_1" pos="-0.1 0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_53_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_53_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
+    </body>
+    <body name="circular_stairs_p_54" pos="0.647214 -0.470228 0.54" quat="-0.951057 0 0 0.309017">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
+      <site name="circular_stairs_p_54_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_54_anchor_-1_1" pos="-0.1 0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_54_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_54_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
+    </body>
+    <body name="circular_stairs_p_55" pos="0.69282 -0.4 0.55" quat="-0.965926 0 0 0.258819">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
+      <site name="circular_stairs_p_55_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_55_anchor_-1_1" pos="-0.1 0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_55_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_55_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
+    </body>
+    <body name="circular_stairs_p_56" pos="0.730836 -0.325389 0.56" quat="-0.978148 0 0 0.207912">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
+      <site name="circular_stairs_p_56_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_56_anchor_-1_1" pos="-0.1 0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_56_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_56_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
+    </body>
+    <body name="circular_stairs_p_57" pos="0.760845 -0.247214 0.57" quat="-0.987688 0 0 0.156434">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
+      <site name="circular_stairs_p_57_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_57_anchor_-1_1" pos="-0.1 0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_57_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_57_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
+    </body>
+    <body name="circular_stairs_p_58" pos="0.782518 -0.166329 0.58" quat="-0.994522 0 0 0.104528">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
+      <site name="circular_stairs_p_58_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_58_anchor_-1_1" pos="-0.1 0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_58_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_58_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
+    </body>
+    <body name="circular_stairs_p_59" pos="0.795618 -0.0836228 0.59" quat="-0.99863 0 0 0.052336">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.003" rgba="0.85 0.838 0.119 1"/>
+      <site name="circular_stairs_p_59_anchor_-1_-1" pos="-0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_59_anchor_-1_1" pos="-0.1 0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_59_anchor_1_-1" pos="0.1 -0.012 0.006" size="0.002"/>
+      <site name="circular_stairs_p_59_anchor_1_1" pos="0.1 0.012 0.006" size="0.002"/>
     </body>
   </worldbody>
 
@@ -1151,6 +1391,326 @@
     <spatial name="circular_stairs_p_39_thread_1_1" limited="true" range="0 0.1" width="0.001">
       <site site="circular_stairs_p_39_hook_1_1"/>
       <site site="circular_stairs_p_39_anchor_1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_40_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_40_hook_-1_-1"/>
+      <site site="circular_stairs_p_40_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_40_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_40_hook_-1_1"/>
+      <site site="circular_stairs_p_40_anchor_-1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_40_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_40_hook_1_-1"/>
+      <site site="circular_stairs_p_40_anchor_1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_40_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_40_hook_1_1"/>
+      <site site="circular_stairs_p_40_anchor_1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_41_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_41_hook_-1_-1"/>
+      <site site="circular_stairs_p_41_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_41_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_41_hook_-1_1"/>
+      <site site="circular_stairs_p_41_anchor_-1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_41_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_41_hook_1_-1"/>
+      <site site="circular_stairs_p_41_anchor_1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_41_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_41_hook_1_1"/>
+      <site site="circular_stairs_p_41_anchor_1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_42_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_42_hook_-1_-1"/>
+      <site site="circular_stairs_p_42_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_42_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_42_hook_-1_1"/>
+      <site site="circular_stairs_p_42_anchor_-1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_42_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_42_hook_1_-1"/>
+      <site site="circular_stairs_p_42_anchor_1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_42_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_42_hook_1_1"/>
+      <site site="circular_stairs_p_42_anchor_1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_43_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_43_hook_-1_-1"/>
+      <site site="circular_stairs_p_43_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_43_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_43_hook_-1_1"/>
+      <site site="circular_stairs_p_43_anchor_-1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_43_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_43_hook_1_-1"/>
+      <site site="circular_stairs_p_43_anchor_1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_43_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_43_hook_1_1"/>
+      <site site="circular_stairs_p_43_anchor_1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_44_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_44_hook_-1_-1"/>
+      <site site="circular_stairs_p_44_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_44_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_44_hook_-1_1"/>
+      <site site="circular_stairs_p_44_anchor_-1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_44_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_44_hook_1_-1"/>
+      <site site="circular_stairs_p_44_anchor_1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_44_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_44_hook_1_1"/>
+      <site site="circular_stairs_p_44_anchor_1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_45_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_45_hook_-1_-1"/>
+      <site site="circular_stairs_p_45_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_45_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_45_hook_-1_1"/>
+      <site site="circular_stairs_p_45_anchor_-1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_45_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_45_hook_1_-1"/>
+      <site site="circular_stairs_p_45_anchor_1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_45_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_45_hook_1_1"/>
+      <site site="circular_stairs_p_45_anchor_1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_46_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_46_hook_-1_-1"/>
+      <site site="circular_stairs_p_46_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_46_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_46_hook_-1_1"/>
+      <site site="circular_stairs_p_46_anchor_-1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_46_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_46_hook_1_-1"/>
+      <site site="circular_stairs_p_46_anchor_1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_46_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_46_hook_1_1"/>
+      <site site="circular_stairs_p_46_anchor_1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_47_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_47_hook_-1_-1"/>
+      <site site="circular_stairs_p_47_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_47_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_47_hook_-1_1"/>
+      <site site="circular_stairs_p_47_anchor_-1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_47_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_47_hook_1_-1"/>
+      <site site="circular_stairs_p_47_anchor_1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_47_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_47_hook_1_1"/>
+      <site site="circular_stairs_p_47_anchor_1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_48_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_48_hook_-1_-1"/>
+      <site site="circular_stairs_p_48_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_48_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_48_hook_-1_1"/>
+      <site site="circular_stairs_p_48_anchor_-1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_48_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_48_hook_1_-1"/>
+      <site site="circular_stairs_p_48_anchor_1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_48_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_48_hook_1_1"/>
+      <site site="circular_stairs_p_48_anchor_1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_49_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_49_hook_-1_-1"/>
+      <site site="circular_stairs_p_49_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_49_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_49_hook_-1_1"/>
+      <site site="circular_stairs_p_49_anchor_-1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_49_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_49_hook_1_-1"/>
+      <site site="circular_stairs_p_49_anchor_1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_49_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_49_hook_1_1"/>
+      <site site="circular_stairs_p_49_anchor_1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_50_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_50_hook_-1_-1"/>
+      <site site="circular_stairs_p_50_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_50_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_50_hook_-1_1"/>
+      <site site="circular_stairs_p_50_anchor_-1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_50_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_50_hook_1_-1"/>
+      <site site="circular_stairs_p_50_anchor_1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_50_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_50_hook_1_1"/>
+      <site site="circular_stairs_p_50_anchor_1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_51_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_51_hook_-1_-1"/>
+      <site site="circular_stairs_p_51_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_51_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_51_hook_-1_1"/>
+      <site site="circular_stairs_p_51_anchor_-1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_51_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_51_hook_1_-1"/>
+      <site site="circular_stairs_p_51_anchor_1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_51_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_51_hook_1_1"/>
+      <site site="circular_stairs_p_51_anchor_1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_52_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_52_hook_-1_-1"/>
+      <site site="circular_stairs_p_52_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_52_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_52_hook_-1_1"/>
+      <site site="circular_stairs_p_52_anchor_-1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_52_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_52_hook_1_-1"/>
+      <site site="circular_stairs_p_52_anchor_1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_52_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_52_hook_1_1"/>
+      <site site="circular_stairs_p_52_anchor_1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_53_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_53_hook_-1_-1"/>
+      <site site="circular_stairs_p_53_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_53_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_53_hook_-1_1"/>
+      <site site="circular_stairs_p_53_anchor_-1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_53_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_53_hook_1_-1"/>
+      <site site="circular_stairs_p_53_anchor_1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_53_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_53_hook_1_1"/>
+      <site site="circular_stairs_p_53_anchor_1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_54_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_54_hook_-1_-1"/>
+      <site site="circular_stairs_p_54_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_54_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_54_hook_-1_1"/>
+      <site site="circular_stairs_p_54_anchor_-1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_54_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_54_hook_1_-1"/>
+      <site site="circular_stairs_p_54_anchor_1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_54_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_54_hook_1_1"/>
+      <site site="circular_stairs_p_54_anchor_1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_55_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_55_hook_-1_-1"/>
+      <site site="circular_stairs_p_55_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_55_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_55_hook_-1_1"/>
+      <site site="circular_stairs_p_55_anchor_-1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_55_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_55_hook_1_-1"/>
+      <site site="circular_stairs_p_55_anchor_1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_55_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_55_hook_1_1"/>
+      <site site="circular_stairs_p_55_anchor_1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_56_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_56_hook_-1_-1"/>
+      <site site="circular_stairs_p_56_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_56_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_56_hook_-1_1"/>
+      <site site="circular_stairs_p_56_anchor_-1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_56_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_56_hook_1_-1"/>
+      <site site="circular_stairs_p_56_anchor_1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_56_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_56_hook_1_1"/>
+      <site site="circular_stairs_p_56_anchor_1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_57_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_57_hook_-1_-1"/>
+      <site site="circular_stairs_p_57_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_57_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_57_hook_-1_1"/>
+      <site site="circular_stairs_p_57_anchor_-1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_57_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_57_hook_1_-1"/>
+      <site site="circular_stairs_p_57_anchor_1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_57_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_57_hook_1_1"/>
+      <site site="circular_stairs_p_57_anchor_1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_58_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_58_hook_-1_-1"/>
+      <site site="circular_stairs_p_58_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_58_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_58_hook_-1_1"/>
+      <site site="circular_stairs_p_58_anchor_-1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_58_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_58_hook_1_-1"/>
+      <site site="circular_stairs_p_58_anchor_1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_58_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_58_hook_1_1"/>
+      <site site="circular_stairs_p_58_anchor_1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_59_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_59_hook_-1_-1"/>
+      <site site="circular_stairs_p_59_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_59_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_59_hook_-1_1"/>
+      <site site="circular_stairs_p_59_anchor_-1_1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_59_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_59_hook_1_-1"/>
+      <site site="circular_stairs_p_59_anchor_1_-1"/>
+    </spatial>
+    <spatial name="circular_stairs_p_59_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="circular_stairs_p_59_hook_1_1"/>
+      <site site="circular_stairs_p_59_anchor_1_1"/>
     </spatial>
   </tendon>
 </mujoco>
