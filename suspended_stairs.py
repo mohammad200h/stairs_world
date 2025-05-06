@@ -7,7 +7,7 @@ def tread_mill():
   # https://github.com/google-deepmind/mujoco/issues/547
   pass
 
-def floating_platform(spec, gird_loc=[0, 0, 0], name='platform'):
+def floating_platform(spec, gird_loc=[0, 0, 0],theta = 0, name='platform'):
   PLATFORM_LENGTH = 0.1
   WIDTH = 0.02
   INWARD_OFFSET = 0.008
@@ -23,23 +23,34 @@ def floating_platform(spec, gird_loc=[0, 0, 0], name='platform'):
   platform.add_geom(size= SIZE)
   platform.add_freejoint()
 
-  for x in [-1, 1]:
-    for y in [-1, 1]:
+  for x_dir in [-1, 1]:
+    for y_dir in [-1, 1]:
+
       # Add site to world
-      spec.worldbody.add_site(name=f'{name}_hook_{x}_{y}',
-                              pos=[ gird_loc[0] + x * PLATFORM_LENGTH,
-                                    gird_loc[1] + y * (WIDTH - INWARD_OFFSET),
-                                    gird_loc[2] + 0.2],
+      rotation_matrix = np.array([[np.cos(-theta), -np.sin(-theta)],
+                                  [np.sin(-theta), np.cos(-theta)]])
+      vector = np.array([x_dir * PLATFORM_LENGTH, y_dir * (WIDTH - INWARD_OFFSET) ])
+      vector = np.dot(vector , rotation_matrix)
+
+      x_w = gird_loc[0] + vector[0]
+      y_w = gird_loc[1] + vector[1]
+
+      # Rotate sites by theta
+      spec.worldbody.add_site(name=f'{name}_hook_{x_dir}_{y_dir}',
+                              pos=[ x_w, y_w, gird_loc[2] + 0.2],
                               size=[0.002, 0, 0])
       # Add site to platform
-      platform.add_site(name=f'{name}_anchor_{x}_{y}',
-                        pos=[ x * PLATFORM_LENGTH, y * (WIDTH - INWARD_OFFSET), THICKNESS * 2],
+      x_p = x_dir * PLATFORM_LENGTH
+      y_p = y_dir * (WIDTH - INWARD_OFFSET)
+      platform.add_site(name=f'{name}_anchor_{x_dir}_{y_dir}',
+                        pos=[ x_p, y_p, THICKNESS * 2],
                         size=[0.002, 0, 0])
 
       # Connect tendon to sites
-      thread = spec.add_tendon(name = f'{name}_thread_{x}_{y}', limited=True, range=[0, 0.1], width=0.001 )
-      thread.wrap_site(f'{name}_hook_{x}_{y}')
-      thread.wrap_site(f'{name}_anchor_{x}_{y}')
+      thread = spec.add_tendon(name = f'{name}_thread_{x_dir}_{y_dir}', limited=True,
+                               range=[0, 0.1], width = 0.001 )
+      thread.wrap_site(f'{name}_hook_{x_dir}_{y_dir}')
+      thread.wrap_site(f'{name}_anchor_{x_dir}_{y_dir}')
 
 def simple_suspended_stair(spec, num_stair=4):
   V_STEP = 0.01
@@ -80,7 +91,8 @@ def floating_cube(spec):
   thread.wrap_site('anchor')
 
 
-def circular_stairs(spec, grid_loc=[0, 0], num_stair=40, radius=1, v_step=0.01, h_step=0.05):
+def circular_stairs(spec, grid_loc=[0, 0], num_stair=40,
+                    radius=1, v_step=0.01, h_step=0.05):
     """
     Generates circular stairs around a central point.
 
@@ -94,8 +106,6 @@ def circular_stairs(spec, grid_loc=[0, 0], num_stair=40, radius=1, v_step=0.01, 
         h_step (float, optional): The horizontal step, influencing the width of each stair.
                         It's more accurately an angular step in this case. Defaults to 0.05.
     """
-    # TODO make stairs tangent to circle
-
     # Use the number of stairs to determine the angle increment.
     theta_step = 2 * np.pi / num_stair  # Angle step for each stair to cover a full circle.
 
@@ -109,24 +119,11 @@ def circular_stairs(spec, grid_loc=[0, 0], num_stair=40, radius=1, v_step=0.01, 
 
         # Calculate the z-coordinate based on the stair number.
         z = i * v_step
-        # Calculate the tangent vector (perpendicular to the vector from the center).
-        tangent = np.array([-y + grid_loc[1], x - grid_loc[0]])  # Tangent relative to the center
 
-        # Normalize the tangent vector.
-        norm = np.linalg.norm(tangent)
-        if norm != 0:  # Avoid division by zero
-            tangent /= norm
-        else:
-            tangent = np.array([0, 0 ]) # handle the zero case
-
-        print(f"tangent::{tangent}")
-
-        # Angle between (1,0) and tangent
-        theta = np.arccos(np.clip(np.dot(np.array([1,0]), tangent), -1.0, 1.0))
         print(f"theta::{theta}")
 
         # Create the floating platform.
-        floating_platform(spec,[x, y, z], name=f'p_{i}')
+        floating_platform(spec,[x, y, z],theta=theta , name=f'p_{i}')
 
 if __name__ == "__main__":
 
