@@ -54,12 +54,11 @@ def perlin(shape, res, tileable=(False, False), interpolant=interpolant):
   return np.sqrt(2)*((1-t[:,:,1])*n0 + t[:,:,1]*n1)
 
 ######################
-def floating_platform(spec=None, gird_loc=[0, 0, 0], name='platform'):
-  PLATFORM_LENGTH = 0.2
+def floating_platform(spec=None, gird_loc=[0, 0, 0], platform_length = 0.2 ,theta=0, name='platform'):
   WIDTH = 0.02
   INWARD_OFFSET = 0.008
   THICKNESS = 0.003
-  SIZE = [PLATFORM_LENGTH, WIDTH, THICKNESS]
+  SIZE = [ platform_length, WIDTH, THICKNESS]
 
   RGBA_GOLD = [0.850, 0.838, 0.119, 1]
 
@@ -75,26 +74,33 @@ def floating_platform(spec=None, gird_loc=[0, 0, 0], name='platform'):
   platform.add_geom(size=SIZE, rgba=RGBA_GOLD)
   platform.add_freejoint()
 
-  for x in [-1, 1]:
-    for y in [-1, 1]:
+  for x_dir in [-1, 1]:
+    for y_dir in [-1, 1]:
       # Add site to world
-      spec.worldbody.add_site(name=f'{name}_hook_{x}_{y}',
-                              pos=[ gird_loc[0] + x * PLATFORM_LENGTH,
-                                    gird_loc[1] + y * (WIDTH - INWARD_OFFSET),
-                                    gird_loc[2] + 0.2],
-                              size=[0.002, 0, 0],
-                              rgba=RGBA_GOLD)
+      rotation_matrix = np.array([[np.cos(-theta), -np.sin(-theta)],
+                                  [np.sin(-theta), np.cos(-theta)]])
+      vector = np.array([x_dir *  platform_length, y_dir * (WIDTH - INWARD_OFFSET) ])
+      vector = np.dot(vector , rotation_matrix)
+
+      x_w = gird_loc[0] + vector[0]
+      y_w = gird_loc[1] + vector[1]
+
+      # Rotate sites by theta
+      spec.worldbody.add_site(name=f'{name}_hook_{x_dir}_{y_dir}',
+                              pos=[ x_w, y_w, gird_loc[2] + 0.2],
+                              size=[0.002, 0, 0])
       # Add site to platform
-      platform.add_site(name=f'{name}_anchor_{x}_{y}',
-                        pos=[ x * PLATFORM_LENGTH, y * (WIDTH - INWARD_OFFSET), THICKNESS * 2],
-                        size=[0.002, 0, 0],
-                        rgba=RGBA_GOLD)
+      x_p = x_dir *  platform_length
+      y_p = y_dir * (WIDTH - INWARD_OFFSET)
+      platform.add_site(name=f'{name}_anchor_{x_dir}_{y_dir}',
+                        pos=[ x_p, y_p, THICKNESS * 2],
+                        size=[0.002, 0, 0])
 
       # Connect tendon to sites
-      thread = spec.add_tendon(name = f'{name}_thread_{x}_{y}', limited=True,
-                              range=[0, 0.13], width=0.001, rgba=RGBA_GOLD )
-      thread.wrap_site(f'{name}_hook_{x}_{y}')
-      thread.wrap_site(f'{name}_anchor_{x}_{y}')
+      thread = spec.add_tendon(name = f'{name}_thread_{x_dir}_{y_dir}', limited=True,
+                               range=[0, 0.1], width = 0.001 )
+      thread.wrap_site(f'{name}_hook_{x_dir}_{y_dir}')
+      thread.wrap_site(f'{name}_anchor_{x_dir}_{y_dir}')
 
 def simple_suspended_stair(spec=None, grid_loc=[0, 0], num_stair=20,
                            name="simple_suspended_stair"):
@@ -153,6 +159,34 @@ def sin_suspended_stair(spec, grid_loc=[0, 0], num_stair=40,
                             OFFSET_Y + grid_loc[1] + i * H_STEP,
                             i * V_STEP],
                            name =f'{name}_p_{i}')
+
+def circular_stairs(spec, grid_loc=[0, 0], num_stair=40, name="circular_stairs"):
+  BROWN_RGBA = [0.460, 0.362, 0.216, 1.0]
+  SQUARE_LENGTH = 1
+  THICKNESS = 0.05
+
+  RADIUS = 0.8
+  V_STEP = 0.01
+
+  if spec == None:
+    spec = mj.MjSpec()
+
+  # Defaults
+  main = spec.default
+  main.geom.type = mj.mjtGeom.mjGEOM_BOX
+
+  # Plane
+  body = spec.worldbody.add_body(pos=grid_loc + [0], name=name)
+  body.add_geom(size = [SQUARE_LENGTH,SQUARE_LENGTH, THICKNESS], rgba = BROWN_RGBA )
+
+  theta_step = 2 * np.pi / num_stair
+  for i in range(num_stair):
+    theta = i * theta_step
+    x = grid_loc[0] + RADIUS * np.cos(theta)
+    y = grid_loc[1] + RADIUS * np.sin(theta)
+    z = i * V_STEP
+
+    floating_platform(spec,[x, y, z], platform_length = 0.1,theta=theta , name=f'{name}_p_{i}')
 
 def plane(spec, grid_loc=[0, 0], name='plane'):
   BROWN_RGBA = [0.460, 0.362, 0.216, 1.0]
@@ -438,7 +472,7 @@ def add_tile(spec=None, grid_loc=[0, 0]):
   if spec is None:
     spec = mj.MjSpec()
 
-  tile_type = random.randint(0,8)
+  tile_type = random.randint(0,9)
   # tile_type = 3
   # tile_type = random.choice([0, 6])
   if tile_type == 0:
@@ -459,6 +493,8 @@ def add_tile(spec=None, grid_loc=[0, 0]):
     simple_suspended_stair(spec,grid_loc, name = f"sss_{grid_loc[0]}_{grid_loc[1]}")
   elif tile_type == 8:
     sin_suspended_stair(spec,grid_loc, name = f"sinss_{grid_loc[0]}_{grid_loc[1]}")
+  elif tile_type == 9:
+    circular_stairs(spec,grid_loc, name = f"circular_s_{grid_loc[0]}_{grid_loc[1]}")
   return spec
 
 
@@ -497,12 +533,12 @@ if __name__ == "__main__":
     for y in [-1, 1]:
       spec.worldbody.add_light(pos = [x, y, 40], dir = [-x, -y, -15])
 
-  # sin_suspended_stair(spec)
+  circular_stairs(spec)
 
-  SQUARE_LENGTH = 1
-  for i in range(-4,4):
-    for j in range(-4,4):
-      add_tile(spec=spec, grid_loc=[i * 2 * SQUARE_LENGTH,j * 2 * SQUARE_LENGTH])
+  # SQUARE_LENGTH = 1
+  # for i in range(-3,3):
+  #   for j in range(-3,3):
+  #     add_tile(spec=spec, grid_loc=[i * 2 * SQUARE_LENGTH,j * 2 * SQUARE_LENGTH])
 
   model = spec.compile()
   data = mj.MjData(model)
