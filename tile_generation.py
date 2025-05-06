@@ -2,10 +2,161 @@ import mujoco as mj
 import random
 import numpy as np
 
+####### Utility #######
+def interpolant(t):
+    return t*t*t*(t*(t*6 - 15) + 10)
+
+def perlin(shape, res, tileable=(False, False), interpolant=interpolant):
+  """Generate a 2D numpy array of perlin noise.
+
+  Args:
+      shape: The shape of the generated array (tuple of two ints).
+          This must be a multple of res.
+      res: The number of periods of noise to generate along each
+          axis (tuple of two ints). Note shape must be a multiple of
+          res.
+      tileable: If the noise should be tileable along each axis
+          (tuple of two bools). Defaults to (False, False).
+      interpolant: The interpolation function, defaults to
+          t*t*t*(t*(t*6 - 15) + 10).
+
+  Returns:
+      A numpy array of shape shape with the generated noise.
+
+  Raises:
+      ValueError: If shape is not a multiple of res.
+  """
+  delta = (res[0] / shape[0], res[1] / shape[1])
+  d = (shape[0] // res[0], shape[1] // res[1])
+  grid = np.mgrid[0:res[0]:delta[0], 0:res[1]:delta[1]]\
+            .transpose(1, 2, 0) % 1
+  # Gradients
+  angles = 2*np.pi*np.random.rand(res[0]+1, res[1]+1)
+  gradients = np.dstack((np.cos(angles), np.sin(angles)))
+  if tileable[0]:
+    gradients[-1,:] = gradients[0,:]
+  if tileable[1]:
+    gradients[:,-1] = gradients[:,0]
+  gradients = gradients.repeat(d[0], 0).repeat(d[1], 1)
+  g00 = gradients[    :-d[0],    :-d[1]]
+  g10 = gradients[d[0]:     ,    :-d[1]]
+  g01 = gradients[    :-d[0],d[1]:     ]
+  g11 = gradients[d[0]:     ,d[1]:     ]
+  # Ramps
+  n00 = np.sum(np.dstack((grid[:,:,0]  , grid[:,:,1]  )) * g00, 2)
+  n10 = np.sum(np.dstack((grid[:,:,0]-1, grid[:,:,1]  )) * g10, 2)
+  n01 = np.sum(np.dstack((grid[:,:,0]  , grid[:,:,1]-1)) * g01, 2)
+  n11 = np.sum(np.dstack((grid[:,:,0]-1, grid[:,:,1]-1)) * g11, 2)
+  # Interpolation
+  t = interpolant(grid)
+  n0 = n00*(1-t[:,:,0]) + t[:,:,0]*n10
+  n1 = n01*(1-t[:,:,0]) + t[:,:,0]*n11
+  return np.sqrt(2)*((1-t[:,:,1])*n0 + t[:,:,1]*n1)
+
+######################
+def floating_platform(spec=None, gird_loc=[0, 0, 0], name='platform'):
+  PLATFORM_LENGTH = 0.2
+  WIDTH = 0.02
+  INWARD_OFFSET = 0.008
+  THICKNESS = 0.003
+  SIZE = [PLATFORM_LENGTH, WIDTH, THICKNESS]
+
+  RGBA_GOLD = [0.850, 0.838, 0.119, 1]
+
+  if spec == None:
+    spec = mj.MjSpec()
+
+  # Defaults
+  main = spec.default
+  main.geom.type = mj.mjtGeom.mjGEOM_BOX
+
+  # Platform with sites
+  platform = spec.worldbody.add_body(pos=gird_loc, name=name)
+  platform.add_geom(size=SIZE, rgba=RGBA_GOLD)
+  platform.add_freejoint()
+
+  for x in [-1, 1]:
+    for y in [-1, 1]:
+      # Add site to world
+      spec.worldbody.add_site(name=f'{name}_hook_{x}_{y}',
+                              pos=[ gird_loc[0] + x * PLATFORM_LENGTH,
+                                    gird_loc[1] + y * (WIDTH - INWARD_OFFSET),
+                                    gird_loc[2] + 0.2],
+                              size=[0.002, 0, 0],
+                              rgba=RGBA_GOLD)
+      # Add site to platform
+      platform.add_site(name=f'{name}_anchor_{x}_{y}',
+                        pos=[ x * PLATFORM_LENGTH, y * (WIDTH - INWARD_OFFSET), THICKNESS * 2],
+                        size=[0.002, 0, 0],
+                        rgba=RGBA_GOLD)
+
+      # Connect tendon to sites
+      thread = spec.add_tendon(name = f'{name}_thread_{x}_{y}', limited=True,
+                              range=[0, 0.13], width=0.001, rgba=RGBA_GOLD )
+      thread.wrap_site(f'{name}_hook_{x}_{y}')
+      thread.wrap_site(f'{name}_anchor_{x}_{y}')
+
+def simple_suspended_stair(spec=None, grid_loc=[0, 0], num_stair=20,
+                           name="simple_suspended_stair"):
+  BROWN_RGBA = [0.460, 0.362, 0.216, 1.0]
+  SQUARE_LENGTH = 1
+  THICKNESS = 0.05
+  OFFSET_Y = -4/5 * SQUARE_LENGTH
+
+  V_STEP = 0.01
+  H_STEP = 0.04
+
+  if spec == None:
+    spec = mj.MjSpec()
+
+  # Defaults
+  main = spec.default
+  main.geom.type = mj.mjtGeom.mjGEOM_BOX
+
+  # Plane
+  body = spec.worldbody.add_body(pos=grid_loc + [0], name=name)
+  body.add_geom(size = [SQUARE_LENGTH,SQUARE_LENGTH, THICKNESS], rgba = BROWN_RGBA )
+
+  # Stairs
+  for i in range(num_stair):
+    floating_platform(spec,[grid_loc[0],
+                            OFFSET_Y + grid_loc[1] + i * H_STEP,
+                            i * V_STEP],
+                       name =f'{name}_p_{i}')
+
+def sin_suspended_stair(spec, grid_loc=[0, 0], num_stair=40,
+                        name="sin_suspended_stair"):
+  BROWN_RGBA = [0.460, 0.362, 0.216, 1.0]
+  SQUARE_LENGTH = 1
+  THICKNESS = 0.05
+  OFFSET_Y = -4/5 * SQUARE_LENGTH
+
+  V_STEP = 0.01
+  H_STEP = 0.04
+  AMPLITUDE = 0.2
+  FREQUENCY = 1
+
+  if spec == None:
+    spec = mj.MjSpec()
+
+  # Defaults
+  main = spec.default
+  main.geom.type = mj.mjtGeom.mjGEOM_BOX
+
+  # Plane
+  body = spec.worldbody.add_body(pos=grid_loc + [0], name=name)
+  body.add_geom(size = [SQUARE_LENGTH,SQUARE_LENGTH, THICKNESS], rgba = BROWN_RGBA )
+
+  for i in range(num_stair):
+    x_step = AMPLITUDE * np.sin(2 * np.pi * FREQUENCY * (i * H_STEP))
+    floating_platform(spec,[grid_loc[0] + x_step,
+                            OFFSET_Y + grid_loc[1] + i * H_STEP,
+                            i * V_STEP],
+                           name =f'{name}_p_{i}')
 
 def plane(spec, grid_loc=[0, 0], name='plane'):
-  BROWN_RGBA = [0.647, 0.165, 0.165, 1.0]
-  SQUARE_LENGTH = 1 # singe square length
+  BROWN_RGBA = [0.460, 0.362, 0.216, 1.0]
+  SQUARE_LENGTH = 1
   THICKNESS = 0.05
 
   # Defaults
@@ -23,11 +174,11 @@ def plane_with_simple_geoms(spec=None, grid_loc=[0, 0], name='plane'):
   SQUARE_LENGTH = 1
   THICKNESS = 0.05
   STEP = THICKNESS * 8
-  BROWN_RGBA = [0.647, 0.165, 0.165, 1.0]
+  BROWN_RGBA = [0.460, 0.362, 0.216, 1.0]
   RED_RGBA = [0.6, 0.12, 0.15, 1.0]
 
   if spec == None:
-    spec = spec = mj.MjSpec()
+    spec = mj.MjSpec()
 
   # Defaults
   main = spec.default
@@ -76,7 +227,7 @@ def stairs(spec=None, grid_loc=[0, 0] , num_stairs=4, direction=1, name='stair')
   SQUARE_LENGTH = 1
   THICKNESS = 0.05
   STEP = THICKNESS * 2
-  BROWN_RGBA = [0.647, 0.165, 0.165, 1.0]
+  BROWN_RGBA = [0.460, 0.362, 0.216, 1.0]
 
   if spec == None:
     spec = spec = mj.MjSpec()
@@ -131,7 +282,7 @@ def debris(spec=None, grid_loc=[0, 0] , name='debris'):
   THICKNESS = 0.05
   STEP = THICKNESS * 8
   SCALE = 0.1
-  BROWN_RGBA = [0.647, 0.165, 0.165, 1.0]
+  BROWN_RGBA = [0.460, 0.362, 0.216, 1.0]
   RED_RGBA = [0.6, 0.12, 0.15, 1.0]
 
   if spec == None:
@@ -181,7 +332,7 @@ def box_extrusions(spec=None, grid_loc=[0, 0], complex=False, name='box_extrusio
   THICKNESS = 0.05
   GRID_SIZE = int(SQUARE_LENGTH / THICKNESS)
   STEP = THICKNESS * 2
-  BROWN_RGBA = [0.647, 0.165, 0.165, 1.0]
+  BROWN_RGBA = [0.460, 0.362, 0.216, 1.0]
 
 
   if spec == None:
@@ -234,10 +385,10 @@ def boxy_terrain(spec=None, grid_loc=[0, 0], name='boxy_terrain'):
   THICKNESS = 0.05
   GRID_SIZE = int(SQUARE_LENGTH / THICKNESS)
   STEP = THICKNESS * 2
-  BROWN_RGBA = [0.647, 0.165, 0.165, 1.0]
+  BROWN_RGBA = [0.460, 0.362, 0.216, 1.0]
 
   if spec == None:
-    spec = spec = mj.MjSpec()
+    spec=mj.MjSpec()
 
   # Defaults
   main = spec.default
@@ -246,7 +397,7 @@ def boxy_terrain(spec=None, grid_loc=[0, 0], name='boxy_terrain'):
   x_beginning = -SQUARE_LENGTH + THICKNESS
   y_beginning = SQUARE_LENGTH - THICKNESS
 
-  body = spec.worldbody.add_body(pos= grid_loc + [0], name=name)
+  body = spec.worldbody.add_body(pos=grid_loc + [0], name=name)
   for i in range(GRID_SIZE):
     for j in range(GRID_SIZE):
       body.add_geom(
@@ -256,12 +407,40 @@ def boxy_terrain(spec=None, grid_loc=[0, 0], name='boxy_terrain'):
         rgba = BROWN_RGBA
       )
 
+def h_field(spec=None, grid_loc=[0, 0], name='h_field'):
+  SQUARE_LENGTH = 1
+  THICKNESS = 0.1
+  BROWN_RGBA = [0.460, 0.362, 0.216, 1.0]
+
+  if spec is None:
+    spec = mj.MjSpec()
+
+  size = 128
+  noise = perlin((size, size), (8, 8))
+
+  # Remap noise to 0 to 1
+  noise = (noise + 1)/2
+  noise -= np.min(noise)
+  noise /= np.max(noise)
+
+  # Create height field
+  hfield = spec.add_hfield(name=name,
+                           size=[SQUARE_LENGTH, SQUARE_LENGTH, THICKNESS, THICKNESS/10],
+                           nrow=noise.shape[0],
+                           ncol=noise.shape[1],
+                           userdata=noise.flatten())
+
+  body = spec.worldbody.add_body(pos=grid_loc + [0], name=name)
+  body.add_geom(type=mj.mjtGeom.mjGEOM_HFIELD, hfieldname=name,
+                rgba=BROWN_RGBA)
+
 def add_tile(spec=None, grid_loc=[0, 0]):
   if spec is None:
     spec = mj.MjSpec()
 
-  tile_type = random.randint(0,5)
+  tile_type = random.randint(0,8)
   # tile_type = 3
+  # tile_type = random.choice([0, 6])
   if tile_type == 0:
     plane_with_simple_geoms(spec,grid_loc, name = f"plane_{grid_loc[0]}_{grid_loc[1]}")
   elif tile_type == 1:
@@ -274,8 +453,14 @@ def add_tile(spec=None, grid_loc=[0, 0]):
     box_extrusions(spec,grid_loc, name = f"box_extrusions_{grid_loc[0]}_{grid_loc[1]}")
   elif tile_type == 5:
     boxy_terrain(spec,grid_loc, name = f"boxy_terrain_{grid_loc[0]}_{grid_loc[1]}")
-
+  elif tile_type == 6:
+    h_field(spec,grid_loc, name = f"h_field_{grid_loc[0]}_{grid_loc[1]}")
+  elif tile_type == 7:
+    simple_suspended_stair(spec,grid_loc, name = f"sss_{grid_loc[0]}_{grid_loc[1]}")
+  elif tile_type == 8:
+    sin_suspended_stair(spec,grid_loc, name = f"sinss_{grid_loc[0]}_{grid_loc[1]}")
   return spec
+
 
 if __name__ == "__main__":
 
@@ -311,6 +496,8 @@ if __name__ == "__main__":
   for x in [-1, 1]:
     for y in [-1, 1]:
       spec.worldbody.add_light(pos = [x, y, 40], dir = [-x, -y, -15])
+
+  # sin_suspended_stair(spec)
 
   SQUARE_LENGTH = 1
   for i in range(-4,4):

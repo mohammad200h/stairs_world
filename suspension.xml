@@ -1,0 +1,1153 @@
+<mujoco model="2f85 scene">
+  <!-- Add some fluid viscosity to prevent the hanging box from jiggling forever -->
+  <compiler angle="radian"/>
+
+  <option viscosity="0.1"/>
+
+  <visual>
+    <global azimuth="60" elevation="-20"/>
+    <headlight ambient="0.3 0.3 0.3" diffuse="0.6 0.6 0.6" specular="0 0 0"/>
+    <rgba haze="0.15 0.25 0.35 1"/>
+  </visual>
+
+  <statistic extent="0.3" center="0 0 0.05"/>
+
+  <default>
+    <geom type="box"/>
+  </default>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3" markrgb="0.8 0.8 0.8" width="300" height="300"/>
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0.2"/>
+  </asset>
+
+  <worldbody>
+    <geom name="floor" size="0 0 0.05" type="plane" material="groundplane"/>
+    <site name="p_0_hook_-1_-1" pos="0.9 -0.012 0.2" size="0.002"/>
+    <site name="p_0_hook_-1_1" pos="0.9 0.012 0.2" size="0.002"/>
+    <site name="p_0_hook_1_-1" pos="1.1 -0.012 0.2" size="0.002"/>
+    <site name="p_0_hook_1_1" pos="1.1 0.012 0.2" size="0.002"/>
+    <site name="p_1_hook_-1_-1" pos="0.887688 0.144434 0.21" size="0.002"/>
+    <site name="p_1_hook_-1_1" pos="0.887688 0.168434 0.21" size="0.002"/>
+    <site name="p_1_hook_1_-1" pos="1.08769 0.144434 0.21" size="0.002"/>
+    <site name="p_1_hook_1_1" pos="1.08769 0.168434 0.21" size="0.002"/>
+    <site name="p_2_hook_-1_-1" pos="0.851057 0.297017 0.22" size="0.002"/>
+    <site name="p_2_hook_-1_1" pos="0.851057 0.321017 0.22" size="0.002"/>
+    <site name="p_2_hook_1_-1" pos="1.05106 0.297017 0.22" size="0.002"/>
+    <site name="p_2_hook_1_1" pos="1.05106 0.321017 0.22" size="0.002"/>
+    <site name="p_3_hook_-1_-1" pos="0.791007 0.44199 0.23" size="0.002"/>
+    <site name="p_3_hook_-1_1" pos="0.791007 0.46599 0.23" size="0.002"/>
+    <site name="p_3_hook_1_-1" pos="0.991007 0.44199 0.23" size="0.002"/>
+    <site name="p_3_hook_1_1" pos="0.991007 0.46599 0.23" size="0.002"/>
+    <site name="p_4_hook_-1_-1" pos="0.709017 0.575785 0.24" size="0.002"/>
+    <site name="p_4_hook_-1_1" pos="0.709017 0.599785 0.24" size="0.002"/>
+    <site name="p_4_hook_1_-1" pos="0.909017 0.575785 0.24" size="0.002"/>
+    <site name="p_4_hook_1_1" pos="0.909017 0.599785 0.24" size="0.002"/>
+    <site name="p_5_hook_-1_-1" pos="0.607107 0.695107 0.25" size="0.002"/>
+    <site name="p_5_hook_-1_1" pos="0.607107 0.719107 0.25" size="0.002"/>
+    <site name="p_5_hook_1_-1" pos="0.807107 0.695107 0.25" size="0.002"/>
+    <site name="p_5_hook_1_1" pos="0.807107 0.719107 0.25" size="0.002"/>
+    <site name="p_6_hook_-1_-1" pos="0.487785 0.797017 0.26" size="0.002"/>
+    <site name="p_6_hook_-1_1" pos="0.487785 0.821017 0.26" size="0.002"/>
+    <site name="p_6_hook_1_-1" pos="0.687785 0.797017 0.26" size="0.002"/>
+    <site name="p_6_hook_1_1" pos="0.687785 0.821017 0.26" size="0.002"/>
+    <site name="p_7_hook_-1_-1" pos="0.35399 0.879007 0.27" size="0.002"/>
+    <site name="p_7_hook_-1_1" pos="0.35399 0.903007 0.27" size="0.002"/>
+    <site name="p_7_hook_1_-1" pos="0.55399 0.879007 0.27" size="0.002"/>
+    <site name="p_7_hook_1_1" pos="0.55399 0.903007 0.27" size="0.002"/>
+    <site name="p_8_hook_-1_-1" pos="0.209017 0.939057 0.28" size="0.002"/>
+    <site name="p_8_hook_-1_1" pos="0.209017 0.963057 0.28" size="0.002"/>
+    <site name="p_8_hook_1_-1" pos="0.409017 0.939057 0.28" size="0.002"/>
+    <site name="p_8_hook_1_1" pos="0.409017 0.963057 0.28" size="0.002"/>
+    <site name="p_9_hook_-1_-1" pos="0.0564345 0.975688 0.29" size="0.002"/>
+    <site name="p_9_hook_-1_1" pos="0.0564345 0.999688 0.29" size="0.002"/>
+    <site name="p_9_hook_1_-1" pos="0.256434 0.975688 0.29" size="0.002"/>
+    <site name="p_9_hook_1_1" pos="0.256434 0.999688 0.29" size="0.002"/>
+    <site name="p_10_hook_-1_-1" pos="-0.1 0.988 0.3" size="0.002"/>
+    <site name="p_10_hook_-1_1" pos="-0.1 1.012 0.3" size="0.002"/>
+    <site name="p_10_hook_1_-1" pos="0.1 0.988 0.3" size="0.002"/>
+    <site name="p_10_hook_1_1" pos="0.1 1.012 0.3" size="0.002"/>
+    <site name="p_11_hook_-1_-1" pos="-0.256434 0.975688 0.31" size="0.002"/>
+    <site name="p_11_hook_-1_1" pos="-0.256434 0.999688 0.31" size="0.002"/>
+    <site name="p_11_hook_1_-1" pos="-0.0564345 0.975688 0.31" size="0.002"/>
+    <site name="p_11_hook_1_1" pos="-0.0564345 0.999688 0.31" size="0.002"/>
+    <site name="p_12_hook_-1_-1" pos="-0.409017 0.939057 0.32" size="0.002"/>
+    <site name="p_12_hook_-1_1" pos="-0.409017 0.963057 0.32" size="0.002"/>
+    <site name="p_12_hook_1_-1" pos="-0.209017 0.939057 0.32" size="0.002"/>
+    <site name="p_12_hook_1_1" pos="-0.209017 0.963057 0.32" size="0.002"/>
+    <site name="p_13_hook_-1_-1" pos="-0.55399 0.879007 0.33" size="0.002"/>
+    <site name="p_13_hook_-1_1" pos="-0.55399 0.903007 0.33" size="0.002"/>
+    <site name="p_13_hook_1_-1" pos="-0.35399 0.879007 0.33" size="0.002"/>
+    <site name="p_13_hook_1_1" pos="-0.35399 0.903007 0.33" size="0.002"/>
+    <site name="p_14_hook_-1_-1" pos="-0.687785 0.797017 0.34" size="0.002"/>
+    <site name="p_14_hook_-1_1" pos="-0.687785 0.821017 0.34" size="0.002"/>
+    <site name="p_14_hook_1_-1" pos="-0.487785 0.797017 0.34" size="0.002"/>
+    <site name="p_14_hook_1_1" pos="-0.487785 0.821017 0.34" size="0.002"/>
+    <site name="p_15_hook_-1_-1" pos="-0.807107 0.695107 0.35" size="0.002"/>
+    <site name="p_15_hook_-1_1" pos="-0.807107 0.719107 0.35" size="0.002"/>
+    <site name="p_15_hook_1_-1" pos="-0.607107 0.695107 0.35" size="0.002"/>
+    <site name="p_15_hook_1_1" pos="-0.607107 0.719107 0.35" size="0.002"/>
+    <site name="p_16_hook_-1_-1" pos="-0.909017 0.575785 0.36" size="0.002"/>
+    <site name="p_16_hook_-1_1" pos="-0.909017 0.599785 0.36" size="0.002"/>
+    <site name="p_16_hook_1_-1" pos="-0.709017 0.575785 0.36" size="0.002"/>
+    <site name="p_16_hook_1_1" pos="-0.709017 0.599785 0.36" size="0.002"/>
+    <site name="p_17_hook_-1_-1" pos="-0.991007 0.44199 0.37" size="0.002"/>
+    <site name="p_17_hook_-1_1" pos="-0.991007 0.46599 0.37" size="0.002"/>
+    <site name="p_17_hook_1_-1" pos="-0.791007 0.44199 0.37" size="0.002"/>
+    <site name="p_17_hook_1_1" pos="-0.791007 0.46599 0.37" size="0.002"/>
+    <site name="p_18_hook_-1_-1" pos="-1.05106 0.297017 0.38" size="0.002"/>
+    <site name="p_18_hook_-1_1" pos="-1.05106 0.321017 0.38" size="0.002"/>
+    <site name="p_18_hook_1_-1" pos="-0.851057 0.297017 0.38" size="0.002"/>
+    <site name="p_18_hook_1_1" pos="-0.851057 0.321017 0.38" size="0.002"/>
+    <site name="p_19_hook_-1_-1" pos="-1.08769 0.144434 0.39" size="0.002"/>
+    <site name="p_19_hook_-1_1" pos="-1.08769 0.168434 0.39" size="0.002"/>
+    <site name="p_19_hook_1_-1" pos="-0.887688 0.144434 0.39" size="0.002"/>
+    <site name="p_19_hook_1_1" pos="-0.887688 0.168434 0.39" size="0.002"/>
+    <site name="p_20_hook_-1_-1" pos="-1.1 -0.012 0.4" size="0.002"/>
+    <site name="p_20_hook_-1_1" pos="-1.1 0.012 0.4" size="0.002"/>
+    <site name="p_20_hook_1_-1" pos="-0.9 -0.012 0.4" size="0.002"/>
+    <site name="p_20_hook_1_1" pos="-0.9 0.012 0.4" size="0.002"/>
+    <site name="p_21_hook_-1_-1" pos="-1.08769 -0.168434 0.41" size="0.002"/>
+    <site name="p_21_hook_-1_1" pos="-1.08769 -0.144434 0.41" size="0.002"/>
+    <site name="p_21_hook_1_-1" pos="-0.887688 -0.168434 0.41" size="0.002"/>
+    <site name="p_21_hook_1_1" pos="-0.887688 -0.144434 0.41" size="0.002"/>
+    <site name="p_22_hook_-1_-1" pos="-1.05106 -0.321017 0.42" size="0.002"/>
+    <site name="p_22_hook_-1_1" pos="-1.05106 -0.297017 0.42" size="0.002"/>
+    <site name="p_22_hook_1_-1" pos="-0.851057 -0.321017 0.42" size="0.002"/>
+    <site name="p_22_hook_1_1" pos="-0.851057 -0.297017 0.42" size="0.002"/>
+    <site name="p_23_hook_-1_-1" pos="-0.991007 -0.46599 0.43" size="0.002"/>
+    <site name="p_23_hook_-1_1" pos="-0.991007 -0.44199 0.43" size="0.002"/>
+    <site name="p_23_hook_1_-1" pos="-0.791007 -0.46599 0.43" size="0.002"/>
+    <site name="p_23_hook_1_1" pos="-0.791007 -0.44199 0.43" size="0.002"/>
+    <site name="p_24_hook_-1_-1" pos="-0.909017 -0.599785 0.44" size="0.002"/>
+    <site name="p_24_hook_-1_1" pos="-0.909017 -0.575785 0.44" size="0.002"/>
+    <site name="p_24_hook_1_-1" pos="-0.709017 -0.599785 0.44" size="0.002"/>
+    <site name="p_24_hook_1_1" pos="-0.709017 -0.575785 0.44" size="0.002"/>
+    <site name="p_25_hook_-1_-1" pos="-0.807107 -0.719107 0.45" size="0.002"/>
+    <site name="p_25_hook_-1_1" pos="-0.807107 -0.695107 0.45" size="0.002"/>
+    <site name="p_25_hook_1_-1" pos="-0.607107 -0.719107 0.45" size="0.002"/>
+    <site name="p_25_hook_1_1" pos="-0.607107 -0.695107 0.45" size="0.002"/>
+    <site name="p_26_hook_-1_-1" pos="-0.687785 -0.821017 0.46" size="0.002"/>
+    <site name="p_26_hook_-1_1" pos="-0.687785 -0.797017 0.46" size="0.002"/>
+    <site name="p_26_hook_1_-1" pos="-0.487785 -0.821017 0.46" size="0.002"/>
+    <site name="p_26_hook_1_1" pos="-0.487785 -0.797017 0.46" size="0.002"/>
+    <site name="p_27_hook_-1_-1" pos="-0.55399 -0.903007 0.47" size="0.002"/>
+    <site name="p_27_hook_-1_1" pos="-0.55399 -0.879007 0.47" size="0.002"/>
+    <site name="p_27_hook_1_-1" pos="-0.35399 -0.903007 0.47" size="0.002"/>
+    <site name="p_27_hook_1_1" pos="-0.35399 -0.879007 0.47" size="0.002"/>
+    <site name="p_28_hook_-1_-1" pos="-0.409017 -0.963057 0.48" size="0.002"/>
+    <site name="p_28_hook_-1_1" pos="-0.409017 -0.939057 0.48" size="0.002"/>
+    <site name="p_28_hook_1_-1" pos="-0.209017 -0.963057 0.48" size="0.002"/>
+    <site name="p_28_hook_1_1" pos="-0.209017 -0.939057 0.48" size="0.002"/>
+    <site name="p_29_hook_-1_-1" pos="-0.256434 -0.999688 0.49" size="0.002"/>
+    <site name="p_29_hook_-1_1" pos="-0.256434 -0.975688 0.49" size="0.002"/>
+    <site name="p_29_hook_1_-1" pos="-0.0564345 -0.999688 0.49" size="0.002"/>
+    <site name="p_29_hook_1_1" pos="-0.0564345 -0.975688 0.49" size="0.002"/>
+    <site name="p_30_hook_-1_-1" pos="-0.1 -1.012 0.5" size="0.002"/>
+    <site name="p_30_hook_-1_1" pos="-0.1 -0.988 0.5" size="0.002"/>
+    <site name="p_30_hook_1_-1" pos="0.1 -1.012 0.5" size="0.002"/>
+    <site name="p_30_hook_1_1" pos="0.1 -0.988 0.5" size="0.002"/>
+    <site name="p_31_hook_-1_-1" pos="0.0564345 -0.999688 0.51" size="0.002"/>
+    <site name="p_31_hook_-1_1" pos="0.0564345 -0.975688 0.51" size="0.002"/>
+    <site name="p_31_hook_1_-1" pos="0.256434 -0.999688 0.51" size="0.002"/>
+    <site name="p_31_hook_1_1" pos="0.256434 -0.975688 0.51" size="0.002"/>
+    <site name="p_32_hook_-1_-1" pos="0.209017 -0.963057 0.52" size="0.002"/>
+    <site name="p_32_hook_-1_1" pos="0.209017 -0.939057 0.52" size="0.002"/>
+    <site name="p_32_hook_1_-1" pos="0.409017 -0.963057 0.52" size="0.002"/>
+    <site name="p_32_hook_1_1" pos="0.409017 -0.939057 0.52" size="0.002"/>
+    <site name="p_33_hook_-1_-1" pos="0.35399 -0.903007 0.53" size="0.002"/>
+    <site name="p_33_hook_-1_1" pos="0.35399 -0.879007 0.53" size="0.002"/>
+    <site name="p_33_hook_1_-1" pos="0.55399 -0.903007 0.53" size="0.002"/>
+    <site name="p_33_hook_1_1" pos="0.55399 -0.879007 0.53" size="0.002"/>
+    <site name="p_34_hook_-1_-1" pos="0.487785 -0.821017 0.54" size="0.002"/>
+    <site name="p_34_hook_-1_1" pos="0.487785 -0.797017 0.54" size="0.002"/>
+    <site name="p_34_hook_1_-1" pos="0.687785 -0.821017 0.54" size="0.002"/>
+    <site name="p_34_hook_1_1" pos="0.687785 -0.797017 0.54" size="0.002"/>
+    <site name="p_35_hook_-1_-1" pos="0.607107 -0.719107 0.55" size="0.002"/>
+    <site name="p_35_hook_-1_1" pos="0.607107 -0.695107 0.55" size="0.002"/>
+    <site name="p_35_hook_1_-1" pos="0.807107 -0.719107 0.55" size="0.002"/>
+    <site name="p_35_hook_1_1" pos="0.807107 -0.695107 0.55" size="0.002"/>
+    <site name="p_36_hook_-1_-1" pos="0.709017 -0.599785 0.56" size="0.002"/>
+    <site name="p_36_hook_-1_1" pos="0.709017 -0.575785 0.56" size="0.002"/>
+    <site name="p_36_hook_1_-1" pos="0.909017 -0.599785 0.56" size="0.002"/>
+    <site name="p_36_hook_1_1" pos="0.909017 -0.575785 0.56" size="0.002"/>
+    <site name="p_37_hook_-1_-1" pos="0.791007 -0.46599 0.57" size="0.002"/>
+    <site name="p_37_hook_-1_1" pos="0.791007 -0.44199 0.57" size="0.002"/>
+    <site name="p_37_hook_1_-1" pos="0.991007 -0.46599 0.57" size="0.002"/>
+    <site name="p_37_hook_1_1" pos="0.991007 -0.44199 0.57" size="0.002"/>
+    <site name="p_38_hook_-1_-1" pos="0.851057 -0.321017 0.58" size="0.002"/>
+    <site name="p_38_hook_-1_1" pos="0.851057 -0.297017 0.58" size="0.002"/>
+    <site name="p_38_hook_1_-1" pos="1.05106 -0.321017 0.58" size="0.002"/>
+    <site name="p_38_hook_1_1" pos="1.05106 -0.297017 0.58" size="0.002"/>
+    <site name="p_39_hook_-1_-1" pos="0.887688 -0.168434 0.59" size="0.002"/>
+    <site name="p_39_hook_-1_1" pos="0.887688 -0.144434 0.59" size="0.002"/>
+    <site name="p_39_hook_1_-1" pos="1.08769 -0.168434 0.59" size="0.002"/>
+    <site name="p_39_hook_1_1" pos="1.08769 -0.144434 0.59" size="0.002"/>
+    <light pos="0 0 1" dir="0 0 -1"/>
+    <light pos="0 -0.2 1" dir="0 0.242536 -0.970143" directional="true"/>
+    <body name="p_0">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_0_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_0_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_0_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_0_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_1">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_1_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_1_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_1_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_1_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_2">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_2_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_2_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_2_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_2_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_3">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_3_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_3_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_3_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_3_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_4">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_4_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_4_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_4_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_4_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_5">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_5_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_5_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_5_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_5_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_6">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_6_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_6_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_6_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_6_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_7">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_7_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_7_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_7_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_7_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_8">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_8_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_8_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_8_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_8_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_9">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_9_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_9_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_9_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_9_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_10">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_10_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_10_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_10_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_10_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_11">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_11_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_11_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_11_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_11_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_12">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_12_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_12_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_12_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_12_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_13">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_13_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_13_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_13_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_13_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_14">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_14_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_14_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_14_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_14_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_15">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_15_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_15_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_15_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_15_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_16">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_16_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_16_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_16_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_16_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_17">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_17_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_17_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_17_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_17_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_18">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_18_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_18_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_18_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_18_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_19">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_19_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_19_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_19_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_19_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_20">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_20_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_20_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_20_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_20_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_21">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_21_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_21_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_21_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_21_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_22">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_22_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_22_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_22_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_22_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_23">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_23_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_23_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_23_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_23_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_24">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_24_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_24_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_24_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_24_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_25">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_25_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_25_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_25_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_25_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_26">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_26_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_26_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_26_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_26_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_27">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_27_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_27_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_27_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_27_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_28">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_28_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_28_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_28_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_28_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_29">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_29_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_29_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_29_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_29_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_30">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_30_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_30_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_30_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_30_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_31">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_31_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_31_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_31_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_31_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_32">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_32_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_32_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_32_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_32_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_33">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_33_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_33_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_33_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_33_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_34">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_34_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_34_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_34_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_34_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_35">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_35_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_35_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_35_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_35_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_36">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_36_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_36_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_36_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_36_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_37">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_37_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_37_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_37_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_37_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_38">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_38_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_38_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_38_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_38_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+    <body name="p_39">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="p_39_anchor_-1_-1" pos="-0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_39_anchor_-1_1" pos="-0.1 0.012 0.002" size="0.002"/>
+      <site name="p_39_anchor_1_-1" pos="0.1 -0.012 0.002" size="0.002"/>
+      <site name="p_39_anchor_1_1" pos="0.1 0.012 0.002" size="0.002"/>
+    </body>
+  </worldbody>
+
+  <tendon>
+    <spatial name="p_0_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_0_hook_-1_-1"/>
+      <site site="p_0_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_0_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_0_hook_-1_1"/>
+      <site site="p_0_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_0_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_0_hook_1_-1"/>
+      <site site="p_0_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_0_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_0_hook_1_1"/>
+      <site site="p_0_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_1_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_1_hook_-1_-1"/>
+      <site site="p_1_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_1_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_1_hook_-1_1"/>
+      <site site="p_1_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_1_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_1_hook_1_-1"/>
+      <site site="p_1_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_1_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_1_hook_1_1"/>
+      <site site="p_1_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_2_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_2_hook_-1_-1"/>
+      <site site="p_2_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_2_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_2_hook_-1_1"/>
+      <site site="p_2_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_2_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_2_hook_1_-1"/>
+      <site site="p_2_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_2_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_2_hook_1_1"/>
+      <site site="p_2_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_3_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_3_hook_-1_-1"/>
+      <site site="p_3_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_3_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_3_hook_-1_1"/>
+      <site site="p_3_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_3_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_3_hook_1_-1"/>
+      <site site="p_3_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_3_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_3_hook_1_1"/>
+      <site site="p_3_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_4_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_4_hook_-1_-1"/>
+      <site site="p_4_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_4_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_4_hook_-1_1"/>
+      <site site="p_4_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_4_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_4_hook_1_-1"/>
+      <site site="p_4_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_4_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_4_hook_1_1"/>
+      <site site="p_4_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_5_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_5_hook_-1_-1"/>
+      <site site="p_5_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_5_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_5_hook_-1_1"/>
+      <site site="p_5_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_5_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_5_hook_1_-1"/>
+      <site site="p_5_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_5_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_5_hook_1_1"/>
+      <site site="p_5_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_6_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_6_hook_-1_-1"/>
+      <site site="p_6_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_6_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_6_hook_-1_1"/>
+      <site site="p_6_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_6_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_6_hook_1_-1"/>
+      <site site="p_6_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_6_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_6_hook_1_1"/>
+      <site site="p_6_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_7_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_7_hook_-1_-1"/>
+      <site site="p_7_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_7_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_7_hook_-1_1"/>
+      <site site="p_7_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_7_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_7_hook_1_-1"/>
+      <site site="p_7_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_7_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_7_hook_1_1"/>
+      <site site="p_7_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_8_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_8_hook_-1_-1"/>
+      <site site="p_8_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_8_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_8_hook_-1_1"/>
+      <site site="p_8_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_8_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_8_hook_1_-1"/>
+      <site site="p_8_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_8_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_8_hook_1_1"/>
+      <site site="p_8_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_9_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_9_hook_-1_-1"/>
+      <site site="p_9_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_9_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_9_hook_-1_1"/>
+      <site site="p_9_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_9_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_9_hook_1_-1"/>
+      <site site="p_9_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_9_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_9_hook_1_1"/>
+      <site site="p_9_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_10_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_10_hook_-1_-1"/>
+      <site site="p_10_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_10_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_10_hook_-1_1"/>
+      <site site="p_10_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_10_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_10_hook_1_-1"/>
+      <site site="p_10_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_10_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_10_hook_1_1"/>
+      <site site="p_10_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_11_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_11_hook_-1_-1"/>
+      <site site="p_11_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_11_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_11_hook_-1_1"/>
+      <site site="p_11_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_11_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_11_hook_1_-1"/>
+      <site site="p_11_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_11_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_11_hook_1_1"/>
+      <site site="p_11_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_12_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_12_hook_-1_-1"/>
+      <site site="p_12_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_12_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_12_hook_-1_1"/>
+      <site site="p_12_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_12_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_12_hook_1_-1"/>
+      <site site="p_12_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_12_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_12_hook_1_1"/>
+      <site site="p_12_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_13_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_13_hook_-1_-1"/>
+      <site site="p_13_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_13_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_13_hook_-1_1"/>
+      <site site="p_13_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_13_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_13_hook_1_-1"/>
+      <site site="p_13_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_13_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_13_hook_1_1"/>
+      <site site="p_13_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_14_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_14_hook_-1_-1"/>
+      <site site="p_14_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_14_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_14_hook_-1_1"/>
+      <site site="p_14_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_14_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_14_hook_1_-1"/>
+      <site site="p_14_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_14_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_14_hook_1_1"/>
+      <site site="p_14_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_15_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_15_hook_-1_-1"/>
+      <site site="p_15_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_15_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_15_hook_-1_1"/>
+      <site site="p_15_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_15_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_15_hook_1_-1"/>
+      <site site="p_15_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_15_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_15_hook_1_1"/>
+      <site site="p_15_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_16_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_16_hook_-1_-1"/>
+      <site site="p_16_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_16_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_16_hook_-1_1"/>
+      <site site="p_16_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_16_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_16_hook_1_-1"/>
+      <site site="p_16_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_16_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_16_hook_1_1"/>
+      <site site="p_16_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_17_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_17_hook_-1_-1"/>
+      <site site="p_17_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_17_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_17_hook_-1_1"/>
+      <site site="p_17_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_17_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_17_hook_1_-1"/>
+      <site site="p_17_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_17_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_17_hook_1_1"/>
+      <site site="p_17_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_18_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_18_hook_-1_-1"/>
+      <site site="p_18_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_18_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_18_hook_-1_1"/>
+      <site site="p_18_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_18_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_18_hook_1_-1"/>
+      <site site="p_18_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_18_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_18_hook_1_1"/>
+      <site site="p_18_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_19_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_19_hook_-1_-1"/>
+      <site site="p_19_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_19_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_19_hook_-1_1"/>
+      <site site="p_19_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_19_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_19_hook_1_-1"/>
+      <site site="p_19_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_19_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_19_hook_1_1"/>
+      <site site="p_19_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_20_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_20_hook_-1_-1"/>
+      <site site="p_20_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_20_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_20_hook_-1_1"/>
+      <site site="p_20_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_20_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_20_hook_1_-1"/>
+      <site site="p_20_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_20_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_20_hook_1_1"/>
+      <site site="p_20_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_21_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_21_hook_-1_-1"/>
+      <site site="p_21_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_21_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_21_hook_-1_1"/>
+      <site site="p_21_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_21_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_21_hook_1_-1"/>
+      <site site="p_21_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_21_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_21_hook_1_1"/>
+      <site site="p_21_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_22_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_22_hook_-1_-1"/>
+      <site site="p_22_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_22_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_22_hook_-1_1"/>
+      <site site="p_22_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_22_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_22_hook_1_-1"/>
+      <site site="p_22_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_22_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_22_hook_1_1"/>
+      <site site="p_22_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_23_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_23_hook_-1_-1"/>
+      <site site="p_23_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_23_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_23_hook_-1_1"/>
+      <site site="p_23_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_23_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_23_hook_1_-1"/>
+      <site site="p_23_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_23_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_23_hook_1_1"/>
+      <site site="p_23_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_24_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_24_hook_-1_-1"/>
+      <site site="p_24_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_24_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_24_hook_-1_1"/>
+      <site site="p_24_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_24_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_24_hook_1_-1"/>
+      <site site="p_24_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_24_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_24_hook_1_1"/>
+      <site site="p_24_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_25_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_25_hook_-1_-1"/>
+      <site site="p_25_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_25_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_25_hook_-1_1"/>
+      <site site="p_25_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_25_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_25_hook_1_-1"/>
+      <site site="p_25_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_25_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_25_hook_1_1"/>
+      <site site="p_25_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_26_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_26_hook_-1_-1"/>
+      <site site="p_26_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_26_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_26_hook_-1_1"/>
+      <site site="p_26_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_26_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_26_hook_1_-1"/>
+      <site site="p_26_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_26_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_26_hook_1_1"/>
+      <site site="p_26_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_27_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_27_hook_-1_-1"/>
+      <site site="p_27_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_27_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_27_hook_-1_1"/>
+      <site site="p_27_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_27_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_27_hook_1_-1"/>
+      <site site="p_27_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_27_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_27_hook_1_1"/>
+      <site site="p_27_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_28_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_28_hook_-1_-1"/>
+      <site site="p_28_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_28_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_28_hook_-1_1"/>
+      <site site="p_28_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_28_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_28_hook_1_-1"/>
+      <site site="p_28_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_28_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_28_hook_1_1"/>
+      <site site="p_28_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_29_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_29_hook_-1_-1"/>
+      <site site="p_29_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_29_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_29_hook_-1_1"/>
+      <site site="p_29_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_29_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_29_hook_1_-1"/>
+      <site site="p_29_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_29_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_29_hook_1_1"/>
+      <site site="p_29_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_30_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_30_hook_-1_-1"/>
+      <site site="p_30_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_30_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_30_hook_-1_1"/>
+      <site site="p_30_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_30_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_30_hook_1_-1"/>
+      <site site="p_30_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_30_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_30_hook_1_1"/>
+      <site site="p_30_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_31_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_31_hook_-1_-1"/>
+      <site site="p_31_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_31_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_31_hook_-1_1"/>
+      <site site="p_31_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_31_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_31_hook_1_-1"/>
+      <site site="p_31_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_31_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_31_hook_1_1"/>
+      <site site="p_31_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_32_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_32_hook_-1_-1"/>
+      <site site="p_32_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_32_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_32_hook_-1_1"/>
+      <site site="p_32_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_32_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_32_hook_1_-1"/>
+      <site site="p_32_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_32_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_32_hook_1_1"/>
+      <site site="p_32_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_33_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_33_hook_-1_-1"/>
+      <site site="p_33_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_33_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_33_hook_-1_1"/>
+      <site site="p_33_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_33_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_33_hook_1_-1"/>
+      <site site="p_33_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_33_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_33_hook_1_1"/>
+      <site site="p_33_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_34_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_34_hook_-1_-1"/>
+      <site site="p_34_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_34_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_34_hook_-1_1"/>
+      <site site="p_34_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_34_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_34_hook_1_-1"/>
+      <site site="p_34_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_34_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_34_hook_1_1"/>
+      <site site="p_34_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_35_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_35_hook_-1_-1"/>
+      <site site="p_35_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_35_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_35_hook_-1_1"/>
+      <site site="p_35_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_35_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_35_hook_1_-1"/>
+      <site site="p_35_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_35_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_35_hook_1_1"/>
+      <site site="p_35_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_36_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_36_hook_-1_-1"/>
+      <site site="p_36_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_36_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_36_hook_-1_1"/>
+      <site site="p_36_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_36_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_36_hook_1_-1"/>
+      <site site="p_36_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_36_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_36_hook_1_1"/>
+      <site site="p_36_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_37_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_37_hook_-1_-1"/>
+      <site site="p_37_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_37_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_37_hook_-1_1"/>
+      <site site="p_37_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_37_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_37_hook_1_-1"/>
+      <site site="p_37_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_37_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_37_hook_1_1"/>
+      <site site="p_37_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_38_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_38_hook_-1_-1"/>
+      <site site="p_38_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_38_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_38_hook_-1_1"/>
+      <site site="p_38_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_38_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_38_hook_1_-1"/>
+      <site site="p_38_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_38_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_38_hook_1_1"/>
+      <site site="p_38_anchor_1_1"/>
+    </spatial>
+    <spatial name="p_39_thread_-1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_39_hook_-1_-1"/>
+      <site site="p_39_anchor_-1_-1"/>
+    </spatial>
+    <spatial name="p_39_thread_-1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_39_hook_-1_1"/>
+      <site site="p_39_anchor_-1_1"/>
+    </spatial>
+    <spatial name="p_39_thread_1_-1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_39_hook_1_-1"/>
+      <site site="p_39_anchor_1_-1"/>
+    </spatial>
+    <spatial name="p_39_thread_1_1" limited="true" range="0 0.1" width="0.001">
+      <site site="p_39_hook_1_1"/>
+      <site site="p_39_anchor_1_1"/>
+    </spatial>
+  </tendon>
+</mujoco>
