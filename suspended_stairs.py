@@ -7,19 +7,31 @@ def tread_mill():
   # https://github.com/google-deepmind/mujoco/issues/547
   pass
 
-def floating_platform(spec, gird_loc=[0, 0, 0],theta = 0, name='platform'):
-  PLATFORM_LENGTH = 0.1
-  WIDTH = 0.02
+def floating_platform_for_circular_stair():
+  # TODO
+  # make the platform out of three rectangles.
+  # the tendon sites need to be place on outer and inner circle
+  # outer and inner circles are at the edges of the platforms
+  pass
+
+def floating_platform(spec, gird_loc=[0, 0, 0], theta = 0, name='platform'):
+  # https://dutchess.com/standard-stair-dimensions/
+  # https://www.google.com/search?sca_esv=bf2c799dee4adccd&sxsrf=AHTn8zogVNx3s3lRtL5dfb_zMDRJUt0nqg:1746614086661&q=circular+stairs&udm=2&fbs=ABzOT_CWdhQLP1FcmU5B0fn3xuWpA-dk4wpBWOGsoR7DG5zJBsxayPSIAqObp_AgjkUGqengxVrJ7hrmYmz7X2OZp_NIYfhIAjPnSJLO3GH6L0gKvuUU9jOm91_NGkSK1WJYVWjjHf1cMeOfIs5S2VkHB51zdvs5rEFgawK72NTjOMMeP0ZkzDJsLwBUA55RuQQ6_IgnTa_0Sg-ZSjc8BLe0lulqWQaGgA&sa=X&ved=2ahUKEwi5ysfBlJGNAxW6zQIHHW7kAjsQtKgLegQIERAB&biw=1708&bih=958&dpr=2#vhid=JrepwICK0wfd-M&vssid=mosaic
+  PLATFORM_LENGTH = 0.5
+  WIDTH = 0.12
   INWARD_OFFSET = 0.008
-  THICKNESS = 0.001
+  THICKNESS = 0.005
   SIZE = [PLATFORM_LENGTH, WIDTH, THICKNESS]
+  TENDON_LENGTH = 0.5
+  Z_OFFSET = 0.1
 
   # Defaults
   main = spec.default
   main.geom.type = mj.mjtGeom.mjGEOM_BOX
 
   # Platform with sites
-  platform = spec.worldbody.add_body(pos=[0, 0, 0], name=name)
+  gird_loc[2] += Z_OFFSET
+  platform = spec.worldbody.add_body(pos=gird_loc, name=name,euler =[0,0,theta])
   platform.add_geom(size= SIZE)
   platform.add_freejoint()
 
@@ -34,21 +46,21 @@ def floating_platform(spec, gird_loc=[0, 0, 0],theta = 0, name='platform'):
 
       x_w = gird_loc[0] + vector[0]
       y_w = gird_loc[1] + vector[1]
-
+      z_w = gird_loc[2] + TENDON_LENGTH
       # Rotate sites by theta
       spec.worldbody.add_site(name=f'{name}_hook_{x_dir}_{y_dir}',
-                              pos=[ x_w, y_w, gird_loc[2] + 0.2],
-                              size=[0.002, 0, 0])
+                              pos=[ x_w, y_w, z_w],
+                              size=[0.01, 0, 0])
       # Add site to platform
       x_p = x_dir * PLATFORM_LENGTH
       y_p = y_dir * (WIDTH - INWARD_OFFSET)
       platform.add_site(name=f'{name}_anchor_{x_dir}_{y_dir}',
                         pos=[ x_p, y_p, THICKNESS * 2],
-                        size=[0.002, 0, 0])
+                        size=[0.01, 0, 0])
 
       # Connect tendon to sites
       thread = spec.add_tendon(name = f'{name}_thread_{x_dir}_{y_dir}', limited=True,
-                               range=[0, 0.1], width = 0.001 )
+                               range=[0, TENDON_LENGTH], width = 0.01 )
       thread.wrap_site(f'{name}_hook_{x_dir}_{y_dir}')
       thread.wrap_site(f'{name}_anchor_{x_dir}_{y_dir}')
 
@@ -92,7 +104,7 @@ def floating_cube(spec):
 
 
 def circular_stairs(spec, grid_loc=[0, 0], num_stair=40,
-                    radius=1, v_step=0.01, h_step=0.05):
+                    radius=1.5, v_step=0.076, h_step=0.05):
     """
     Generates circular stairs around a central point.
 
@@ -119,8 +131,6 @@ def circular_stairs(spec, grid_loc=[0, 0], num_stair=40,
 
         # Calculate the z-coordinate based on the stair number.
         z = i * v_step
-
-        print(f"theta::{theta}")
 
         # Create the floating platform.
         floating_platform(spec,[x, y, z],theta=theta , name=f'p_{i}')
@@ -158,6 +168,14 @@ if __name__ == "__main__":
   """
 
   spec = mj.MjSpec.from_string(arena_xml)
+  spec.compiler.degree  = False
+
+  spec.option.enableflags |= mj.mjtEnableBit.mjENBL_OVERRIDE
+  spec.option.enableflags |= mj.mjtEnableBit.mjENBL_MULTICCD
+  spec.option.timestep = 0.0001
+
+  main = spec.default
+  main.geom.solref = [0.001, 1]
 
 
   # floating_cube(spec)

@@ -535,7 +535,7 @@ if __name__ == "__main__":
 
   # simple_suspended_stair(spec)
   # sin_suspended_stair(spec)
-  circular_stairs(spec)
+  # circular_stairs(spec)
 
   # plane_with_simple_geoms(spec)
   # debris(spec)
@@ -546,10 +546,10 @@ if __name__ == "__main__":
 
   # h_field(spec)
 
-  # SQUARE_LENGTH = 1
-  # for i in range(-3,3):
-  #   for j in range(-3,3):
-  #     add_tile(spec=spec, grid_loc=[i * 2 * SQUARE_LENGTH,j * 2 * SQUARE_LENGTH])
+  SQUARE_LENGTH = 1
+  for i in range(-3,3):
+    for j in range(-3,3):
+      add_tile(spec=spec, grid_loc=[i * 2 * SQUARE_LENGTH,j * 2 * SQUARE_LENGTH])
 
   model = spec.compile()
   data = mj.MjData(model)
