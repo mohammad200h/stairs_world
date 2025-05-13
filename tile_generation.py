@@ -1,6 +1,7 @@
 import mujoco as mj
 import random
 import numpy as np
+from scipy.signal import convolve2d
 
 ####### Utility #######
 def interpolant(t):
@@ -52,6 +53,23 @@ def perlin(shape, res, tileable=(False, False), interpolant=interpolant):
   n0 = n00*(1-t[:,:,0]) + t[:,:,0]*n10
   n1 = n01*(1-t[:,:,0]) + t[:,:,0]*n11
   return np.sqrt(2)*((1-t[:,:,1])*n0 + t[:,:,1]*n1)
+
+def edge_slope(size, border_width=5, blur_iterations=20):
+  """Creates a grayscale image with a white center and fading black edges using convolution."""
+  img = np.ones((size, size), dtype=np.float32)
+  img[:border_width, :] = 0
+  img[-border_width:, :] = 0
+  img[:, :border_width] = 0
+  img[:, -border_width:] = 0
+
+  kernel = np.array([[1, 1, 1],
+                      [1, 1, 1],
+                      [1, 1, 1]]) / 9.0
+
+  for _ in range(blur_iterations):
+    img = convolve2d(img, kernel, mode='same', boundary='symm')
+
+  return img
 
 ######################
 def floating_platform_for_circular_stair(spec=None, gird_loc=[0, 0, 0] ,theta=0, name='platform'):
@@ -345,10 +363,10 @@ def stairs(spec=None, grid_loc=[0, 0] , num_stairs=4, direction=1, name='stair')
   size_one = [H_SIZE , SQUARE_LENGTH, V_SIZE]
   size_two =  [SQUARE_LENGTH , H_SIZE, V_SIZE]
   # Geoms positions
-  x_pos_l = [x_beginning, 0, V_SIZE]
-  x_pos_r = [x_end, 0, V_SIZE]
-  y_pos_up = [0, y_beginning, V_SIZE]
-  y_pos_down = [0, y_end, V_SIZE]
+  x_pos_l = [x_beginning, 0, direction * V_SIZE]
+  x_pos_r = [x_end, 0, direction * V_SIZE]
+  y_pos_up = [0, y_beginning, direction * V_SIZE]
+  y_pos_down = [0, y_end, direction * V_SIZE]
 
   for i in range(num_stairs):
     size_one[1] = SQUARE_LENGTH - H_STEP * i
@@ -524,6 +542,9 @@ def h_field(spec=None, grid_loc=[0, 0], name='h_field'):
   noise = (noise + 1)/2
   noise -= np.min(noise)
   noise /= np.max(noise)
+
+  # Makes the edges slope down to avoid sharp boundary
+  noise *= edge_slope(size)
 
   # Create height field
   hfield = spec.add_hfield(name=name,
