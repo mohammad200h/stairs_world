@@ -226,3 +226,36 @@ WARNING: Pre-allocated visual geom buffer is full. Increase maxgeom above 20000.
 Tue May  6 12:05:21 2025
 WARNING: Pre-allocated visual geom buffer is full. Increase maxgeom above 20000. Time = 0.2417.
 
+Mon May 12 16:03:36 2025
+WARNING: Pre-allocated visual geom buffer is full. Increase maxgeom above 20000. Time = 0.0000.
+
+Mon May 12 16:03:55 2025
+WARNING: Nan, Inf or huge value in QACC at DOF 1731. The simulation is unstable. Time = 0.2450.
+
+Mon May 12 16:03:55 2025
+WARNING: Pre-allocated visual geom buffer is full. Increase maxgeom above 20000. Time = 0.0008.
+
+Mon May 12 16:04:14 2025
+WARNING: Pre-allocated visual geom buffer is full. Increase maxgeom above 20000. Time = 0.0008.
+
+Mon May 12 16:04:33 2025
+WARNING: Pre-allocated visual geom buffer is full. Increase maxgeom above 20000. Time = 0.0016.
+
+Mon May 12 16:04:56 2025
+WARNING: Pre-allocated visual geom buffer is full. Increase maxgeom above 20000. Time = 0.0000.
+
+Mon May 12 16:18:36 2025
+WARNING: Pre-allocated visual geom buffer is full. Increase maxgeom above 20000. Time = 0.0000.
+
+Mon May 12 16:25:21 2025
+WARNING: Nan, Inf or huge value in QACC at DOF 840. The simulation is unstable. Time = 0.2784.
+
+Mon May 12 17:00:34 2025
+WARNING: Nan, Inf or huge value in QACC at DOF 1378. The simulation is unstable. Time = 0.5116.
+
+Mon May 12 17:01:14 2025
+WARNING: Nan, Inf or huge value in QACC at DOF 672. The simulation is unstable. Time = 0.8693.
+
+Mon May 12 17:02:22 2025
+WARNING: Nan, Inf or huge value in QACC at DOF 1381. The simulation is unstable. Time = 0.6385.
+

@@ -9,7 +9,7 @@ def tread_mill():
   # https://github.com/google-deepmind/mujoco/issues/547
   pass
 
-def floating_platform_for_circular_stair():
+def floating_platform_for_circular_stair(spec, gird_loc=[0, 0, 0], theta = 0, name='platform'):
   # TODO
   # make the platform out of three rectangles.
   # the tendon sites need to be place on outer and inner circle
@@ -17,7 +17,76 @@ def floating_platform_for_circular_stair():
   # https://www.google.com/search?sca_esv=bf2c799dee4adccd&sxsrf=AHTn8zogVNx3s3lRtL5dfb_zMDRJUt0nqg:1746614086661&q=circular+stairs&udm=2&fbs=ABzOT_CWdhQLP1FcmU5B0fn3xuWpA-dk4wpBWOGsoR7DG5zJBsxayPSIAqObp_AgjkUGqengxVrJ7hrmYmz7X2OZp_NIYfhIAjPnSJLO3GH6L0gKvuUU9jOm91_NGkSK1WJYVWjjHf1cMeOfIs5S2VkHB51zdvs5rEFgawK72NTjOMMeP0ZkzDJsLwBUA55RuQQ6_IgnTa_0Sg-ZSjc8BLe0lulqWQaGgA&sa=X&ved=2ahUKEwi5ysfBlJGNAxW6zQIHHW7kAjsQtKgLegQIERAB&biw=1708&bih=958&dpr=2#vhid=JrepwICK0wfd-M&vssid=mosaic
   # https://www.archdaily.com/642612/living-staircase-paul-cocksedge/557f8523e58ece7103000058-living-staircase-paul-cocksedge-photo
   # https://www.archdaily.com/642612/living-staircase-paul-cocksedge/557f8592e58ece710300005a-living-staircase-paul-cocksedge-photo
-  pass
+  PLATFORM_LENGTH = 0.5
+  TENDON_LENGTH = 0.5
+  WIDTH = 0.12/4
+  THICKNESS = 0.005
+  INWARD_OFFSET = 0.0
+  SIZE = [PLATFORM_LENGTH, WIDTH, THICKNESS]
+  Z_OFFSET = 0.1
+
+
+  YELLOW = [0.795, 0.860, 0.206,1]
+  RED = [0.870, 0.348, 0.174, 1]
+  GREEN = [0.262, 0.890, 0.205, 1]
+  BLUE = [0.176, 0.293, 0.880, 1]
+
+  COLORS = [YELLOW, RED, GREEN, BLUE]
+  color_str = ["yellow", "red", "green", "blue"]
+
+  # Defaults
+  main = spec.default
+  main.geom.type = mj.mjtGeom.mjGEOM_BOX
+
+  # Platform with sites
+  gird_loc[2] += Z_OFFSET
+  platform = spec.worldbody.add_body(pos=gird_loc, name=name,euler =[0,0,theta])
+  platform.add_geom(pos=[0,0,0] ,size= SIZE, euler=[0,0,0],rgba = [0.2,0.2,0.2,1])
+  platform.add_geom(pos=[0,0.02,0] ,size= SIZE, euler=[0,0,0.05],rgba = [0.4,0.2,0.2,1])
+  platform.add_geom(pos=[0,0.05,0] ,size= SIZE, euler=[0,0,0.1],rgba = [0.4,0.2,0.2,1])
+  platform.add_geom(pos=[0,0.08,0] ,size= SIZE, euler=[0,0,0.15],rgba = [0.4,0.2,0.2,1])
+  platform.add_freejoint()
+
+  for i, x_dir in enumerate([-1, 1]):
+    for j, y_dir in enumerate([-1, 1]):
+      color_idx = i + j
+
+      print(f"{color_str[color_idx]} :: {x_dir}, {y_dir}")
+
+      # Add site to world
+      rotation_matrix = np.array([[np.cos(-theta), -np.sin(-theta)],
+                                  [np.sin(-theta), np.cos(-theta)]])
+      vector = np.array([x_dir * PLATFORM_LENGTH, y_dir * ( WIDTH - INWARD_OFFSET) ])
+      if i + j == 2:
+        vector = np.array([x_dir * PLATFORM_LENGTH, y_dir * ( 6 * WIDTH - INWARD_OFFSET) ])
+      vector = np.dot(vector , rotation_matrix)
+
+      x_w = gird_loc[0] + vector[0]
+      y_w = gird_loc[1] + vector[1]
+      z_w = gird_loc[2] + TENDON_LENGTH
+
+
+      # Rotate sites by theta
+      spec.worldbody.add_site(name=f'{name}_hook_{x_dir}_{y_dir}',
+                              pos=[ x_w, y_w, z_w],
+                              size=[0.01, 0, 0])
+      # Add site to platform
+      x_p = x_dir * PLATFORM_LENGTH
+      y_p = y_dir * (WIDTH - INWARD_OFFSET)
+      if i + j == 2:
+        y_p = y_dir * (6 * WIDTH - INWARD_OFFSET)
+
+      platform.add_site(name=f'{name}_anchor_{x_dir}_{y_dir}',
+                        pos=[ x_p, y_p, THICKNESS * 2],
+                        size=[0.01, 0, 0])
+
+      # Connect tendon to sites
+      thread = spec.add_tendon(name = f'{name}_thread_{x_dir}_{y_dir}', limited=True,
+                               range=[0, TENDON_LENGTH], width = 0.01 , rgba = COLORS[color_idx])
+      thread.wrap_site(f'{name}_hook_{x_dir}_{y_dir}')
+      thread.wrap_site(f'{name}_anchor_{x_dir}_{y_dir}')
+
+
 
 def floating_platform(spec, gird_loc=[0, 0, 0], theta = 0, name='platform'):
   # https://dutchess.com/standard-stair-dimensions/
@@ -36,7 +105,7 @@ def floating_platform(spec, gird_loc=[0, 0, 0], theta = 0, name='platform'):
 
   # Platform with sites
   gird_loc[2] += Z_OFFSET
-  platform = spec.worldbody.add_body(pos=gird_loc, name=name,euler =[0,0,theta])
+  platform = spec.worldbody.add_body(pos=gird_loc, name=name, euler=[0,0,theta])
   platform.add_geom(size= SIZE)
   platform.add_freejoint()
 
@@ -74,7 +143,7 @@ def simple_suspended_stair(spec, num_stair=40):
   H_STEP = 0.12
 
   for i in range(num_stair):
-    floating_platform(spec,[0, i * H_STEP, i * V_STEP], name =f'p_{i}')
+    floating_platform(spec,[0, i * 2 * H_STEP, i * V_STEP], name =f'p_{i}')
 
 def sin_suspended_stair(spec, num_stair=40):
   V_STEP = 0.076
@@ -84,7 +153,7 @@ def sin_suspended_stair(spec, num_stair=40):
 
   for i in range(num_stair):
     x_step = AMPLITUDE * np.sin(2 * np.pi * FREQUENCY * (i * H_STEP))
-    floating_platform(spec,[x_step, i * H_STEP, i * V_STEP], name =f'p_{i}')
+    floating_platform(spec,[x_step, i * 2 * H_STEP, i * V_STEP], name =f'p_{i}')
 
 def floating_cube(spec):
   # Defaults
@@ -107,8 +176,7 @@ def floating_cube(spec):
   thread.wrap_site('hook')
   thread.wrap_site('anchor')
 
-
-def circular_stairs(spec, grid_loc=[0, 0], num_stair=40,
+def circular_stairs(spec, grid_loc=[0, 0], num_stair=60,
                     radius=1.5, v_step=0.076, h_step=0.05):
     """
     Generates circular stairs around a central point.
@@ -138,7 +206,7 @@ def circular_stairs(spec, grid_loc=[0, 0], num_stair=40,
         z = i * v_step
 
         # Create the floating platform.
-        floating_platform(spec,[x, y, z],theta=theta , name=f'p_{i}')
+        floating_platform_for_circular_stair(spec,[x, y, z],theta=theta , name=f'p_{i}')
 
 if __name__ == "__main__":
 
@@ -185,9 +253,9 @@ if __name__ == "__main__":
 
   # floating_cube(spec)
   # simple_suspended_stair(spec)
-  sin_suspended_stair(spec)
-  # circular_stairs(spec)
-
+  # sin_suspended_stair(spec)
+  circular_stairs(spec)
+  # floating_platform_for_circular_stair(spec)
 
   model = spec.compile()
   data = mj.MjData(model)
