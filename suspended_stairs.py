@@ -86,8 +86,6 @@ def floating_platform_for_circular_stair(spec, gird_loc=[0, 0, 0], theta = 0, na
       thread.wrap_site(f'{name}_hook_{x_dir}_{y_dir}')
       thread.wrap_site(f'{name}_anchor_{x_dir}_{y_dir}')
 
-
-
 def floating_platform(spec, gird_loc=[0, 0, 0], theta = 0, name='platform'):
   # https://dutchess.com/standard-stair-dimensions/
   # https://architectureideas.info/wp-content/uploads/2013/10/staircase.jpg

@@ -323,8 +323,11 @@ def plane_with_simple_geoms(spec=None, grid_loc=[0, 0], name='plane'):
 
 def stairs(spec=None, grid_loc=[0, 0] , num_stairs=4, direction=1, name='stair'):
   SQUARE_LENGTH = 2
+  V_SIZE = 0.076
+  H_SIZE = 0.12
   THICKNESS = 0.05
-  STEP = THICKNESS * 2
+  H_STEP = H_SIZE * 2
+  V_STEP = V_SIZE * 2
   BROWN_RGBA = [0.460, 0.362, 0.216, 1.0]
 
   if spec == None:
@@ -336,43 +339,44 @@ def stairs(spec=None, grid_loc=[0, 0] , num_stairs=4, direction=1, name='stair')
 
   body = spec.worldbody.add_body(pos= grid_loc + [0], name=name)
   # Offset
-  x_beginning, y_end = [-SQUARE_LENGTH + THICKNESS] * 2
-  x_end, y_beginning = [SQUARE_LENGTH - THICKNESS] * 2
+  x_beginning, y_end = [-SQUARE_LENGTH + H_SIZE] * 2
+  x_end, y_beginning = [SQUARE_LENGTH - H_SIZE] * 2
   # Dimension
-  size_one = [THICKNESS , SQUARE_LENGTH, THICKNESS]
-  size_two =  [SQUARE_LENGTH , THICKNESS, THICKNESS]
+  size_one = [H_SIZE , SQUARE_LENGTH, V_SIZE]
+  size_two =  [SQUARE_LENGTH , H_SIZE, V_SIZE]
   # Geoms positions
-  x_pos_l = [x_beginning, 0, THICKNESS]
-  x_pos_r = [x_end, 0, THICKNESS]
-  y_pos_up = [0, y_beginning, THICKNESS]
-  y_pos_down = [0, y_end, THICKNESS]
+  x_pos_l = [x_beginning, 0, V_SIZE]
+  x_pos_r = [x_end, 0, V_SIZE]
+  y_pos_up = [0, y_beginning, V_SIZE]
+  y_pos_down = [0, y_end, V_SIZE]
 
   for i in range(num_stairs):
-    size_one[1] = SQUARE_LENGTH - STEP * i
-    size_two[0] = SQUARE_LENGTH - STEP * i
+    size_one[1] = SQUARE_LENGTH - H_STEP * i
+    size_two[0] = SQUARE_LENGTH - H_STEP * i
 
+    # Z
     x_pos_l[2], x_pos_r[2], y_pos_up[2], y_pos_down[2]  = [
-      direction * ( THICKNESS + STEP * i)] * 4
+      direction * ( V_SIZE + V_STEP * i)] * 4
 
     # Left side
-    x_pos_l[0] = x_beginning + STEP * i
+    x_pos_l[0] = x_beginning + H_STEP * i
     body.add_geom(pos=x_pos_l, size=size_one, rgba=BROWN_RGBA)
     # Right side
-    x_pos_r[0] = x_end - STEP * i
+    x_pos_r[0] = x_end - H_STEP * i
     body.add_geom(pos=x_pos_r, size=size_one, rgba=BROWN_RGBA)
     # Top
-    y_pos_up[1] = y_beginning - STEP * i
+    y_pos_up[1] = y_beginning - H_STEP * i
     body.add_geom(pos=y_pos_up, size=size_two, rgba=BROWN_RGBA)
     # Bottom
-    y_pos_down[1] = y_end + STEP * i
+    y_pos_down[1] = y_end + H_STEP * i
     body.add_geom(pos=y_pos_down, size=size_two, rgba=BROWN_RGBA)
 
   # Closing
-  size = [SQUARE_LENGTH - STEP * num_stairs,
-          SQUARE_LENGTH - STEP * num_stairs,
-          THICKNESS]
+  size = [SQUARE_LENGTH - H_STEP * num_stairs,
+          SQUARE_LENGTH - H_STEP * num_stairs,
+          V_SIZE]
   pos = [0, 0,
-         direction * (THICKNESS + STEP * num_stairs)]
+         direction * (V_SIZE + V_STEP * num_stairs)]
   body.add_geom(pos=pos, size=size, rgba=BROWN_RGBA)
 
 def debris(spec=None, grid_loc=[0, 0] , name='debris'):
