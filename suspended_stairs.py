@@ -25,7 +25,6 @@ def floating_platform_for_circular_stair(spec, gird_loc=[0, 0, 0], theta = 0, na
   SIZE = [PLATFORM_LENGTH, WIDTH, THICKNESS]
   Z_OFFSET = 0.1
 
-
   YELLOW = [0.795, 0.860, 0.206,1]
   RED = [0.870, 0.348, 0.174, 1]
   GREEN = [0.262, 0.890, 0.205, 1]

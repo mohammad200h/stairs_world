@@ -25,7 +25,7 @@ def platform(spec, gird_loc=[0, 0, 0],theta = 0, name='platform'):
   platform.add_geom(size= SIZE)
   # platform.add_freejoint()
 
-def rope_ladder(spec,world_sites,num_stairs=10 ,name="stair"):
+def rope_ladder(spec, world_sites, num_stairs=10 , name="stair"):
 
   PLATFORM_LENGTH = 0.1
   WIDTH = 0.02
@@ -47,7 +47,7 @@ def rope_ladder(spec,world_sites,num_stairs=10 ,name="stair"):
     print(f"i::{i}")
     # Create stair above
     platform_above = spec.worldbody.add_body(pos=[0, 0, 0.1], name=f"{name}_{i+1}")
-    platform_above.add_geom(size= SIZE)
+    platform_above.add_geom(size=SIZE)
     platform_above.add_freejoint()
 
     tip =[]
@@ -62,8 +62,8 @@ def rope_ladder(spec,world_sites,num_stairs=10 ,name="stair"):
                          size=[0.005, 0, 0])
 
       # Connect using a tendon
-      thread = spec.add_tendon(name = f'{name}_thread_{i}_{i+1}_{dir}', limited=True,
-                               range=[0, TENDON_LENGTH], width = 0.001 )
+      thread = spec.add_tendon(name=f'{name}_thread_{i}_{i+1}_{dir}', limited=True,
+                               range=[0, TENDON_LENGTH], width=0.001 )
       thread.wrap_site(s_b.name)
       thread.wrap_site(s_a.name)
 
@@ -82,6 +82,64 @@ def rope_ladder(spec,world_sites,num_stairs=10 ,name="stair"):
     thread.wrap_site(s_w.name)
     thread.wrap_site(s_l.name)
 
+def bridge(spec, beginning_sites, end_sites, length=2, name="bridge"):
+  PLATFORM_LENGTH = 0.1
+  WIDTH = 0.02
+  THICKNESS = 0.001
+  SIZE = [PLATFORM_LENGTH, WIDTH, THICKNESS]
+  TENDON_LENGTH = 0.005
+  INWARD_OFFSET = 0.000
+
+  YELLOW = [0.795, 0.860, 0.206,1]
+  RED = [0.870, 0.348, 0.174, 1]
+
+  COLORS = [YELLOW, RED]
+  color_str = ["yellow", "red"]
+
+  # Defaults
+  main = spec.default
+  main.geom.type = mj.mjtGeom.mjGEOM_BOX
+
+  tail = beginning_sites
+  for i in range(length):
+    y_pos = (TENDON_LENGTH + WIDTH) * 2 * i
+    platform = spec.worldbody.add_body(pos=[0, y_pos, 0.1],
+                                       name=f"{name}_{i}")
+    platform.add_geom(size=SIZE)
+    platform.add_freejoint()
+
+    # Sites
+    next_tip = []
+    for color_idx, y_dir in enumerate([-1,1]):
+      y_p = y_dir * (WIDTH - INWARD_OFFSET)
+      # Left site
+      s1 = platform.add_site(name=f'b_l_s_{i}_{y_dir}', pos=[PLATFORM_LENGTH, y_p, 0],
+                             size=[0.005, 0, 0],
+                             rgba=COLORS[color_idx]
+                             )
+      # Right site
+      s2 = platform.add_site(name=f'b_r_s_{i}_{y_dir}', pos=[-PLATFORM_LENGTH, y_p , 0],
+                             size=[0.005, 0, 0],
+                             rgba=COLORS[color_idx]
+                             )
+      sites = [s1, s2]
+      # Connect previous tail to tip
+      if color_idx == 0:
+        for k in range(2):
+          thread = spec.add_tendon(name = f'{name}_thread_{i}_{k}', limited=True,
+                               range=[0, TENDON_LENGTH], width = 0.005 )
+          thread.wrap_site(tail[k].name)
+          thread.wrap_site(sites[k].name)
+      else:
+        tail = sites
+
+  # Connect bridge to the end
+  for k in range(2):
+    thread = spec.add_tendon(name = f'{name}_end_thread_{i}_{k}', limited=True,
+        range=[0, TENDON_LENGTH], width = 0.005 )
+    thread.wrap_site(tail[k].name)
+    thread.wrap_site(end_sites[k].name)
+
 def balustrade(parent_body, loc=[0,0,0], open=False, connection=None, theta=0, name="balustrade"):
   # RAILS
   STEP = 0.1
@@ -96,6 +154,9 @@ def balustrade(parent_body, loc=[0,0,0], open=False, connection=None, theta=0, n
   THICKNESS = 0.01
 
   sites = None
+  if connection:
+    sites = []
+
   body = parent_body.add_body(pos=loc, name=name, euler=[0,0 , theta])
 
   for i in range(10):
@@ -113,15 +174,22 @@ def balustrade(parent_body, loc=[0,0,0], open=False, connection=None, theta=0, n
                   pos=[0, STEP * 10 - (2 * LENGTH), 2 * HEIGHT],
                   size=SIZE)
     if connection == Connection.BRIDGE:
-      pass
+      middle = 0.45
+      offset = 0.15
+      s1 = body.add_site(name='b_l_s', pos=[0, middle + offset, 0], size=[0.01, 0, 0])
+      s2 = body.add_site(name='b_r_s', pos=[0, middle - offset, 0], size=[0.01, 0, 0])
+      sites = [s1, s2]
     elif connection == Connection.LADDER:
-      pass
+      middle = 0.45
+      offset = 0.1
+      s1 = body.add_site(name='l_l_s', pos=[0, middle + offset, 0], size=[0.01, 0, 0])
+      s2 = body.add_site(name='l_r_s', pos=[0, middle - offset, 0], size=[0.01, 0, 0])
+      sites = [s1, s2]
   else:
     SIZE = [WIDTH, 4.5 * LENGTH + OVERHANG, THICKNESS]
     body.add_geom(type=mj.mjtGeom.mjGEOM_BOX,
                   pos=[0, 4.5 * STEP, 2 * HEIGHT],
                   size=SIZE)
-
   return sites
 
 def look_at_platform(spec, loc=[0, 0,0], openings=[False, False, False, True], name="lookout"):
@@ -145,10 +213,21 @@ def look_at_platform(spec, loc=[0, 0,0], openings=[False, False, False, True], n
     pos = [0,0,HIGHT]
   )
 
-  balustrade(parent_body=platform, open=openings[0], loc=[0.5, 0.45, HIGHT * 2 ], theta=3.14, name=f"{name}_v" )
+  # Sites belonging to each bridge
+  bridges = []
+  connection = Connection.LADDER
+  sites = balustrade(parent_body=platform, open=openings[0], connection=connection,
+             loc=[0.5, 0.45, HIGHT * 2 ], theta=3.14, name=f"{name}_v" )
+  if connection == Connection.LADDER:
+    rope_ladder(spec, world_sites = sites)
+
   balustrade(parent_body=platform, open=openings[1], loc=[-0.5,0.49, HIGHT * 2 ], theta=3.14, name=f"{name}_v2" )
   balustrade(parent_body=platform, open=openings[2], loc=[0.5, 0.49, HIGHT * 2 ], theta=1.57, name=f"{name}_h" )
-  balustrade(parent_body=platform, open=openings[3], loc=[0.5, -0.5, HIGHT * 2 ], theta=1.57, name=f"{name}_h2" )
+  connection = Connection.BRIDGE
+  sites = balustrade(parent_body=platform, open=openings[3], connection=connection, loc=[0.5, -0.5, HIGHT * 2 ], theta=1.57, name=f"{name}_h2" )
+  if connection == Connection.BRIDGE:
+    bridges.append(sites)
+
 
 if __name__ == "__main__":
 
@@ -186,9 +265,37 @@ if __name__ == "__main__":
   spec.compiler.degree  = False
 
   PLATFORM_LENGTH = 0.1
+  WIDTH = 0.02
   THICKNESS = 0.001
   TENDON_LENGTH = 0.1
   num_stairs=10
+
+  SAGENESS = 2.5
+
+
+  # Add site to the world
+  beginning_sites = []
+  for dir in [-1,1]:
+      x_p = dir * PLATFORM_LENGTH
+      y_p = 0
+      s_w = spec.worldbody.add_site(  name=f'wb_site_{dir}',
+                         pos=[ x_p, y_p, 0.2],
+                         size=[0.005, 0, 0])
+      beginning_sites.append(s_w)
+
+  end_sites = []
+  for dir in [-1,1]:
+      x_p = dir * PLATFORM_LENGTH
+      y_p = num_stairs * SAGENESS * WIDTH
+      s_w = spec.worldbody.add_site(  name=f'we_site_{dir}',
+                         pos=[ x_p, y_p, 0.2],
+                         size=[0.005, 0, 0])
+      end_sites.append(s_w)
+
+
+  bridge(spec, beginning_sites = beginning_sites,
+               end_sites = end_sites,
+               length=num_stairs)
 
   # Add site to the world
   # world_sites = []
@@ -202,14 +309,16 @@ if __name__ == "__main__":
 
   # rope_ladder(spec, world_sites, num_stairs)
 
+
+
   # balustrade(spec,open=False, theta = 3.14, name="v" )
   # balustrade(spec,open=False,loc=[-0.9, 0, 0 ], theta = 3.14, name="v2" )
   # balustrade(spec,open=False, theta = 1.57,name="h" )
   # balustrade(spec,open=True, loc=[0, -0.9, 0 ], theta = 1.57,name="h2" )
 
 
-  look_at_platform(spec,openings=[True, False, False, True], name= "lk1")
-  look_at_platform(spec, openings=[False, True, False, False], loc=[2,0,0], name="lk2")
+  # look_at_platform(spec,openings=[True, False, False, True], name= "lk1")
+  # look_at_platform(spec, openings=[False, True, False, False], loc=[2,0,0], name="lk2")
 
   model = spec.compile()
   data = mj.MjData(model)

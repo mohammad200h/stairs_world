@@ -12,6 +12,10 @@
 
   <statistic extent="0.3" center="0 0 0.05"/>
 
+  <default>
+    <geom type="box"/>
+  </default>
+
   <asset>
     <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
     <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3" markrgb="0.8 0.8 0.8" width="300" height="300"/>
@@ -20,110 +24,182 @@
 
   <worldbody>
     <geom name="floor" size="0 0 0.05" type="plane" material="groundplane"/>
+    <site name="wb_site_-1" pos="-0.1 0 0.2"/>
+    <site name="wb_site_1" pos="0.1 0 0.2"/>
+    <site name="we_site_-1" pos="-0.1 0.5 0.2"/>
+    <site name="we_site_1" pos="0.1 0.5 0.2"/>
     <light pos="0 0 1" dir="0 0 -1"/>
     <light pos="0 -0.2 1" dir="0 0.242536 -0.970143" directional="true"/>
-    <body name="lk1">
-      <geom size="0.5 0.5 0.01" pos="0 0 1" type="box"/>
-      <geom size="0.1 0.5" pos="0 0 0.5" type="cylinder"/>
-      <body name="lk1_v" pos="0.5 0.45 1" quat="0.000796327 0 0 1">
-        <geom size="0.01 0.1" pos="0 0 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.1 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.2 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.7 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.8 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.9 0.1" type="cylinder"/>
-        <geom size="0.02 0.12 0.01" pos="0 0.1 0.2" type="box"/>
-        <geom size="0.02 0.12 0.01" pos="0 0.8 0.2" type="box"/>
-      </body>
-      <body name="lk1_v2" pos="-0.5 0.49 1" quat="0.000796327 0 0 1">
-        <geom size="0.01 0.1" pos="0 0 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.1 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.2 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.3 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.4 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.5 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.6 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.7 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.8 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.9 0.1" type="cylinder"/>
-        <geom size="0.02 0.47 0.01" pos="0 0.45 0.2" type="box"/>
-      </body>
-      <body name="lk1_h" pos="0.5 0.49 1" quat="0.707388 0 0 0.706825">
-        <geom size="0.01 0.1" pos="0 0 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.1 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.2 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.3 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.4 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.5 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.6 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.7 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.8 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.9 0.1" type="cylinder"/>
-        <geom size="0.02 0.47 0.01" pos="0 0.45 0.2" type="box"/>
-      </body>
-      <body name="lk1_h2" pos="0.5 -0.5 1" quat="0.707388 0 0 0.706825">
-        <geom size="0.01 0.1" pos="0 0 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.1 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.2 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.7 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.8 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.9 0.1" type="cylinder"/>
-        <geom size="0.02 0.12 0.01" pos="0 0.1 0.2" type="box"/>
-        <geom size="0.02 0.12 0.01" pos="0 0.8 0.2" type="box"/>
-      </body>
+    <body name="bridge_0" pos="0 0 0.1">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="b_l_s_0_-1" pos="0.1 -0.02 0" rgba="0.795 0.86 0.206 1"/>
+      <site name="b_r_s_0_-1" pos="-0.1 -0.02 0" rgba="0.795 0.86 0.206 1"/>
+      <site name="b_l_s_0_1" pos="0.1 0.02 0" rgba="0.87 0.348 0.174 1"/>
+      <site name="b_r_s_0_1" pos="-0.1 0.02 0" rgba="0.87 0.348 0.174 1"/>
     </body>
-    <body name="lk2" pos="2 0 0">
-      <geom size="0.5 0.5 0.01" pos="0 0 1" type="box"/>
-      <geom size="0.1 0.5" pos="0 0 0.5" type="cylinder"/>
-      <body name="lk2_v" pos="0.5 0.45 1" quat="0.000796327 0 0 1">
-        <geom size="0.01 0.1" pos="0 0 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.1 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.2 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.3 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.4 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.5 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.6 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.7 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.8 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.9 0.1" type="cylinder"/>
-        <geom size="0.02 0.47 0.01" pos="0 0.45 0.2" type="box"/>
-      </body>
-      <body name="lk2_v2" pos="-0.5 0.49 1" quat="0.000796327 0 0 1">
-        <geom size="0.01 0.1" pos="0 0 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.1 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.2 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.7 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.8 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.9 0.1" type="cylinder"/>
-        <geom size="0.02 0.12 0.01" pos="0 0.1 0.2" type="box"/>
-        <geom size="0.02 0.12 0.01" pos="0 0.8 0.2" type="box"/>
-      </body>
-      <body name="lk2_h" pos="0.5 0.49 1" quat="0.707388 0 0 0.706825">
-        <geom size="0.01 0.1" pos="0 0 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.1 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.2 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.3 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.4 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.5 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.6 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.7 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.8 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.9 0.1" type="cylinder"/>
-        <geom size="0.02 0.47 0.01" pos="0 0.45 0.2" type="box"/>
-      </body>
-      <body name="lk2_h2" pos="0.5 -0.5 1" quat="0.707388 0 0 0.706825">
-        <geom size="0.01 0.1" pos="0 0 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.1 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.2 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.3 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.4 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.5 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.6 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.7 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.8 0.1" type="cylinder"/>
-        <geom size="0.01 0.1" pos="0 0.9 0.1" type="cylinder"/>
-        <geom size="0.02 0.47 0.01" pos="0 0.45 0.2" type="box"/>
-      </body>
+    <body name="bridge_1" pos="0 0.05 0.1">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="b_l_s_1_-1" pos="0.1 -0.02 0" rgba="0.795 0.86 0.206 1"/>
+      <site name="b_r_s_1_-1" pos="-0.1 -0.02 0" rgba="0.795 0.86 0.206 1"/>
+      <site name="b_l_s_1_1" pos="0.1 0.02 0" rgba="0.87 0.348 0.174 1"/>
+      <site name="b_r_s_1_1" pos="-0.1 0.02 0" rgba="0.87 0.348 0.174 1"/>
+    </body>
+    <body name="bridge_2" pos="0 0.1 0.1">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="b_l_s_2_-1" pos="0.1 -0.02 0" rgba="0.795 0.86 0.206 1"/>
+      <site name="b_r_s_2_-1" pos="-0.1 -0.02 0" rgba="0.795 0.86 0.206 1"/>
+      <site name="b_l_s_2_1" pos="0.1 0.02 0" rgba="0.87 0.348 0.174 1"/>
+      <site name="b_r_s_2_1" pos="-0.1 0.02 0" rgba="0.87 0.348 0.174 1"/>
+    </body>
+    <body name="bridge_3" pos="0 0.15 0.1">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="b_l_s_3_-1" pos="0.1 -0.02 0" rgba="0.795 0.86 0.206 1"/>
+      <site name="b_r_s_3_-1" pos="-0.1 -0.02 0" rgba="0.795 0.86 0.206 1"/>
+      <site name="b_l_s_3_1" pos="0.1 0.02 0" rgba="0.87 0.348 0.174 1"/>
+      <site name="b_r_s_3_1" pos="-0.1 0.02 0" rgba="0.87 0.348 0.174 1"/>
+    </body>
+    <body name="bridge_4" pos="0 0.2 0.1">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="b_l_s_4_-1" pos="0.1 -0.02 0" rgba="0.795 0.86 0.206 1"/>
+      <site name="b_r_s_4_-1" pos="-0.1 -0.02 0" rgba="0.795 0.86 0.206 1"/>
+      <site name="b_l_s_4_1" pos="0.1 0.02 0" rgba="0.87 0.348 0.174 1"/>
+      <site name="b_r_s_4_1" pos="-0.1 0.02 0" rgba="0.87 0.348 0.174 1"/>
+    </body>
+    <body name="bridge_5" pos="0 0.25 0.1">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="b_l_s_5_-1" pos="0.1 -0.02 0" rgba="0.795 0.86 0.206 1"/>
+      <site name="b_r_s_5_-1" pos="-0.1 -0.02 0" rgba="0.795 0.86 0.206 1"/>
+      <site name="b_l_s_5_1" pos="0.1 0.02 0" rgba="0.87 0.348 0.174 1"/>
+      <site name="b_r_s_5_1" pos="-0.1 0.02 0" rgba="0.87 0.348 0.174 1"/>
+    </body>
+    <body name="bridge_6" pos="0 0.3 0.1">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="b_l_s_6_-1" pos="0.1 -0.02 0" rgba="0.795 0.86 0.206 1"/>
+      <site name="b_r_s_6_-1" pos="-0.1 -0.02 0" rgba="0.795 0.86 0.206 1"/>
+      <site name="b_l_s_6_1" pos="0.1 0.02 0" rgba="0.87 0.348 0.174 1"/>
+      <site name="b_r_s_6_1" pos="-0.1 0.02 0" rgba="0.87 0.348 0.174 1"/>
+    </body>
+    <body name="bridge_7" pos="0 0.35 0.1">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="b_l_s_7_-1" pos="0.1 -0.02 0" rgba="0.795 0.86 0.206 1"/>
+      <site name="b_r_s_7_-1" pos="-0.1 -0.02 0" rgba="0.795 0.86 0.206 1"/>
+      <site name="b_l_s_7_1" pos="0.1 0.02 0" rgba="0.87 0.348 0.174 1"/>
+      <site name="b_r_s_7_1" pos="-0.1 0.02 0" rgba="0.87 0.348 0.174 1"/>
+    </body>
+    <body name="bridge_8" pos="0 0.4 0.1">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="b_l_s_8_-1" pos="0.1 -0.02 0" rgba="0.795 0.86 0.206 1"/>
+      <site name="b_r_s_8_-1" pos="-0.1 -0.02 0" rgba="0.795 0.86 0.206 1"/>
+      <site name="b_l_s_8_1" pos="0.1 0.02 0" rgba="0.87 0.348 0.174 1"/>
+      <site name="b_r_s_8_1" pos="-0.1 0.02 0" rgba="0.87 0.348 0.174 1"/>
+    </body>
+    <body name="bridge_9" pos="0 0.45 0.1">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom size="0.1 0.02 0.001"/>
+      <site name="b_l_s_9_-1" pos="0.1 -0.02 0" rgba="0.795 0.86 0.206 1"/>
+      <site name="b_r_s_9_-1" pos="-0.1 -0.02 0" rgba="0.795 0.86 0.206 1"/>
+      <site name="b_l_s_9_1" pos="0.1 0.02 0" rgba="0.87 0.348 0.174 1"/>
+      <site name="b_r_s_9_1" pos="-0.1 0.02 0" rgba="0.87 0.348 0.174 1"/>
     </body>
   </worldbody>
+
+  <tendon>
+    <spatial name="bridge_thread_0_0" limited="true" range="0 0.005" width="0.005">
+      <site site="wb_site_-1"/>
+      <site site="b_l_s_0_-1"/>
+    </spatial>
+    <spatial name="bridge_thread_0_1" limited="true" range="0 0.005" width="0.005">
+      <site site="wb_site_1"/>
+      <site site="b_r_s_0_-1"/>
+    </spatial>
+    <spatial name="bridge_thread_1_0" limited="true" range="0 0.005" width="0.005">
+      <site site="b_l_s_0_1"/>
+      <site site="b_l_s_1_-1"/>
+    </spatial>
+    <spatial name="bridge_thread_1_1" limited="true" range="0 0.005" width="0.005">
+      <site site="b_r_s_0_1"/>
+      <site site="b_r_s_1_-1"/>
+    </spatial>
+    <spatial name="bridge_thread_2_0" limited="true" range="0 0.005" width="0.005">
+      <site site="b_l_s_1_1"/>
+      <site site="b_l_s_2_-1"/>
+    </spatial>
+    <spatial name="bridge_thread_2_1" limited="true" range="0 0.005" width="0.005">
+      <site site="b_r_s_1_1"/>
+      <site site="b_r_s_2_-1"/>
+    </spatial>
+    <spatial name="bridge_thread_3_0" limited="true" range="0 0.005" width="0.005">
+      <site site="b_l_s_2_1"/>
+      <site site="b_l_s_3_-1"/>
+    </spatial>
+    <spatial name="bridge_thread_3_1" limited="true" range="0 0.005" width="0.005">
+      <site site="b_r_s_2_1"/>
+      <site site="b_r_s_3_-1"/>
+    </spatial>
+    <spatial name="bridge_thread_4_0" limited="true" range="0 0.005" width="0.005">
+      <site site="b_l_s_3_1"/>
+      <site site="b_l_s_4_-1"/>
+    </spatial>
+    <spatial name="bridge_thread_4_1" limited="true" range="0 0.005" width="0.005">
+      <site site="b_r_s_3_1"/>
+      <site site="b_r_s_4_-1"/>
+    </spatial>
+    <spatial name="bridge_thread_5_0" limited="true" range="0 0.005" width="0.005">
+      <site site="b_l_s_4_1"/>
+      <site site="b_l_s_5_-1"/>
+    </spatial>
+    <spatial name="bridge_thread_5_1" limited="true" range="0 0.005" width="0.005">
+      <site site="b_r_s_4_1"/>
+      <site site="b_r_s_5_-1"/>
+    </spatial>
+    <spatial name="bridge_thread_6_0" limited="true" range="0 0.005" width="0.005">
+      <site site="b_l_s_5_1"/>
+      <site site="b_l_s_6_-1"/>
+    </spatial>
+    <spatial name="bridge_thread_6_1" limited="true" range="0 0.005" width="0.005">
+      <site site="b_r_s_5_1"/>
+      <site site="b_r_s_6_-1"/>
+    </spatial>
+    <spatial name="bridge_thread_7_0" limited="true" range="0 0.005" width="0.005">
+      <site site="b_l_s_6_1"/>
+      <site site="b_l_s_7_-1"/>
+    </spatial>
+    <spatial name="bridge_thread_7_1" limited="true" range="0 0.005" width="0.005">
+      <site site="b_r_s_6_1"/>
+      <site site="b_r_s_7_-1"/>
+    </spatial>
+    <spatial name="bridge_thread_8_0" limited="true" range="0 0.005" width="0.005">
+      <site site="b_l_s_7_1"/>
+      <site site="b_l_s_8_-1"/>
+    </spatial>
+    <spatial name="bridge_thread_8_1" limited="true" range="0 0.005" width="0.005">
+      <site site="b_r_s_7_1"/>
+      <site site="b_r_s_8_-1"/>
+    </spatial>
+    <spatial name="bridge_thread_9_0" limited="true" range="0 0.005" width="0.005">
+      <site site="b_l_s_8_1"/>
+      <site site="b_l_s_9_-1"/>
+    </spatial>
+    <spatial name="bridge_thread_9_1" limited="true" range="0 0.005" width="0.005">
+      <site site="b_r_s_8_1"/>
+      <site site="b_r_s_9_-1"/>
+    </spatial>
+    <spatial name="bridge_end_thread_9_0" limited="true" range="0 0.005" width="0.005">
+      <site site="b_l_s_9_1"/>
+      <site site="we_site_-1"/>
+    </spatial>
+    <spatial name="bridge_end_thread_9_1" limited="true" range="0 0.005" width="0.005">
+      <site site="b_r_s_9_1"/>
+      <site site="we_site_1"/>
+    </spatial>
+  </tendon>
 </mujoco>
